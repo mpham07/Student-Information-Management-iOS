@@ -1,7 +1,3 @@
-
-
-
-
 {
   "users" : {
     "admin_123": {
@@ -9,7 +5,7 @@
       "name": "JJ Watt",
       "student_id": "",
       "role": "admin",
-      "photoUrl": "admin	admin_123.png"
+      "photoUrl": "admin_123.png"
     },
     "minh_pham": {
       "email": "minh@gator.uhd.edu",
@@ -24,7 +20,7 @@
             "quiz_1": 80,
             "quiz_2": 79,
             "midterm": 90,
-            "final":
+            "final": 0
             },
           {
             "uid_course": "CS_2420",
@@ -32,7 +28,7 @@
             "quiz_1": 94,
             "quiz_2": 90,
             "midterm": 87,
-            "final":
+            "final": 0
           },
           {
            "uid_course": "CS_3300",
@@ -40,7 +36,7 @@
            "quiz_1": 88,
            "quiz_2": 100,
            "midterm": 88,
-           "final":
+           "final": 0
           },
           {
             "uid_course": "CS_4294",
@@ -48,7 +44,7 @@
             "quiz_1": 78,
             "quiz_2": 79,
             "midterm": 81,
-            "final":
+            "final": 0
           }
         ]
     },
@@ -65,7 +61,7 @@
              "quiz_1": 80,
              "quiz_2": 90,
              "midterm": 90,
-             "final":
+             "final": 0
             },
             {
             "uid_course": "CS_3300",
@@ -73,7 +69,7 @@
             "quiz_1": 94,
             "quiz_2": 100,
             "midterm": 87,
-            "final":
+            "final": 0
           },
           {
             "uid_course": "CS_3420",
@@ -81,7 +77,7 @@
             "quiz_1": 94,
             "quiz_2": 82,
             "midterm": 87,
-            "final":
+            "final": 0
           },
           {
             "uid_course": "CS_3308",
@@ -89,7 +85,7 @@
             "quiz_1": 88,
             "quiz_2": 79,
             "midterm": 88,
-            "final":
+            "final": 0
           },
           {
             "uid_course": "CS_4303",
@@ -97,7 +93,7 @@
             "quiz_1": 78,
             "quiz_2": 90,
             "midterm": 81,
-            "final":
+            "final": 0
           },
           {
             "uid_course": "CS_4319",
@@ -105,7 +101,7 @@
             "quiz_1": 80,
             "quiz_2": 100,
             "midterm": 90,
-            "final":
+            "final": 0
           }
         ]
     },
@@ -122,7 +118,7 @@
               "quiz_1": 88,
               "quiz_2": 79,
               "midterm": 88,
-              "final":
+              "final": 0
             },
             {
               "uid_course": "CS_3308",
@@ -130,7 +126,7 @@
               "quiz_1": 80,
               "quiz_2": 100,
               "midterm": 90,
-              "final":
+              "final": 0
             },
             {
               "uid_course": "CS_3306",
@@ -138,7 +134,7 @@
               "quiz_1": 94,
               "quiz_2": 82,
               "midterm": 87,
-              "final":
+              "final": 0
             },
             {
               "uid_course": "CS_4319",
@@ -146,7 +142,7 @@
               "quiz_1": 88,
               "quiz_2": 100,
               "midterm": 88,
-              "final":
+              "final": 0
             }
         ]
     }
@@ -164,7 +160,7 @@
     },
     "CS_2420": {
       "course_id": "CS 2420",
-      "name": "Digital Logic	in_class",
+      "name": "Digital Logic",
       "type": "in_class"
     },
     "CS_4390": {
