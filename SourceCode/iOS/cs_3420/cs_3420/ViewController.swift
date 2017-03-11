@@ -18,9 +18,43 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //get_1_course()
+        getCoursesFromDB()
+        
         //get_1_User()
-        getUsersFromDB()
-        //getCoursesFromDB()
+        //getUsersFromDB()
+        
+    }
+    
+    func getCoursesFromDB() {
+        
+        DataService.instance.getAllCourses { (err, courses) in
+            
+            if let err = err {
+                print(err)
+                return
+            }
+            
+            if let courses = courses as? [Course] {
+                self.courses = courses
+                self.printC(num: 14)
+            }
+        }
+    }
+    
+    func get_1_course() {
+        
+        DataService.instance.get_1_course(uid: "CS_3308") { (err, course) in
+            
+            if let err = err {
+                print(err)
+                return
+            }
+            
+            if let course = course {
+                self.print_1C(course: course as! Course)
+            }
+        }
     }
     
     func get_1_User() {
@@ -45,27 +79,16 @@ class ViewController: UIViewController {
         }
     }
     
-    func getCoursesFromDB() {
-        
-        DataService.instance.getAllCourses { (error, courses) in
-            if let err = error {
-                print(err)
-                return
-            }
-            
-            if let courses = courses as? [Course] {
-                self.courses = courses
-                //self.printC(num: 2)
-            }
-        }
+    func printC(num: Int) {
+        print_1C(course: courses[num])
+        print(self.courses.count)
     }
     
-    func printC(num: Int) {
-        print(self.courses[num].uid)
-        print(self.courses[num].course_id)
-        print(self.courses[num].name)
-        print(self.courses[num].type)
-        print(self.courses.count)
+    func print_1C(course: Course) {
+        print(course.uid)
+        print(course.course_id)
+        print(course.name)
+        print(course.type)
     }
     
     func printU(user: User, _ course_grade: Int) {

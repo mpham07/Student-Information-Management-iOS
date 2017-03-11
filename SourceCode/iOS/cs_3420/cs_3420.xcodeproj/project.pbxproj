@@ -20,6 +20,7 @@
 		BAA15D871E7270550028F47B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D861E7270550028F47B /* Course.swift */; };
 		BAA15D891E7270FA0028F47B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D881E7270FA0028F47B /* User.swift */; };
 		BAA15D8B1E72714B0028F47B /* Course_Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D8A1E72714B0028F47B /* Course_Grade.swift */; };
+		BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACF01041E74520F00DDFCF7 /* DataService+GET.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		BAA15D861E7270550028F47B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		BAA15D881E7270FA0028F47B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAA15D8A1E72714B0028F47B /* Course_Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course_Grade.swift; sourceTree = "<group>"; };
+		BACF01041E74520F00DDFCF7 /* DataService+GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+GET.swift"; sourceTree = "<group>"; };
 		F9A846B224AAD0971EEE6C6D /* Pods-cs_3420.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cs_3420.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cs_3420/Pods-cs_3420.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,12 +73,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA0174EA1E7351E400822366 /* Service */ = {
+		BA0174EA1E7351E400822366 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BA0174EB1E7351F600822366 /* DataService.swift */,
+				BACF01031E7451C500DDFCF7 /* DataServie */,
 			);
-			name = Service;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		BA0174ED1E7352E400822366 /* Helper */ = {
@@ -109,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				BA0174ED1E7352E400822366 /* Helper */,
-				BA0174EA1E7351E400822366 /* Service */,
+				BA0174EA1E7351E400822366 /* Services */,
 				BAA15D831E726FE50028F47B /* Model */,
 				BAA15D821E726FE30028F47B /* View */,
 				BAA15D811E726FE00028F47B /* Controller */,
@@ -155,6 +157,15 @@
 				BAA15D8A1E72714B0028F47B /* Course_Grade.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		BACF01031E7451C500DDFCF7 /* DataServie */ = {
+			isa = PBXGroup;
+			children = (
+				BA0174EB1E7351F600822366 /* DataService.swift */,
+				BACF01041E74520F00DDFCF7 /* DataService+GET.swift */,
+			);
+			name = DataServie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				BAA15D6F1E726E2B0028F47B /* ViewController.swift in Sources */,
 				BAA15D891E7270FA0028F47B /* User.swift in Sources */,
 				BAA15D6D1E726E2B0028F47B /* AppDelegate.swift in Sources */,
+				BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

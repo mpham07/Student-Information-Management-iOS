@@ -16,6 +16,10 @@ struct CONSTANTS {
         static let COURSE_ID = "course_id"
         static let NAME = "name"
         static let TYPE = "type"
+        
+        static let IN_CLASS = "in_class"
+        static let HYBRID = "hybrid"
+        static let ONLINE = "online"
     }
     
     struct users {
@@ -41,4 +45,8 @@ struct CONSTANTS {
         static let UID_COURSE = "uid_course"
     }
     
+    struct search {
+        static let USER_NOT_FOUND = "The user is not found!"
+        static let COURSE_NOT_FOUND = "The course not found!"
+    }
 }
