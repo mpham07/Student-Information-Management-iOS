@@ -16,7 +16,7 @@ class User {
     private var _photoUrl: String?
     private var _role: String
     private var _student_id: String?
-    private var _course_grades: [Student_Grade]?
+    private var _course_grades: [Course_Grade]?
     
     var uid: String {
         return _uid
@@ -30,29 +30,41 @@ class User {
         return _name
     }
     
-    var photoUrl: String? {
-        return _photoUrl
-    }
-    
     var role: String {
         return _role
     }
     
+    var photoUrl: String? {
+        get {
+            return _photoUrl
+        }
+        set {
+            _photoUrl = newValue
+        }
+    }
+    
     var student_id: String? {
-        return _student_id
+        get {
+            return _student_id
+        }
+        set {
+            _student_id = newValue
+        }
     }
     
-    var course_grades: [Student_Grade]? {
-        return _course_grades
+    var course_grades: [Course_Grade]? {
+        get {
+            return _course_grades
+        }
+        set {
+            _course_grades = newValue
+        }
     }
     
-    init(uid: String, email: String, name: String, photoUrl: String?, role: String, student_id: String?, course_grades: [Student_Grade]?) {
+    init(uid: String, email: String, name: String, role: String) {
         _uid = uid
         _email = email
         _name = name
-        _photoUrl = photoUrl
         _role = role
-        _student_id = student_id
-        _course_grades = course_grades
     }
 }

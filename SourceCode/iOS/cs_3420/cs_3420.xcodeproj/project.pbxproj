@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		190DE0988C15EAA3FF2F6125 /* Pods_cs_3420.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C18E031D10BA3DDF00D8A4 /* Pods_cs_3420.framework */; };
+		BA0174EC1E7351F600822366 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0174EB1E7351F600822366 /* DataService.swift */; };
+		BA0174EF1E7352FC00822366 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0174EE1E7352FC00822366 /* Constant.swift */; };
 		BAA15D6D1E726E2B0028F47B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D6C1E726E2B0028F47B /* AppDelegate.swift */; };
 		BAA15D6F1E726E2B0028F47B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D6E1E726E2B0028F47B /* ViewController.swift */; };
 		BAA15D721E726E2B0028F47B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA15D701E726E2B0028F47B /* Main.storyboard */; };
@@ -17,12 +19,14 @@
 		BAA15D851E7270220028F47B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D841E7270220028F47B /* AppState.swift */; };
 		BAA15D871E7270550028F47B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D861E7270550028F47B /* Course.swift */; };
 		BAA15D891E7270FA0028F47B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D881E7270FA0028F47B /* User.swift */; };
-		BAA15D8B1E72714B0028F47B /* Student_Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D8A1E72714B0028F47B /* Student_Grade.swift */; };
+		BAA15D8B1E72714B0028F47B /* Course_Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D8A1E72714B0028F47B /* Course_Grade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24C18E031D10BA3DDF00D8A4 /* Pods_cs_3420.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cs_3420.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E5BCB37E9B5D463834748A /* Pods-cs_3420.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cs_3420.release.xcconfig"; path = "Pods/Target Support Files/Pods-cs_3420/Pods-cs_3420.release.xcconfig"; sourceTree = "<group>"; };
+		BA0174EB1E7351F600822366 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BA0174EE1E7352FC00822366 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BAA15D691E726E2B0028F47B /* cs_3420.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cs_3420.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA15D6C1E726E2B0028F47B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA15D6E1E726E2B0028F47B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +38,7 @@
 		BAA15D841E7270220028F47B /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BAA15D861E7270550028F47B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		BAA15D881E7270FA0028F47B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BAA15D8A1E72714B0028F47B /* Student_Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student_Grade.swift; sourceTree = "<group>"; };
+		BAA15D8A1E72714B0028F47B /* Course_Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course_Grade.swift; sourceTree = "<group>"; };
 		F9A846B224AAD0971EEE6C6D /* Pods-cs_3420.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cs_3420.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cs_3420/Pods-cs_3420.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +71,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA0174EA1E7351E400822366 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BA0174EB1E7351F600822366 /* DataService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		BA0174ED1E7352E400822366 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BA0174EE1E7352FC00822366 /* Constant.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		BAA15D601E726E2B0028F47B = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +108,8 @@
 		BAA15D6B1E726E2B0028F47B /* cs_3420 */ = {
 			isa = PBXGroup;
 			children = (
+				BA0174ED1E7352E400822366 /* Helper */,
+				BA0174EA1E7351E400822366 /* Service */,
 				BAA15D831E726FE50028F47B /* Model */,
 				BAA15D821E726FE30028F47B /* View */,
 				BAA15D811E726FE00028F47B /* Controller */,
@@ -130,7 +152,7 @@
 			children = (
 				BAA15D861E7270550028F47B /* Course.swift */,
 				BAA15D881E7270FA0028F47B /* User.swift */,
-				BAA15D8A1E72714B0028F47B /* Student_Grade.swift */,
+				BAA15D8A1E72714B0028F47B /* Course_Grade.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -260,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA15D8B1E72714B0028F47B /* Student_Grade.swift in Sources */,
+				BAA15D8B1E72714B0028F47B /* Course_Grade.swift in Sources */,
+				BA0174EC1E7351F600822366 /* DataService.swift in Sources */,
 				BAA15D871E7270550028F47B /* Course.swift in Sources */,
+				BA0174EF1E7352FC00822366 /* Constant.swift in Sources */,
 				BAA15D851E7270220028F47B /* AppState.swift in Sources */,
 				BAA15D6F1E726E2B0028F47B /* ViewController.swift in Sources */,
 				BAA15D891E7270FA0028F47B /* User.swift in Sources */,

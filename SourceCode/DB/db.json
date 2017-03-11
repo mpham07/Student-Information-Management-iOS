@@ -3,7 +3,6 @@
     "admin_123": {
       "email": "admin@gator.uhd.edu",
       "name": "JJ Watt",
-      "student_id": "",
       "role": "admin",
       "photoUrl": "admin_123.png"
     },
@@ -13,7 +12,7 @@
       "student_id": "111222333",
       "role": "student",
       "photoUrl": "minh_pham.png",
-      "student_courses": [
+      "courses_grades": [
           {
             "uid_course": "CS_3420",
             "assigment": 90,
@@ -54,7 +53,7 @@
       "student_id": "222333444",
       "role": "student",
       "photoUrl": "anthony_nguyen.png",
-      "student_courses": [
+      "courses_grades": [
           {
              "uid_course": "CS_4318",
              "assigment": 86,
@@ -111,7 +110,7 @@
       "student_id": "333666888",
       "role": "student",
       "photoUrl": "nhan_nguyen.png",
-      "student_courses": [
+      "courses_grades": [
             {
              "uid_course": "CS_3308",
               "assigment": 86,
