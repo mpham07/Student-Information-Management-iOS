@@ -61,6 +61,20 @@ class User {
         }
     }
     
+    var isAdmin: Bool {
+        
+        if _role == CONSTANTS.users.ADMIN {
+            return true
+        }
+        
+        return false
+    }
+    
+    var isStudent: Bool {
+        
+        return !isAdmin
+    }
+    
     init(uid: String, email: String, name: String, role: String) {
         _uid = uid
         _email = email

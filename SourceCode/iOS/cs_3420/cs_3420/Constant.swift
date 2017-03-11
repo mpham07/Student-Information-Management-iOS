@@ -11,28 +11,34 @@ import Foundation
 struct CONSTANTS {
     
     struct courses {
-        static let courses = "courses"
-        static let course_id = "course_id"
-        static let name = "name"
-        static let type = "type"
+        
+        static let COURSES = "courses"
+        static let COURSE_ID = "course_id"
+        static let NAME = "name"
+        static let TYPE = "type"
     }
     
     struct users {
-        static let users = "users"
-        static let email = "email"
-        static let name = "name"
-        static let photoUrl = "photoUrl"
-        static let role = "role"
-        static let student_id = "student_id"
+        static let ADMIN = "admin"
+        static let STUDENT = "student"
+        
+        static let USERS = "users"
+        static let EMAIL = "email"
+        static let NAME = "name"
+        static let PHOTO_URL = "photoUrl"
+        static let ROLE = "role"
+        static let STUDENT_ID = "student_id"
     }
     
     struct courses_grades {
-        static let courses_grades = "courses_grades"
-        static let assignment = "assigment"
-        static let final = "final"
-        static let midterm = "midterm"
-        static let quiz_1 = "quiz_1"
-        static let quiz_2 = "quiz_2"
-        static let uid_course = "uid_course"
+        
+        static let COURSES_GRADES = "courses_grades"
+        static let ASSIGNMENT = "assigment"
+        static let FINAL = "final"
+        static let MIDTERM = "midterm"
+        static let QUIZ_1 = "quiz_1"
+        static let QUIZ_2 = "quiz_2"
+        static let UID_COURSE = "uid_course"
     }
+    
 }
