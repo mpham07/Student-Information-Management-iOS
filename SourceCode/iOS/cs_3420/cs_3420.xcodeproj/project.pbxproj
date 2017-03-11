@@ -123,13 +123,13 @@
 		BAA15D801E726FD60028F47B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BAA15D841E7270220028F47B /* AppState.swift */,
 				BAA15D6C1E726E2B0028F47B /* AppDelegate.swift */,
 				BAA15D701E726E2B0028F47B /* Main.storyboard */,
 				BAA15D751E726E2B0028F47B /* LaunchScreen.storyboard */,
 				BAA15D731E726E2B0028F47B /* Assets.xcassets */,
 				BAA15D7E1E726F130028F47B /* GoogleService-Info.plist */,
 				BAA15D781E726E2B0028F47B /* Info.plist */,
-				BAA15D841E7270220028F47B /* AppState.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";

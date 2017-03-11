@@ -19,12 +19,70 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //get_1_course()
-        getCoursesFromDB()
+        //getCoursesFromDB()
         
         //get_1_User()
         //getUsersFromDB()
         
+        
+        
     }
+    
+
+    @IBAction func btnDelete1_pressed(_ sender: Any) {
+        deleteCourse()
+    }
+    
+    @IBAction func btnUpdate_Pressed(_ sender: Any) {
+        updateCourse()
+    }
+    
+    @IBAction func btnAdd_Pressed(_ sender: Any) {
+        //updateCourse()
+        addCourse()
+    }
+    
+    func deleteCourse() {
+        let uid = "COMM_1301"
+        DataService.instance.deleteCourse(uid: uid) { (err) in
+            print("Deleted course successfully")
+        }
+    }
+    
+    func updateCourse() {
+        
+        let course = [
+            CONSTANTS.courses.COURSE_ID: "COMM 1302",
+            CONSTANTS.courses.NAME: "Intro to Communication",
+            CONSTANTS.courses.TYPE: CONSTANTS.courses.ONLINE
+        ]
+        
+        let uid = "COMM_1301"
+        
+        DataService.instance.updateCourseInfo(uid: uid, data: course) { (err) in
+            
+            print("Update course successfully")
+        }
+        
+       
+    }
+    
+    func addCourse() {
+        
+        let course_id = "COMM 1301";
+        let course = [
+            CONSTANTS.courses.COURSE_ID: course_id,
+            CONSTANTS.courses.NAME: "Communication 1",
+            CONSTANTS.courses.TYPE: CONSTANTS.courses.HYBRID
+        ]
+        
+        let uid = course_id.replacingOccurrences(of: " ", with: "_")
+        
+        DataService.instance.addCourse(uid: uid, data: course) { (err) in
+            print("Added course successfully")
+        }
+    }
+  
     
     func getCoursesFromDB() {
         
