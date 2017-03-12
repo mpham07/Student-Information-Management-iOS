@@ -17,6 +17,54 @@ class Course_Grade {
     private var _quiz_1: Int?
     private var _quiz_2: Int?
     
+    private var _courseInfo: Course?
+    
+    var courseInfo: Course? {
+        get {
+            return _courseInfo
+        }
+        set{
+            _courseInfo = newValue
+        }
+    }
+    
+    var averge: Double? {
+        
+        var sum = 0
+        var count = 0
+        
+        if let assign = _assignment {
+            sum += assign
+            count += 1
+        }
+        
+        if let final = _final {
+            sum += final
+            count += 1
+        }
+        
+        if let midterm = _midterm {
+            sum += midterm
+            count += 1
+        }
+        
+        if let quiz_1 = _quiz_1 {
+            sum += quiz_1
+            count += 1
+        }
+        
+        if let quiz_2 = _quiz_2 {
+            sum += quiz_2
+            count += 1
+        }
+        
+        if sum != 0 {
+            return Double(sum)/Double(count)
+        }
+        
+        return nil
+    }
+    
     var uid_course: String {
         get {
             return _uid_course
@@ -72,15 +120,6 @@ class Course_Grade {
             _quiz_2 = newValue
         }
     }
-    
-//    init(uid_course: String?, assignment: Int?, quiz_1: Int?, quiz_2: Int?, midterm: Int?, final: Int?) {
-//        _uid_course = uid_course
-//        _assignment = assignment
-//        _quiz_1 = quiz_1
-//        _quiz_2 = quiz_2
-//        _midterm = midterm
-//        _final = final
-//    }
     
     init(uid_course: String) {
         _uid_course = uid_course

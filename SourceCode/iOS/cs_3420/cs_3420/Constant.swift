@@ -44,9 +44,11 @@ struct CONSTANTS {
         static let QUIZ_1 = "quiz_1"
         static let QUIZ_2 = "quiz_2"
         static let UID_COURSE = "uid_course"
+        
+        static let DEFAULT_GRADE = -1
     }
     
-    struct search {
+    struct notices {
         static let USER_NOT_FOUND = "The user is not found!"
         static let COURSE_NOT_FOUND = "The course not found!"
     }

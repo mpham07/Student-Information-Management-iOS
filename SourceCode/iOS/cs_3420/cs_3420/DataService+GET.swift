@@ -13,7 +13,7 @@ extension DataService {
     
     // ======= COURSES GET METHODS ========
     // Get only 1 course from DB
-    func get_1_course(uid: String?, _ onComplete: Completion?) {
+    func getACourse(uid: String?, _ onComplete: Completion_Data_And_Err?) {
        
         getCourse(uid_parameter: uid) { (error, data) in
             
@@ -23,7 +23,7 @@ extension DataService {
     
     
     // Get all courses from DB
-    func getAllCourses(_ onComplete: Completion?) {
+    func getAllCourses(_ onComplete: Completion_Data_And_Err?) {
         
         getCourse(uid_parameter: nil) { (error, data) in
             
@@ -32,7 +32,7 @@ extension DataService {
     }
     
     // General GET function supports about GET COURSE funcs
-    private func getCourse (uid_parameter: String?, _ onComplete: Completion?) {
+    private func getCourse (uid_parameter: String?, _ onComplete: Completion_Data_And_Err?) {
         
         course_ref.observeSingleEvent(of: .value, with: { (snapshot) in
             var courses:[Course]?
@@ -71,7 +71,7 @@ extension DataService {
             
             // func get 1 course and, NO any course found
             if uid_parameter != nil {
-                onComplete?(CONSTANTS.search.COURSE_NOT_FOUND, nil)
+                onComplete?(CONSTANTS.notices.COURSE_NOT_FOUND, nil)
                 return
             }else {
                 
@@ -86,7 +86,7 @@ extension DataService {
     
     // =========== USERS GET METHOD ===========
     // Get All Students
-    func getAllStudents(_ onComplete: Completion?) {
+    func getAllStudents(_ onComplete: Completion_Data_And_Err?) {
         
         getUser(filter: CONSTANTS.users.STUDENT, uidParameter: nil) { (error, students) in
 
@@ -95,7 +95,7 @@ extension DataService {
     }
     
     // Get 1 User matching up with uid
-    func get_1_User(uid: String?,_ onComplete: Completion? ) {
+    func getAUser(uid: String?,_ onComplete: Completion_Data_And_Err? ) {
         
         getUser(filter: nil, uidParameter: uid) { (error, user) in
             
@@ -104,7 +104,7 @@ extension DataService {
     }
     
     // General GET function supports about funcs
-    private func getUser(filter: String?, uidParameter: String?, _ onComplete: Completion?) {
+    private func getUser(filter: String?, uidParameter: String?, _ onComplete: Completion_Data_And_Err?) {
         
         user_ref.observeSingleEvent(of: .value, with: { (snapshot) in
             //print(snapshot)
@@ -178,7 +178,7 @@ extension DataService {
             
             // func get 1 user, and no user found
             if uidParameter != nil {
-                onComplete?(CONSTANTS.search.USER_NOT_FOUND, nil)
+                onComplete?(CONSTANTS.notices.USER_NOT_FOUND, nil)
                 return
                 
             } else {

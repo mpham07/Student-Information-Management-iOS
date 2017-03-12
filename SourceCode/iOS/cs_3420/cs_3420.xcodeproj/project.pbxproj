@@ -20,6 +20,9 @@
 		BAA15D871E7270550028F47B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D861E7270550028F47B /* Course.swift */; };
 		BAA15D891E7270FA0028F47B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D881E7270FA0028F47B /* User.swift */; };
 		BAA15D8B1E72714B0028F47B /* Course_Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D8A1E72714B0028F47B /* Course_Grade.swift */; };
+		BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CC9C1E75142F00255D5D /* DataService+ADD.swift */; };
+		BAB0CC9F1E75160A00255D5D /* DataService+UPDATE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CC9E1E75160A00255D5D /* DataService+UPDATE.swift */; };
+		BAB0CCA11E75166700255D5D /* DataService+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */; };
 		BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACF01041E74520F00DDFCF7 /* DataService+GET.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		BAA15D861E7270550028F47B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		BAA15D881E7270FA0028F47B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAA15D8A1E72714B0028F47B /* Course_Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course_Grade.swift; sourceTree = "<group>"; };
+		BAB0CC9C1E75142F00255D5D /* DataService+ADD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+ADD.swift"; sourceTree = "<group>"; };
+		BAB0CC9E1E75160A00255D5D /* DataService+UPDATE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+UPDATE.swift"; sourceTree = "<group>"; };
+		BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+DELETE.swift"; sourceTree = "<group>"; };
 		BACF01041E74520F00DDFCF7 /* DataService+GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+GET.swift"; sourceTree = "<group>"; };
 		F9A846B224AAD0971EEE6C6D /* Pods-cs_3420.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cs_3420.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cs_3420/Pods-cs_3420.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +170,9 @@
 			children = (
 				BA0174EB1E7351F600822366 /* DataService.swift */,
 				BACF01041E74520F00DDFCF7 /* DataService+GET.swift */,
+				BAB0CC9C1E75142F00255D5D /* DataService+ADD.swift */,
+				BAB0CC9E1E75160A00255D5D /* DataService+UPDATE.swift */,
+				BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */,
 			);
 			name = DataServie;
 			sourceTree = "<group>";
@@ -298,7 +307,10 @@
 				BAA15D871E7270550028F47B /* Course.swift in Sources */,
 				BA0174EF1E7352FC00822366 /* Constant.swift in Sources */,
 				BAA15D851E7270220028F47B /* AppState.swift in Sources */,
+				BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */,
 				BAA15D6F1E726E2B0028F47B /* ViewController.swift in Sources */,
+				BAB0CC9F1E75160A00255D5D /* DataService+UPDATE.swift in Sources */,
+				BAB0CCA11E75166700255D5D /* DataService+DELETE.swift in Sources */,
 				BAA15D891E7270FA0028F47B /* User.swift in Sources */,
 				BAA15D6D1E726E2B0028F47B /* AppDelegate.swift in Sources */,
 				BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */,

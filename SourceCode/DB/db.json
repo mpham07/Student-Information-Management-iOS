@@ -1,71 +1,88 @@
 {
-  "users" : {
-    "admin_123": {
-      "email": "admin@gator.uhd.edu",
-      "name": "JJ Watt",
-      "role": "admin",
-      "photoUrl": "admin_123.png"
+  "courses" : {
+    "CS_2420" : {
+      "course_id" : "CS 2420",
+      "name" : "Digital Logic",
+      "registered" : 2,
+      "type" : "in_class"
     },
-    "minh_pham": {
-      "email": "minh@gator.uhd.edu",
-      "name": "Minh Pham",
-      "student_id": "111222333",
-      "role": "student",
-      "photoUrl": "minh_pham.png",
-      "courses_grades": {
-          "CS_2420" :{
-            "assigment": 86,
-            "quiz_1": 94,
-            "quiz_2": 90,
-            "midterm": 87,
-            "final": 0
-          },
-          "CS_4390": {
-           "assigment": 87,
-           "quiz_1": 88,
-           "quiz_2": 100,
-           "midterm": 88,
-           "final": 0
-          }
-        }
+    "CS_3306" : {
+      "course_id" : "CS 3306",
+      "name" : "Theory of Computation",
+      "registered" : 0,
+      "type" : "online"
     },
-    "anthony_nguyen": {
-      "email": "anthony@gator.uhd.edu",
-      "name": "Anthony Nguyen",
-      "student_id": "222333444",
-      "role": "student",
-      "photoUrl": "anthony_nguyen.png",
-      "courses_grades": {
-          "CS_3420": {
-            "assigment": 86,
-            "quiz_1": 78,
-            "quiz_2": 90,
-            "midterm": 81,
-            "final": 0
-          }
-        }
+    "CS_3420" : {
+      "course_id" : "CS 3420",
+      "name" : "Introduction to Software Engineering",
+      "registered" : 1,
+      "type" : "in_class"
+    },
+    "CS_4390" : {
+      "course_id" : "CS 4390",
+      "name" : "Artificial Inteliigent",
+      "registered" : 1,
+      "type" : "in_class"
     }
   },
-  "courses": {
-    "CS_3420": {
-      "course_id": "CS 3420",
-      "name": "Introduction to Software Engineering",
-      "type": "in_class"
+  "users" : {
+    "admin_123" : {
+      "email" : "admin@gator.uhd.edu",
+      "name" : "JJ Watt",
+      "photoUrl" : "admin_123.png",
+      "role" : "admin"
     },
-    "CS_3306": {
-      "course_id": "CS 3306",
-      "name": "Theory of Computation",
-      "type": "online"
+    "anthony_nguyen" : {
+      "CS_2420" : {
+        "assigment" : 80,
+        "final" : 30,
+        "midterm" : -1,
+        "quiz_1" : 100,
+        "quiz_2" : -1
+      },
+      "courses_grades" : {
+        "CS_2420" : {
+          "assigment" : -1,
+          "final" : -1,
+          "midterm" : -1,
+          "quiz_1" : -1,
+          "quiz_2" : -1
+        },
+        "CS_3420" : {
+          "assigment" : 86,
+          "midterm" : 81,
+          "quiz_1" : 78,
+          "quiz_2" : 90
+        }
+      },
+      "email" : "anthony@gator.uhd.edu",
+      "name" : "Anthony Nguyen",
+      "photoUrl" : "anthony_nguyen.png",
+      "role" : "student",
+      "student_id" : "222333444"
     },
-    "CS_2420": {
-      "course_id": "CS 2420",
-      "name": "Digital Logic",
-      "type": "in_class"
-    },
-    "CS_4390": {
-      "course_id": "CS 4390",
-      "name": "Artificial Inteliigent",
-      "type": "in_class"
+    "minh_pham" : {
+      "courses_grades" : {
+        "CS_2420" : {
+          "assigment" : 86,
+          "final" : 0,
+          "midterm" : 87,
+          "quiz_1" : 94,
+          "quiz_2" : 90
+        },
+        "CS_4390" : {
+          "assigment" : 87,
+          "final" : 0,
+          "midterm" : 88,
+          "quiz_1" : 88,
+          "quiz_2" : 100
+        }
+      },
+      "email" : "minh@gator.uhd.edu",
+      "name" : "Minh Pham",
+      "photoUrl" : "minh_pham.png",
+      "role" : "student",
+      "student_id" : "111222333"
     }
   }
 }
