@@ -16,6 +16,25 @@ class Course {
     private var _course_id: String
     private var _name: String
     private var _type: String
+    private var _registed: Int
+    
+    var incrementRegisted: Int {
+        get {
+            _registed += 1
+            return _registed
+        }
+    }
+    
+    var decrementRegisted: Int {
+        get {
+            _registed -= 1
+            return _registed
+        }
+    }
+    
+    var registed: Int {
+        return _registed
+    }
     
     var uid: String {
         return _uid
@@ -33,10 +52,11 @@ class Course {
         return _type
     }
     
-    init(uid: String, course_id: String, name: String, type: String) {
+    init(uid: String, course_id: String, name: String, type: String, registed: Int) {
         _uid = uid
         _course_id = course_id
         _name = name
         _type = type
+        _registed = registed
     }
 }

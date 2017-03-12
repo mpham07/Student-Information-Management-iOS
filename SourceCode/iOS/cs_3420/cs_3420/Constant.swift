@@ -12,10 +12,11 @@ struct CONSTANTS {
     
     struct courses {
         
-        static let COURSES = "courses"
+        static let UID = "courses"
         static let COURSE_ID = "course_id"
         static let NAME = "name"
         static let TYPE = "type"
+        static let REGISTERED = "registered"
         
         static let IN_CLASS = "in_class"
         static let HYBRID = "hybrid"
@@ -26,7 +27,7 @@ struct CONSTANTS {
         static let ADMIN = "admin"
         static let STUDENT = "student"
         
-        static let USERS = "users"
+        static let UID = "users"
         static let EMAIL = "email"
         static let NAME = "name"
         static let PHOTO_URL = "photoUrl"
@@ -36,7 +37,7 @@ struct CONSTANTS {
     
     struct courses_grades {
         
-        static let COURSES_GRADES = "courses_grades"
+        static let UID = "courses_grades"
         static let ASSIGNMENT = "assigment"
         static let FINAL = "final"
         static let MIDTERM = "midterm"

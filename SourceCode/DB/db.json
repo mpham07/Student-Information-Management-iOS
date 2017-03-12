@@ -12,40 +12,22 @@
       "student_id": "111222333",
       "role": "student",
       "photoUrl": "minh_pham.png",
-      "courses_grades": [
-          {
-            "uid_course": "CS_3420",
-            "assigment": 90,
-            "quiz_1": 80,
-            "quiz_2": 79,
-            "midterm": 90,
-            "final": 0
-            },
-          {
-            "uid_course": "CS_2420",
+      "courses_grades": {
+          "CS_2420" :{
             "assigment": 86,
             "quiz_1": 94,
             "quiz_2": 90,
             "midterm": 87,
             "final": 0
           },
-          {
-           "uid_course": "CS_3300",
+          "CS_4390": {
            "assigment": 87,
            "quiz_1": 88,
            "quiz_2": 100,
            "midterm": 88,
            "final": 0
-          },
-          {
-            "uid_course": "CS_4294",
-            "assigment": 90,
-            "quiz_1": 78,
-            "quiz_2": 79,
-            "midterm": 81,
-            "final": 0
           }
-        ]
+        }
     },
     "anthony_nguyen": {
       "email": "anthony@gator.uhd.edu",
@@ -53,97 +35,15 @@
       "student_id": "222333444",
       "role": "student",
       "photoUrl": "anthony_nguyen.png",
-      "courses_grades": [
-          {
-             "uid_course": "CS_4318",
-             "assigment": 86,
-             "quiz_1": 80,
-             "quiz_2": 90,
-             "midterm": 90,
-             "final": 0
-            },
-            {
-            "uid_course": "CS_3300",
-            "assigment": 87,
-            "quiz_1": 94,
-            "quiz_2": 100,
-            "midterm": 87,
-            "final": 0
-          },
-          {
-            "uid_course": "CS_3420",
-            "assigment": 90,
-            "quiz_1": 94,
-            "quiz_2": 82,
-            "midterm": 87,
-            "final": 0
-          },
-          {
-            "uid_course": "CS_3308",
-            "assigment": 90,
-            "quiz_1": 88,
-            "quiz_2": 79,
-            "midterm": 88,
-            "final": 0
-          },
-          {
-            "uid_course": "CS_4303",
+      "courses_grades": {
+          "CS_3420": {
             "assigment": 86,
             "quiz_1": 78,
             "quiz_2": 90,
             "midterm": 81,
             "final": 0
-          },
-          {
-            "uid_course": "CS_4319",
-            "assigment": 87,
-            "quiz_1": 80,
-            "quiz_2": 100,
-            "midterm": 90,
-            "final": 0
           }
-        ]
-    },
-    "nhan_nguyen": {
-      "email": "nhan@gator.uhd.edu",
-      "name": "Nhan Nguyen",
-      "student_id": "333666888",
-      "role": "student",
-      "photoUrl": "nhan_nguyen.png",
-      "courses_grades": [
-            {
-             "uid_course": "CS_3308",
-              "assigment": 86,
-              "quiz_1": 88,
-              "quiz_2": 79,
-              "midterm": 88,
-              "final": 0
-            },
-            {
-              "uid_course": "CS_3308",
-              "assigment": 90,
-              "quiz_1": 80,
-              "quiz_2": 100,
-              "midterm": 90,
-              "final": 0
-            },
-            {
-              "uid_course": "CS_3306",
-              "assigment": 86,
-              "quiz_1": 94,
-              "quiz_2": 82,
-              "midterm": 87,
-              "final": 0
-            },
-            {
-              "uid_course": "CS_4319",
-              "assigment": 87,
-              "quiz_1": 88,
-              "quiz_2": 100,
-              "midterm": 88,
-              "final": 0
-            }
-        ]
+        }
     }
   },
   "courses": {
@@ -165,66 +65,6 @@
     "CS_4390": {
       "course_id": "CS 4390",
       "name": "Artificial Inteliigent",
-      "type": "in_class"
-    },
-    "CS_1412": {
-      "course_id": "CS 1412",
-      "name": "Introduction to Computer Science with C#",
-      "type": "online"
-    },
-    "CS_2401": {
-      "course_id": "CS 2401",
-      "name": "Assembly Language",
-      "type": "in_class"
-    },
-    "CS_3300": {
-      "course_id": "CS 3300",
-      "name": "Object-Oriented Programming and Concepts",
-      "type": "in_class"
-    },
-    "CS_3304": {
-      "course_id": "CS 3304",
-      "name": "Data and Information Structures",
-      "type": "in_class"
-    },
-    "CS_3308": {
-      "course_id": "CS 3308",
-      "name": "Numerical Methods",
-      "type": "in_class"
-    },
-    "CS_3326": {
-      "course_id": "CS 3326",
-      "name": "Network Security",
-      "type": "in_class"
-    },
-    "CS_4294": {
-      "course_id": "CS 4294",
-      "name": "Senior Seminar",
-      "type": "in_class"
-    },
-    "CS_4300": {
-      "course_id": "CS 4300",
-      "name": "Web Programming",
-      "type": "in_class"
-    },
-    "CS_4303": {
-      "course_id": "CS 4303",
-      "name": "Programming Language Concepts",
-      "type": "online"
-    },
-    "CS_4315": {
-      "course_id": "CS 4315",
-      "name": "Operating Systems",
-      "type": "in_class"
-    },
-    "CS_4318": {
-      "course_id": "CS 4318",
-      "name": "Database Systems",
-      "type": "online"
-    },
-    "CS_4319": {
-      "course_id": "CS 4319",
-      "name": "Data Mining and Warehouses",
       "type": "in_class"
     }
   }

@@ -19,18 +19,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //get_1_course()
-        //getCoursesFromDB()
+        getCoursesFromDB()
         
         //get_1_User()
-        //getUsersFromDB()
+        getAllStudentsFromDB()
         
-        
-        
+        //addCoursesIntoAStudent()
     }
     
+    func deleteCoursesOfAStudent() {
+        let user = self.users[0]
+        //let arrCourses = [self.courses[0], self.courses[1]]
+        let arrCourses = [self.courses[0]]
+        for cou in arrCourses {
+            DataService.instance.deleteCoursesForStudent(user: user, course: cou, { (err) in
+           
+                print("Delete a \(cou.course_id) for Student successfully")
+            })
+        }
+    }
+    
+    func addCoursesIntoAStudent() {
+        
+        let user = self.users[0]
+        //let arrCourses = [self.courses[0], self.courses[1]]
+        let arrCourses = [self.courses[0]]
+        let dict = ["assingment": -1]
+        
+        for cou in arrCourses {
+            DataService.instance.addCoursesForStudent(user: user, course: cou, data: dict) { (err) in
+                
+                print("Added a \(cou.course_id) for Student successfully")
+            }
+        }
+    }
 
     @IBAction func btnDelete1_pressed(_ sender: Any) {
-        deleteCourse()
+        //deleteCourse()
+        deleteCoursesOfAStudent()
     }
     
     @IBAction func btnUpdate_Pressed(_ sender: Any) {
@@ -38,8 +64,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnAdd_Pressed(_ sender: Any) {
-        //updateCourse()
-        addCourse()
+        //addCourse()
+        addCoursesIntoAStudent()
     }
     
     func deleteCourse() {
@@ -51,10 +77,11 @@ class ViewController: UIViewController {
     
     func updateCourse() {
         
-        let course = [
+        let course: [String: Any] = [
             CONSTANTS.courses.COURSE_ID: "COMM 1302",
             CONSTANTS.courses.NAME: "Intro to Communication",
-            CONSTANTS.courses.TYPE: CONSTANTS.courses.ONLINE
+            CONSTANTS.courses.TYPE: CONSTANTS.courses.ONLINE,
+            CONSTANTS.courses.REGISTERED: 0
         ]
         
         let uid = "COMM_1301"
@@ -63,17 +90,16 @@ class ViewController: UIViewController {
             
             print("Update course successfully")
         }
-        
-       
     }
     
     func addCourse() {
         
         let course_id = "COMM 1301";
-        let course = [
+        let course: [String : Any] = [
             CONSTANTS.courses.COURSE_ID: course_id,
             CONSTANTS.courses.NAME: "Communication 1",
-            CONSTANTS.courses.TYPE: CONSTANTS.courses.HYBRID
+            CONSTANTS.courses.TYPE: CONSTANTS.courses.HYBRID,
+            CONSTANTS.courses.REGISTERED: 0
         ]
         
         let uid = course_id.replacingOccurrences(of: " ", with: "_")
@@ -95,7 +121,7 @@ class ViewController: UIViewController {
             
             if let courses = courses as? [Course] {
                 self.courses = courses
-                self.printC(num: 14)
+                //self.printC(num: 2)
             }
         }
     }
@@ -128,18 +154,18 @@ class ViewController: UIViewController {
         }
     }
     
-    func getUsersFromDB() {
+    func getAllStudentsFromDB() {
     
         DataService.instance.getAllStudents { (err, students) in
             self.users = students as! [User]
             
-            self.printUs(0, 5)
+            //self.printUs(0, 0)
         }
     }
     
+    //
     func printC(num: Int) {
         print_1C(course: courses[num])
-        print(self.courses.count)
     }
     
     func print_1C(course: Course) {
@@ -147,6 +173,7 @@ class ViewController: UIViewController {
         print(course.course_id)
         print(course.name)
         print(course.type)
+        print(course.registed)
     }
     
     func printU(user: User, _ course_grade: Int) {
