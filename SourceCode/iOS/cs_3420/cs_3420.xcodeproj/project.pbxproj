@@ -11,7 +11,7 @@
 		BA0174EC1E7351F600822366 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0174EB1E7351F600822366 /* DataService.swift */; };
 		BA0174EF1E7352FC00822366 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0174EE1E7352FC00822366 /* Constant.swift */; };
 		BAA15D6D1E726E2B0028F47B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D6C1E726E2B0028F47B /* AppDelegate.swift */; };
-		BAA15D6F1E726E2B0028F47B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D6E1E726E2B0028F47B /* ViewController.swift */; };
+		BAA15D6F1E726E2B0028F47B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D6E1E726E2B0028F47B /* LoginVC.swift */; };
 		BAA15D721E726E2B0028F47B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA15D701E726E2B0028F47B /* Main.storyboard */; };
 		BAA15D741E726E2B0028F47B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA15D731E726E2B0028F47B /* Assets.xcassets */; };
 		BAA15D771E726E2B0028F47B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA15D751E726E2B0028F47B /* LaunchScreen.storyboard */; };
@@ -20,6 +20,7 @@
 		BAA15D871E7270550028F47B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D861E7270550028F47B /* Course.swift */; };
 		BAA15D891E7270FA0028F47B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D881E7270FA0028F47B /* User.swift */; };
 		BAA15D8B1E72714B0028F47B /* Course_Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D8A1E72714B0028F47B /* Course_Grade.swift */; };
+		BAA4FFB51E786F9F0098EE86 /* LoginVC+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4FFB41E786F9F0098EE86 /* LoginVC+Test.swift */; };
 		BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CC9C1E75142F00255D5D /* DataService+ADD.swift */; };
 		BAB0CC9F1E75160A00255D5D /* DataService+UPDATE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CC9E1E75160A00255D5D /* DataService+UPDATE.swift */; };
 		BAB0CCA11E75166700255D5D /* DataService+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */; };
@@ -33,7 +34,7 @@
 		BA0174EE1E7352FC00822366 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BAA15D691E726E2B0028F47B /* cs_3420.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cs_3420.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA15D6C1E726E2B0028F47B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAA15D6E1E726E2B0028F47B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BAA15D6E1E726E2B0028F47B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BAA15D711E726E2B0028F47B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAA15D731E726E2B0028F47B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA15D761E726E2B0028F47B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		BAA15D861E7270550028F47B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		BAA15D881E7270FA0028F47B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAA15D8A1E72714B0028F47B /* Course_Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course_Grade.swift; sourceTree = "<group>"; };
+		BAA4FFB41E786F9F0098EE86 /* LoginVC+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginVC+Test.swift"; sourceTree = "<group>"; };
 		BAB0CC9C1E75142F00255D5D /* DataService+ADD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+ADD.swift"; sourceTree = "<group>"; };
 		BAB0CC9E1E75160A00255D5D /* DataService+UPDATE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+UPDATE.swift"; sourceTree = "<group>"; };
 		BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+DELETE.swift"; sourceTree = "<group>"; };
@@ -143,7 +145,8 @@
 		BAA15D811E726FE00028F47B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BAA15D6E1E726E2B0028F47B /* ViewController.swift */,
+				BAA15D6E1E726E2B0028F47B /* LoginVC.swift */,
+				BAA4FFB41E786F9F0098EE86 /* LoginVC+Test.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -307,8 +310,9 @@
 				BAA15D871E7270550028F47B /* Course.swift in Sources */,
 				BA0174EF1E7352FC00822366 /* Constant.swift in Sources */,
 				BAA15D851E7270220028F47B /* AppState.swift in Sources */,
+				BAA4FFB51E786F9F0098EE86 /* LoginVC+Test.swift in Sources */,
 				BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */,
-				BAA15D6F1E726E2B0028F47B /* ViewController.swift in Sources */,
+				BAA15D6F1E726E2B0028F47B /* LoginVC.swift in Sources */,
 				BAB0CC9F1E75160A00255D5D /* DataService+UPDATE.swift in Sources */,
 				BAB0CCA11E75166700255D5D /* DataService+DELETE.swift in Sources */,
 				BAA15D891E7270FA0028F47B /* User.swift in Sources */,
