@@ -26,6 +26,7 @@
 		BAB0CCA11E75166700255D5D /* DataService+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */; };
 		BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACF01041E74520F00DDFCF7 /* DataService+GET.swift */; };
 		BAE1015D1E78EA0D002FB15F /* CustomizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1015C1E78EA0D002FB15F /* CustomizedButton.swift */; };
+		BAE1015F1E790ABF002FB15F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1015E1E790ABF002FB15F /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+DELETE.swift"; sourceTree = "<group>"; };
 		BACF01041E74520F00DDFCF7 /* DataService+GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+GET.swift"; sourceTree = "<group>"; };
 		BAE1015C1E78EA0D002FB15F /* CustomizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedButton.swift; sourceTree = "<group>"; };
+		BAE1015E1E790ABF002FB15F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F9A846B224AAD0971EEE6C6D /* Pods-cs_3420.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cs_3420.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cs_3420/Pods-cs_3420.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 		BA0174EA1E7351E400822366 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BAE1015E1E790ABF002FB15F /* AuthService.swift */,
 				BACF01031E7451C500DDFCF7 /* DataServie */,
 			);
 			name = Services;
@@ -320,6 +323,7 @@
 				BAB0CC9F1E75160A00255D5D /* DataService+UPDATE.swift in Sources */,
 				BAB0CCA11E75166700255D5D /* DataService+DELETE.swift in Sources */,
 				BAA15D891E7270FA0028F47B /* User.swift in Sources */,
+				BAE1015F1E790ABF002FB15F /* AuthService.swift in Sources */,
 				BAA15D6D1E726E2B0028F47B /* AppDelegate.swift in Sources */,
 				BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */,
 			);

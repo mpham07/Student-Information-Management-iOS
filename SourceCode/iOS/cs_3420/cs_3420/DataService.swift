@@ -18,7 +18,7 @@ typealias Completion_Data_And_Err = (_ errMsg: ErrorMessage, _ data: Data) -> Vo
 
 class DataService {
     
-    private static var _instance = DataService();
+    private static var _instance = DataService()
     
     static var instance: DataService {
         return _instance

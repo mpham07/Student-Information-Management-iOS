@@ -87,7 +87,7 @@
                                                                             <constraint firstAttribute="height" constant="20" id="ibz-Gc-lnS"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qqqqqq" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wip-f5-cei">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qqqqqq" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wip-f5-cei">
                                                                         <rect key="frame" x="40" y="0.0" width="205" height="20"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,6 +130,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="setLinearGadient" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnLogin_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeJ-4j-UyU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -158,6 +161,10 @@
                             <constraint firstAttribute="trailing" secondItem="eTS-uY-wtI" secondAttribute="trailing" constant="40" id="t4q-6Q-xC3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="aNM-Bx-s9Z" id="ezt-Pr-0pe"/>
+                        <outlet property="txtPassword" destination="Wip-f5-cei" id="lgz-d6-73H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

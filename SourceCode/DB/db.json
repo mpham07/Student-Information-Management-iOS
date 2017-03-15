@@ -68,7 +68,7 @@
       "name" : "Minh Pham",
       "photoUrl" : "minh_pham.png",
       "role" : "student",
-      "student_id" : 111222333
+      "student_id" : "111222333"
     }
   }
 }

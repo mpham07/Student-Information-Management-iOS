@@ -8,4 +8,7 @@ target 'cs_3420' do
   # Pods for cs_3420
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  
+  pod 'FTIndicator'
 end

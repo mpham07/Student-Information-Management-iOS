@@ -10,4 +10,19 @@ import Foundation
 
 class AppState {
     
+    private static var _instance = AppState()
+    private var _user: User?
+    
+    static var instance: AppState {
+        return _instance
+    }
+    
+    var user: User? {
+        get {
+            return _user
+        }
+        set {
+            _user = newValue
+        }
+    }
 }

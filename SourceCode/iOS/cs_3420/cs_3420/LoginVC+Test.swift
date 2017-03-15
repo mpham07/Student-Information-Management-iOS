@@ -177,22 +177,26 @@ extension LoginVC {
         }
     }
     
-    func get_1_User() {
+    func get_1_User(uid: String) {
         
-        DataService.instance.getAUser(uid: "nhan_nguyen") { (err, user) in
+        DataService.instance.getAUser(uid: uid) { (err, user) in
             
             if let err = err {
                 print(err)
                 return
             }
             
-            self.printU(user: user as! User, 0)
+            //self.printU(user: user as! User, 0)
         }
     }
     
     func getAllStudentsFromDB() {
         
         DataService.instance.getAllStudents { (err, students) in
+            if let err = err {
+                print(err)
+                return
+            }
             self.users = students as! [User]
             
             //print(self.users[0].course_grades?[0].averge)
@@ -214,18 +218,18 @@ extension LoginVC {
     }
     
     func printU(user: User, _ course_grade: Int) {
-//        print(user.email)
-//        print(user.name)
-//        print(user.photoUrl)
-//        print(user.role)
-//        print(user.student_id)
-//        
-//        
-//        print(user.course_grades?[course_grade].assignment)
-//        print(user.course_grades?[course_grade].final)
-//        print(user.course_grades?[course_grade].midterm)
-//        print(user.course_grades?[course_grade].quiz_1)
-//        print(user.course_grades?[course_grade].quiz_2)
+        print(user.email)
+        print(user.name)
+        print(user.photoUrl!)
+        print(user.role)
+        print(user.student_id!)
+        
+        
+//        print(user.course_grades?[course_grade].assignment!)
+//        print(user.course_grades?[course_grade].final!)
+//        print(user.course_grades?[course_grade].midterm!)
+//        print(user.course_grades?[course_grade].quiz_1!)
+//        print(user.course_grades?[course_grade].quiz_2!)
 //        print(user.course_grades?[course_grade].uid_course)
     }
     
