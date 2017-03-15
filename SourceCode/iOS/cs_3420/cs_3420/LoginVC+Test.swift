@@ -37,7 +37,7 @@ extension LoginVC {
         
         let uid = "nhan_nguyen"
         
-        var info = [
+        let info = [
             CONSTANTS.users.EMAIL: "nhan@gmail.com",
             CONSTANTS.users.NAME: "Nhan Nguyen",
             CONSTANTS.users.ROLE: CONSTANTS.users.STUDENT,
@@ -196,7 +196,7 @@ extension LoginVC {
             self.users = students as! [User]
             
             //print(self.users[0].course_grades?[0].averge)
-            //self.printUs(0, 0)
+            self.printUs(0, 0)
         }
     }
     
