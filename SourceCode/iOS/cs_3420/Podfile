@@ -11,4 +11,5 @@ target 'cs_3420' do
   pod 'Firebase/Auth'
   
   pod 'FTIndicator'
+  pod 'SlideMenuControllerSwift'
 end

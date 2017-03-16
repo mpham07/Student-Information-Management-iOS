@@ -12,15 +12,57 @@ import FirebaseDatabase
 extension DataService {
     
     // ======= COURSES GET METHODS ========
+    
+    // Get all courses of a student
+    func getCoursesOfAStudent(user: User, _ onComplete: Completion_Data_And_Err?) {
+        
+//        if let user = AppState.instance.user {
+//            if let coursesList = user.course_grades {
+//                courses = coursesList
+//                
+//                for course in courses! {
+//                    DataService.instance.getACourseInfo(uid: course.uid_course, { (err, courseInfo) in
+//                        
+//                        if let err = err {
+//                            print (err)
+//                            return
+//                        }
+//                        
+//                        // Successfully get course info
+//                        if let courseInfo = courseInfo as? Course {
+//                            course.courseInfo = courseInfo
+//                            
+//                            self.tableView.reloadData()
+//                        }
+//                    })
+//                }
+//            }
+//        }
+        
+        if let coursesList = user.course_grades {
+            
+            for course in coursesList {
+                getACourseInfo(uid: course.uid_course, { (err, courseInfo) in
+                    
+                    if let err = err {
+                        onComplete?(err, nil)
+                        return
+                    }
+                    
+                    course.courseInfo = courseInfo as? Course
+                })
+            }
+        }
+    }
+    
     // Get only 1 course from DB
-    func getACourse(uid: String?, _ onComplete: Completion_Data_And_Err?) {
-       
+    func getACourseInfo(uid: String?, _ onComplete: Completion_Data_And_Err?) {
+        
         getCourse(uid_parameter: uid) { (error, data) in
             
             onComplete?(error, data)
         }
     }
-    
     
     // Get all courses from DB
     func getAllCourses(_ onComplete: Completion_Data_And_Err?) {

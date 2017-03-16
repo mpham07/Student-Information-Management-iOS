@@ -164,7 +164,7 @@ extension LoginVC {
     
     func get_1_course() {
         
-        DataService.instance.getACourse(uid: "CS_3308") { (err, course) in
+        DataService.instance.getACourseInfo(uid: "CS_3308") { (err, course) in
             
             if let err = err {
                 print(err)

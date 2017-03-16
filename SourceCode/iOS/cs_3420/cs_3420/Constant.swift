@@ -18,9 +18,9 @@ struct CONSTANTS {
         static let TYPE = "type"
         static let REGISTERED = "registered"
         
-        static let IN_CLASS = "in_class"
-        static let HYBRID = "hybrid"
-        static let ONLINE = "online"
+        static let IN_CLASS = "In Person"
+        static let HYBRID = "Hybrid"
+        static let ONLINE = "Online"
     }
     
     struct users {

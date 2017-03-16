@@ -9,19 +9,44 @@
 import UIKit
 import Firebase
 import FTIndicator
+import SlideMenuControllerSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    public static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
     var window: UIWindow?
-
+    var slideMenu : SlideMenuController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FTIndicator.setIndicatorStyle(.dark)
         FIRApp.configure()
+        
+        self.window?.makeKeyAndVisible()
         return true
     }
+    
+    
+    func switchToCourseNC()
+    {
+        
+      let  mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListNC")
+    
+        
+      let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Menu")
+        
+        
+        slideMenu = SlideMenuController.init(mainViewController: mainVC, leftMenuViewController: menuVC)
+        
+        
+        window?.rootViewController = slideMenu
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

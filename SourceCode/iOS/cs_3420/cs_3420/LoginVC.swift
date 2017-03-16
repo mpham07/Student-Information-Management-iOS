@@ -50,6 +50,7 @@ class LoginVC: UIViewController {
             }
             
             FTIndicator.dismissProgress()
+            AppDelegate.shared.switchToCourseNC()
         }
     }
 }

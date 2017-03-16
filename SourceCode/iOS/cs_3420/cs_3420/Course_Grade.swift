@@ -33,27 +33,27 @@ class Course_Grade {
         var sum = 0
         var count = 0
         
-        if let assign = _assignment {
+        if let assign = _assignment, assign > 0 {
             sum += assign
             count += 1
         }
         
-        if let final = _final {
+        if let final = _final , final > 0 {
             sum += final
             count += 1
         }
         
-        if let midterm = _midterm {
+        if let midterm = _midterm , midterm > 0 {
             sum += midterm
             count += 1
         }
         
-        if let quiz_1 = _quiz_1 {
+        if let quiz_1 = _quiz_1 , quiz_1 > 0 {
             sum += quiz_1
             count += 1
         }
         
-        if let quiz_2 = _quiz_2 {
+        if let quiz_2 = _quiz_2 , quiz_2 > 0 {
             sum += quiz_2
             count += 1
         }
