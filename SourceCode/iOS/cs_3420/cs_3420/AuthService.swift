@@ -17,7 +17,15 @@ class AuthService {
         return _instance
     }
     
-    func logintoFIRviaEmailPassword(email: String, password: String, _ onComplete: Completion_Data_And_Err?) {
+    func logOut() {
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch (let err) {
+            print(err.localizedDescription)
+        }
+    }
+    
+    func logInviaEmailPassword(email: String, password: String, _ onComplete: Completion_Data_And_Err?) {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, err) in
             

@@ -15,13 +15,13 @@ import SlideMenuControllerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    public static var shared: AppDelegate {
+    public static var instance: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
     var window: UIWindow?
-    var slideMenu : SlideMenuController!
-
+    var slideMenu: SlideMenuController!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FTIndicator.setIndicatorStyle(.dark)
@@ -31,18 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func switchToLoginVC() {
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+        
+        window?.rootViewController = loginVC
+    }
     
     func switchToCourseNC()
     {
         
       let  mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListNC")
-    
         
-      let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Menu")
-        
-        
-        slideMenu = SlideMenuController.init(mainViewController: mainVC, leftMenuViewController: menuVC)
-        
+      let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuVC")
+
+      slideMenu = SlideMenuController.init(mainViewController: mainVC, leftMenuViewController: menuVC)
         
         window?.rootViewController = slideMenu
     }

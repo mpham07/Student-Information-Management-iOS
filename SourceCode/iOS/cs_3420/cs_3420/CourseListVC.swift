@@ -48,6 +48,12 @@ class CourseListVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func btnOpenMenu_Pressed(_ sender: Any) {
+        if let slideMenuVC = self.navigationController?.slideMenuController() {
+             slideMenuVC.openLeft()
+        }
+    }
 }
 
 extension CourseListVC: UITableViewDelegate, UITableViewDataSource {

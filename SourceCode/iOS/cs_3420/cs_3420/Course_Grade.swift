@@ -28,7 +28,7 @@ class Course_Grade {
         }
     }
     
-    var averge: Double? {
+    var averge: Int? {
         
         var sum = 0
         var count = 0
@@ -59,7 +59,7 @@ class Course_Grade {
         }
         
         if sum != 0 {
-            return Double(sum)/Double(count)
+            return sum/count
         }
         
         return nil
@@ -119,6 +119,46 @@ class Course_Grade {
         set{
             _quiz_2 = newValue
         }
+    }
+    
+    var gradeLetter: CONSTANTS.gradeLetter? {
+        
+        if let averge = self.averge {
+            switch averge {
+            case 90...100:
+                return CONSTANTS.gradeLetter.A
+            case 80...89:
+                return CONSTANTS.gradeLetter.B
+            case 70...79:
+                return CONSTANTS.gradeLetter.C
+            case 60...69:
+                return CONSTANTS.gradeLetter.D
+            default:
+                return CONSTANTS.gradeLetter.F
+            }
+        }
+        
+        return nil
+    }
+    
+    var valueOfGradeLetter: CONSTANTS.valueOfGradeLetter? {
+        
+        if let gradeLetter = gradeLetter {
+            switch gradeLetter {
+            case CONSTANTS.gradeLetter.A:
+                return CONSTANTS.valueOfGradeLetter.A
+            case CONSTANTS.gradeLetter.B:
+                return CONSTANTS.valueOfGradeLetter.B
+            case CONSTANTS.gradeLetter.C:
+                return CONSTANTS.valueOfGradeLetter.C
+            case CONSTANTS.gradeLetter.D:
+                return CONSTANTS.valueOfGradeLetter.D
+            default:
+                return CONSTANTS.valueOfGradeLetter.F
+            }
+        }
+        
+        return nil
     }
     
     init(uid_course: String) {

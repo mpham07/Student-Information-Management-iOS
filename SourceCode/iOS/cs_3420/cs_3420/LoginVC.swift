@@ -36,7 +36,7 @@ class LoginVC: UIViewController {
         
         FTIndicator.showProgressWithmessage("Loading...", userInteractionEnable: false)
         
-        AuthService.instance.logintoFIRviaEmailPassword(email: email, password: password) { (err, user) in
+        AuthService.instance.logInviaEmailPassword(email: email, password: password) { (err, user) in
         
             if let err = err {
                 
@@ -47,10 +47,11 @@ class LoginVC: UIViewController {
             // Successfully login and get user
             if let user = user as? User {
                 AppState.instance.user = user
+                AppDelegate.instance.switchToCourseNC()
+            } else {
+                FTIndicator.showError(withMessage: err)
             }
-            
             FTIndicator.dismissProgress()
-            AppDelegate.shared.switchToCourseNC()
         }
     }
 }

@@ -12,4 +12,5 @@ target 'cs_3420' do
   
   pod 'FTIndicator'
   pod 'SlideMenuControllerSwift'
+  pod 'SDWebImage', '~>3.8'
 end

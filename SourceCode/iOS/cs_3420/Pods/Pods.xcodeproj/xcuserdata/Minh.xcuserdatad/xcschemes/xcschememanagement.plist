@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SlideMenuControllerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2753A17FD284E9C84501D1E698C78097</key>
+		<key>48E12FCA284CFEFAC088C505DB2B21F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52B8379FCB23B719A2EE8D1A3833D6A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A70B956FC5399EB0D1E61055E09B385</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A84DA1D502917E8956383E16DCBDC7CD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B674B389D3DDD6E65DEDDAC1681E8177</key>
 		<dict>
 			<key>primary</key>
 			<true/>

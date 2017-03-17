@@ -75,6 +75,34 @@ class User {
         return !isAdmin
     }
     
+    var GPA: String {
+        
+        if let grades = _course_grades {
+            
+            var sum = 0.0
+            for grade in grades {
+                if let val = grade.valueOfGradeLetter {
+                    sum += val.rawValue
+                }
+            }
+            
+            let gpa = sum / Double(grades.count)
+            
+            return "\(gpa)"
+        }
+        
+        return "0"
+    }
+    
+    var takingCourses: String {
+        
+        if let grades = _course_grades {
+            return "\(grades.count)"
+        }
+        
+        return ""
+    }
+    
     init(uid: String, email: String, name: String, role: String) {
         _uid = uid
         _email = email

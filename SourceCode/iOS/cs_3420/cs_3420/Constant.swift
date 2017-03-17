@@ -52,4 +52,29 @@ struct CONSTANTS {
         static let USER_NOT_FOUND = "The user is not found!"
         static let COURSE_NOT_FOUND = "The course not found!"
     }
+    
+    enum gradeLetter: String {
+        
+        case A = "A"
+        case B = "B"
+        case C = "C"
+        case D = "D"
+        case F = "F"
+    }
+    
+    enum valueOfGradeLetter: Double {
+        case A = 4.0
+        case B = 3.0
+        case C = 2.0
+        case D = 1.0
+        case F = 0.0
+    }
+    
+    enum menuItems: String {
+        
+        case profile = "PROFILE"
+        case courses = "COURSES"
+        case settings = "SETTINGS"
+        case logout = "LOG OUT"
+    }
 }
