@@ -112,6 +112,24 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		BA3DE8AF1E7C5EE200E703FB /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */,
+				BA8C2F331E7B603400637E09 /* MenuCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		BA3DE8B01E7C5EED00E703FB /* CustomuzedView */ = {
+			isa = PBXGroup;
+			children = (
+				BAE1015C1E78EA0D002FB15F /* CustomizedButton.swift */,
+				BA8A28831E7A3EC7004646F3 /* CustomizedImageView.swift */,
+			);
+			name = CustomuzedView;
+			sourceTree = "<group>";
+		};
 		BAA15D601E726E2B0028F47B = {
 			isa = PBXGroup;
 			children = (
@@ -171,10 +189,8 @@
 		BAA15D821E726FE30028F47B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BAE1015C1E78EA0D002FB15F /* CustomizedButton.swift */,
-				BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */,
-				BA8A28831E7A3EC7004646F3 /* CustomizedImageView.swift */,
-				BA8C2F331E7B603400637E09 /* MenuCell.swift */,
+				BA3DE8B01E7C5EED00E703FB /* CustomuzedView */,
+				BA3DE8AF1E7C5EE200E703FB /* TableViewCell */,
 			);
 			name = View;
 			sourceTree = "<group>";

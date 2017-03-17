@@ -10,39 +10,39 @@ import UIKit
 import SDWebImage
 
 class MenuVC: UIViewController {
-    
+
     @IBOutlet weak var imgProfile: CustomizedImageView!
     @IBOutlet weak var lblNameUser: UILabel!
     @IBOutlet weak var lblStudentID: UILabel!
     @IBOutlet weak var lblGPA: UILabel!
     @IBOutlet weak var lblTakingCourses: UILabel!
-    
-    
+
+
     @IBOutlet weak var tableView: UITableView!
-    var menuItems:[CONSTANTS.menuItems]!
-    
+    var menuItems: [CONSTANTS.menuItems]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpTableView()
-            }
-    
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateProfileViewInfo(user: AppState.instance.user!)
 
     }
-    
-    func updateProfileViewInfo(user: User){
+
+    func updateProfileViewInfo(user: User) {
         if let image = user.photoUrl {
             imgProfile.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder"), options: .refreshCached)
         }
         lblNameUser.text = user.name
-        
+
         guard let student_id = user.student_id else {
             return
         }
-        
+
         lblStudentID.text = student_id
         lblGPA.text = user.GPA
         lblTakingCourses.text = user.takingCourses
@@ -50,47 +50,50 @@ class MenuVC: UIViewController {
 }
 
 extension MenuVC: UITableViewDelegate, UITableViewDataSource {
-    
+
     func setUpTableView() {
-        
+
         menuItems = [CONSTANTS.menuItems.profile,
-                     CONSTANTS.menuItems.courses,
-                     CONSTANTS.menuItems.settings,
-                     CONSTANTS.menuItems.logout]
-        
+            CONSTANTS.menuItems.courses,
+            CONSTANTS.menuItems.settings,
+            CONSTANTS.menuItems.logout]
+
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return menuItems.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as? MenuCell {
-            
+
             cell.updateUI(itemInfo: menuItems[indexPath.row].rawValue)
-            
+
             return cell
         }
-        
+
         return UITableViewCell()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         switch menuItems[indexPath.row] {
         case CONSTANTS.menuItems.logout:
-            
-            AuthService.instance.logOut()
-            AppDelegate.instance.switchToLoginVC()
+
+            AuthService.instance.logOut({ (err) in
+                self.slideMenuController()?.dismiss(animated: true, completion: nil)
+
+            })
+    
             break
         default:
             print("Error")
         }
-        
+
         self.slideMenuController()?.closeLeft()
     }
 }

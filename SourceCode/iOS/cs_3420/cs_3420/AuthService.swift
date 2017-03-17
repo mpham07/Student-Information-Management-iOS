@@ -17,9 +17,10 @@ class AuthService {
         return _instance
     }
     
-    func logOut() {
+    func logOut(_ onComplete: Completion_And_Err) {
         do {
             try FIRAuth.auth()?.signOut()
+            onComplete(nil)
         } catch (let err) {
             print(err.localizedDescription)
         }

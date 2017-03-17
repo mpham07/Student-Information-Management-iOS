@@ -14,6 +14,7 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgIcon: UIImageView!
     
+    @IBOutlet weak var imgBackground: UIImageView!
     func updateUI(itemInfo: String) {
         
         if itemInfo == CONSTANTS.menuItems.logout.rawValue {
@@ -23,4 +24,15 @@ class MenuCell: UITableViewCell {
         lblName.text = itemInfo
         imgIcon.image = UIImage(named: itemInfo)
     }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        
+        if selected {
+            imgBackground.image = UIImage(named: "menuCell_Selected")
+        }else {
+            imgBackground.image = nil
+        }
+    }
+    
+    
 }
