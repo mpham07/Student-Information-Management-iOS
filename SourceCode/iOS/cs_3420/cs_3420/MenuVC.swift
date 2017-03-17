@@ -14,8 +14,6 @@ class MenuVC: UIViewController {
     @IBOutlet weak var imgProfile: CustomizedImageView!
     @IBOutlet weak var lblNameUser: UILabel!
     @IBOutlet weak var lblStudentID: UILabel!
-    @IBOutlet weak var lblGPA: UILabel!
-    @IBOutlet weak var lblTakingCourses: UILabel!
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,8 +42,6 @@ class MenuVC: UIViewController {
         }
 
         lblStudentID.text = student_id
-        lblGPA.text = user.GPA
-        lblTakingCourses.text = user.takingCourses
     }
 }
 

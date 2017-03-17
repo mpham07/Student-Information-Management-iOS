@@ -9,120 +9,120 @@
 import Foundation
 
 class Course_Grade {
-    
+
     private var _uid_course: String
     private var _assignment: Int?
     private var _final: Int?
     private var _midterm: Int?
     private var _quiz_1: Int?
     private var _quiz_2: Int?
-    
+
     private var _courseInfo: Course?
-    
+
     var courseInfo: Course? {
         get {
             return _courseInfo
         }
-        set{
+        set {
             _courseInfo = newValue
         }
     }
-    
+
     var averge: Int? {
-        
+
         var sum = 0
         var count = 0
-        
+
         if let assign = _assignment, assign > 0 {
             sum += assign
             count += 1
         }
-        
-        if let final = _final , final > 0 {
+
+        if let final = _final, final > 0 {
             sum += final
             count += 1
         }
-        
-        if let midterm = _midterm , midterm > 0 {
+
+        if let midterm = _midterm, midterm > 0 {
             sum += midterm
             count += 1
         }
-        
-        if let quiz_1 = _quiz_1 , quiz_1 > 0 {
+
+        if let quiz_1 = _quiz_1, quiz_1 > 0 {
             sum += quiz_1
             count += 1
         }
-        
-        if let quiz_2 = _quiz_2 , quiz_2 > 0 {
+
+        if let quiz_2 = _quiz_2, quiz_2 > 0 {
             sum += quiz_2
             count += 1
         }
-        
+
         if sum != 0 {
-            return sum/count
+            return sum / count
         }
-        
+
         return nil
     }
-    
+
     var uid_course: String {
         get {
             return _uid_course
         }
-        set{
+        set {
             _uid_course = newValue
         }
     }
-    
+
     var assignment: Int? {
         get {
             return _assignment
         }
-        set{
+        set {
             _assignment = newValue
         }
     }
-    
+
     var final: Int? {
         get {
             return _final
         }
-        set{
+        set {
             _final = newValue
         }
-        
+
     }
-    
+
     var midterm: Int? {
         get {
-           return _midterm
+            return _midterm
         }
-        set{
+        set {
             _midterm = newValue
         }
     }
-    
+
     var quiz_1: Int? {
         get {
-           return _quiz_1
+            return _quiz_1
         }
-        set{
+        set {
             _quiz_1 = newValue
         }
-        
+
     }
-    
+
     var quiz_2: Int? {
         get {
             return _quiz_2
         }
-        set{
+        set {
             _quiz_2 = newValue
         }
     }
-    
+
     var gradeLetter: CONSTANTS.gradeLetter? {
-        
+
         if let averge = self.averge {
             switch averge {
             case 90...100:
@@ -137,12 +137,12 @@ class Course_Grade {
                 return CONSTANTS.gradeLetter.F
             }
         }
-        
+
         return nil
     }
-    
+
     var valueOfGradeLetter: CONSTANTS.valueOfGradeLetter? {
-        
+
         if let gradeLetter = gradeLetter {
             switch gradeLetter {
             case CONSTANTS.gradeLetter.A:
@@ -157,10 +157,24 @@ class Course_Grade {
                 return CONSTANTS.valueOfGradeLetter.F
             }
         }
-        
+
         return nil
     }
-    
+
+    var creditHour: Int {
+
+        if  var str = courseInfo?.course_id {
+            let i1 = str.index(str.startIndex, offsetBy: str.characters.count - 3)
+            let i2 = str.index(after: i1)
+            let range = i1..<i2
+            
+            str = str.substring(with: range)
+            return Int(str)!
+        }
+        
+        return 0
+    }
+
     init(uid_course: String) {
         _uid_course = uid_course
     }

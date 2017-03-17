@@ -9,7 +9,7 @@
 import Foundation
 
 class User {
-    
+
     private var _uid: String
     private var _email: String
     private var _name: String
@@ -18,7 +18,7 @@ class User {
     private var _student_id: String?
     private var _major: String?
     private var _course_grades: [Course_Grade]?
-    
+
     var major: String? {
         set {
             _major = newValue
@@ -27,23 +27,23 @@ class User {
             return _major
         }
     }
-    
+
     var uid: String {
         return _uid
     }
-    
+
     var email: String {
         return _email
     }
-    
+
     var name: String {
         return _name
     }
-    
+
     var role: String {
         return _role
     }
-    
+
     var photoUrl: String? {
         get {
             return _photoUrl
@@ -52,7 +52,7 @@ class User {
             _photoUrl = newValue
         }
     }
-    
+
     var student_id: String? {
         get {
             return _student_id
@@ -61,7 +61,7 @@ class User {
             _student_id = newValue
         }
     }
-    
+
     var course_grades: [Course_Grade]? {
         get {
             return _course_grades
@@ -70,56 +70,64 @@ class User {
             _course_grades = newValue
         }
     }
-    
+
     var isAdmin: Bool {
-        
+
         if _role == CONSTANTS.users.ADMIN {
             return true
         }
-        
+
         return false
     }
-    
+
     var isStudent: Bool {
-        
+
         return !isAdmin
     }
-    
+
     var GPA: String {
-        
+
         if let grades = _course_grades {
-            
+
             var sum = 0.0
             for grade in grades {
                 if let val = grade.valueOfGradeLetter {
                     sum += val.rawValue
                 }
             }
-            
+
             let gpa = sum / Double(grades.count)
-            
+
             return "\(gpa)"
+        }
+
+        return "0"
+    }
+
+    var takingCourses: String {
+
+        if let grades = _course_grades {
+            return "\(grades.count)"
+        }
+
+        return ""
+    }
+
+    var totalCredit: String {
+
+        if let courses = _course_grades {
+            var sum = 0
+
+            for course in courses {
+                sum += course.creditHour
+            }
+            
+            return "\(sum)"
         }
         
         return "0"
     }
-    
-    var takingCourses: String {
-        
-        if let grades = _course_grades {
-            return "\(grades.count)"
-        }
-        
-        return ""
-    }
-    
-    var totalCredit: String {
-        
-        
-        
-        return "14"
-    }
-    
+
     init(uid: String, email: String, name: String, role: String) {
         _uid = uid
         _email = email
