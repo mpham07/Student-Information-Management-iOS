@@ -12,6 +12,7 @@
 		BA0174EF1E7352FC00822366 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0174EE1E7352FC00822366 /* Constant.swift */; };
 		BA01B47B1E79C38E004E8FE7 /* CourseListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */; };
 		BA01B47D1E79C54F004E8FE7 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */; };
+		BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */; };
 		BA8A28841E7A3EC7004646F3 /* CustomizedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A28831E7A3EC7004646F3 /* CustomizedImageView.swift */; };
 		BA8C2F321E7B5F9700637E09 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C2F311E7B5F9700637E09 /* MenuVC.swift */; };
 		BA8C2F341E7B603400637E09 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8C2F331E7B603400637E09 /* MenuCell.swift */; };
@@ -41,6 +42,7 @@
 		BA0174EE1E7352FC00822366 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListVC.swift; sourceTree = "<group>"; };
 		BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BA8A28831E7A3EC7004646F3 /* CustomizedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedImageView.swift; sourceTree = "<group>"; };
 		BA8C2F311E7B5F9700637E09 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		BA8C2F331E7B603400637E09 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				BAA4FFB41E786F9F0098EE86 /* LoginVC+Test.swift */,
 				BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */,
 				BA8C2F311E7B5F9700637E09 /* MenuVC.swift */,
+				BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				BA8C2F341E7B603400637E09 /* MenuCell.swift in Sources */,
 				BAA4FFB51E786F9F0098EE86 /* LoginVC+Test.swift in Sources */,
 				BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */,
+				BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */,
 				BAA15D6F1E726E2B0028F47B /* LoginVC.swift in Sources */,
 				BAE1015D1E78EA0D002FB15F /* CustomizedButton.swift in Sources */,
 				BAB0CC9F1E75160A00255D5D /* DataService+UPDATE.swift in Sources */,

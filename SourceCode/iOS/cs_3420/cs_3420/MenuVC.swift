@@ -17,8 +17,8 @@ class MenuVC: UIViewController {
     @IBOutlet weak var lblGPA: UILabel!
     @IBOutlet weak var lblTakingCourses: UILabel!
 
-
     @IBOutlet weak var tableView: UITableView!
+    
     var menuItems: [CONSTANTS.menuItems]!
 
     override func viewDidLoad() {
@@ -81,19 +81,32 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        var destinationVC: UIViewController!
         switch menuItems[indexPath.row] {
+        
+        case CONSTANTS.menuItems.courses:
+            destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListNC")
+            break
+            
+        case CONSTANTS.menuItems.profile:
+            
+            destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC")
+        
+            break
+            
+        case CONSTANTS.menuItems.settings:
+            
+            return
+            
         case CONSTANTS.menuItems.logout:
-
             AuthService.instance.logOut({ (err) in
                 self.slideMenuController()?.dismiss(animated: true, completion: nil)
 
             })
-    
             break
-        default:
-            print("Error")
+            
         }
 
-        self.slideMenuController()?.closeLeft()
+        self.slideMenuController()?.changeMainViewController(destinationVC, close: true)
     }
 }
