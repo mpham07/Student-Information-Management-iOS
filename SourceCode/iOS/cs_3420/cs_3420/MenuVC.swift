@@ -35,7 +35,7 @@ class MenuVC: UIViewController {
 
     func updateProfileViewInfo(user: User) {
         if let image = user.photoUrl {
-            imgProfile.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder"), options: .refreshCached)
+            imgProfile.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "PROFILE_DEFAULT"), options: .refreshCached)
         }
         lblNameUser.text = user.name
 
@@ -103,8 +103,8 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
                 self.slideMenuController()?.dismiss(animated: true, completion: nil)
 
             })
-            break
             
+            return
         }
 
         self.slideMenuController()?.changeMainViewController(destinationVC, close: true)

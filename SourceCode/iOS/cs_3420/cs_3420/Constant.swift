@@ -33,6 +33,7 @@ struct CONSTANTS {
         static let PHOTO_URL = "photoUrl"
         static let ROLE = "role"
         static let STUDENT_ID = "student_id"
+        static let MAJOR = "major"
     }
     
     struct courses_grades {

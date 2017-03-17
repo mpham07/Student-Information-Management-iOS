@@ -16,7 +16,17 @@ class User {
     private var _photoUrl: String?
     private var _role: String
     private var _student_id: String?
+    private var _major: String?
     private var _course_grades: [Course_Grade]?
+    
+    var major: String? {
+        set {
+            _major = newValue
+        }
+        get {
+            return _major
+        }
+    }
     
     var uid: String {
         return _uid
@@ -101,6 +111,13 @@ class User {
         }
         
         return ""
+    }
+    
+    var totalCredit: String {
+        
+        
+        
+        return "14"
     }
     
     init(uid: String, email: String, name: String, role: String) {

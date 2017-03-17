@@ -181,6 +181,10 @@ extension DataService {
                     user.student_id = student_id
                 }
                 
+                if let major = item[CONSTANTS.users.MAJOR] as? String {
+                    user.major = major
+                }
+                
                 if let courses_grades = item[CONSTANTS.courses_grades.UID] as? [String:Any]{
                     // Check if user is student, then run following block
                     if user.isStudent {
