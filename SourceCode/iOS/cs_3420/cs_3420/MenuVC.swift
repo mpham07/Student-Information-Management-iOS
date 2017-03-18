@@ -51,7 +51,7 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
 
         menuItems = [CONSTANTS.menuItems.profile,
             CONSTANTS.menuItems.courses,
-            CONSTANTS.menuItems.settings,
+            CONSTANTS.menuItems.notification,
             CONSTANTS.menuItems.logout]
 
         tableView.dataSource = self
@@ -90,8 +90,9 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         
             break
             
-        case CONSTANTS.menuItems.settings:
+        case CONSTANTS.menuItems.notification:
             
+            tableView.cellForRow(at: indexPath)?.isSelected = false
             return
             
         case CONSTANTS.menuItems.logout:

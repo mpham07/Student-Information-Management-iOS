@@ -13,12 +13,17 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var onNotify: UISwitch!
     
     @IBOutlet weak var imgBackground: UIImageView!
     func updateUI(itemInfo: String) {
         
         if itemInfo == CONSTANTS.menuItems.logout.rawValue {
             lineView.isHidden = false
+        }
+        
+        if itemInfo == CONSTANTS.menuItems.notification.rawValue {
+            onNotify.isHidden = false
         }
         
         lblName.text = itemInfo

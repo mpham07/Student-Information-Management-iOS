@@ -88,7 +88,7 @@ struct CONSTANTS {
         
         case profile = "PROFILE"
         case courses = "COURSES"
-        case settings = "SETTINGS"
+        case notification = "NOTIFICATION"
         case logout = "LOG OUT"
     }
 }
