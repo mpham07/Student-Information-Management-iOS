@@ -94,6 +94,12 @@ struct CONSTANTS {
     }
     
     struct imagesAssets {
+        
         static let PROFILE_DEFAULT = "PROFILE_DEFAULT"
+    }
+    
+    struct indicatorMessage {
+        
+        static let LOADING = "Loading"
     }
 }

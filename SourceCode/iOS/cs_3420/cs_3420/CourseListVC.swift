@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SloppySwiper
 
 class CourseListVC: UIViewController {
 
@@ -18,6 +19,7 @@ class CourseListVC: UIViewController {
     var student: User?
     let isAdmin = AppState.instance.isAdmin!
     var courses = [Course_Grade]()
+    var swiper = SloppySwiper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class CourseListVC: UIViewController {
         
         loadUI()
         setUpTableView()
+        handleGoBackSwipeAction(swiper: &self.swiper)
     }
     
     
@@ -65,7 +68,6 @@ class CourseListVC: UIViewController {
             }
         }
     }
-    
 }
 
 // Take care of UI Events

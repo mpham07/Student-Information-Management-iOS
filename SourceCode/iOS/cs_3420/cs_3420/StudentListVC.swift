@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FTIndicator
 
 class StudentListVC: UIViewController {
     
@@ -24,16 +25,21 @@ class StudentListVC: UIViewController {
     
     func loadAllStudentsData() {
         
+        //self.showProgressLoading()
+        FTIndicator.dismissProgress()
         DataService.instance.getAllStudents { (err, students) in
             
             if let err = err {
-                print(err)
+                
+                self.showError(err: err)
                 return
             }
             
             // Seccessully got all data
             if let studentList = students as? [User] {
                 
+                //self.dismissProgress()
+                FTIndicator.dismissProgress()
                 self.students = studentList
                 self.loadUI()
             }

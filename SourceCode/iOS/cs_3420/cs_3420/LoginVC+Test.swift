@@ -102,7 +102,7 @@ extension LoginVC {
         //let uid = "COMM_1301"
         
         let course = courses[2]
-        if course.registed == 0 {
+        if course.enrolled == 0 {
             DataService.instance.deleteCourse(uid: course.uid) { (err) in
                 print("Deleted course successfully")
             }
@@ -214,7 +214,7 @@ extension LoginVC {
         print(course.course_id)
         print(course.name)
         print(course.type)
-        print(course.registed)
+        print(course.enrolled)
     }
     
     func printU(user: User, _ course_grade: Int) {

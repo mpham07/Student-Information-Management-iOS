@@ -13,6 +13,7 @@ import SlideMenuControllerSwift
 
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     public static var instance: AppDelegate {

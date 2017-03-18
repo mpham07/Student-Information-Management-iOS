@@ -32,7 +32,7 @@ class Course {
         }
     }
     
-    var registed: Int {
+    var enrolled: Int {
         return _registed
     }
     

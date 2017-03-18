@@ -29,7 +29,7 @@ class DetailGradesVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        handleGoBackSwipeAction()
+        handleGoBackSwipeAction(swiper: &self.swiper)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,12 +47,6 @@ class DetailGradesVC: UIViewController {
             lblAverage.text = "\(courseGrade.averge!)"
             lblNameCourse.text = courseGrade.courseInfo!.course_id
         }
-    }
-    
-    func handleGoBackSwipeAction() {
-        self.swiper = SloppySwiper.init(navigationController: self.navigationController)
-        
-        navigationController?.delegate = self.swiper;
     }
 }
 

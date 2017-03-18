@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
-import FTIndicator
 import SlideMenuControllerSwift
 
 class LoginVC: UIViewController {
@@ -43,25 +42,23 @@ class LoginVC: UIViewController {
             return
         }
 
-        FTIndicator.showProgressWithmessage("Loading...", userInteractionEnable: false)
+        self.showProgressLoading()
 
         AuthService.instance.logInviaEmailPassword(email: email, password: password) { (err, user) in
 
             if let err = err {
 
-                FTIndicator.showError(withMessage: err)
+                self.showError(err: err)
                 return
             }
 
             // Successfully login and get user
             if let user = user as? User {
+                self.dismissProgress()
                 AppState.instance.user = user
-
                 self.handlePresentToSlideMenuVC()
-            } else {
-                FTIndicator.showError(withMessage: err)
             }
-            FTIndicator.dismissProgress()
+            
         }
     }
 
@@ -81,7 +78,6 @@ class LoginVC: UIViewController {
         self.slideMenu = SlideMenuController.init(mainViewController: mainVC, leftMenuViewController: menuVC)
 
         self.present(self.slideMenu, animated: true, completion: nil)
-
     }
 }
 
