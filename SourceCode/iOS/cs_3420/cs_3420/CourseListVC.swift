@@ -22,6 +22,12 @@ class CourseListVC: UIViewController {
         setUpTableView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationController?.slideMenuController()?.addLeftGestures()
+    }
+    
     func getCoursesOfAStudent() {
         
         if let user = AppState.instance.user {
@@ -78,12 +84,27 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         }
-        
+    
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 85.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let courseGrade = courses[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailGradesVC", sender: courseGrade)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? DetailGradesVC {
+            if let courseGrade = sender as? Course_Grade {
+                vc.courseGrade = courseGrade
+            }
+        }
     }
 }

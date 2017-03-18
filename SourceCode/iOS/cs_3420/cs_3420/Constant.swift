@@ -54,6 +54,19 @@ struct CONSTANTS {
         static let COURSE_NOT_FOUND = "The course not found!"
     }
     
+    enum nameOfGrades: String {
+        case ASSIGNMENT = "Assigment"
+        case QUIZ_1 = "Quiz 1"
+        case QUIZ_2 = "Quiz 2"
+        case MIDTERM = "Midterm"
+        case FINAL = "Final"
+    }
+    
+    struct statusOfGrades {
+        static let GRADED = "Graded"
+        static let IN_COMNG = "In coming"
+    }
+    
     enum gradeLetter: String {
         
         case A = "A"
