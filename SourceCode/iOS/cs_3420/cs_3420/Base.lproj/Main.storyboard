@@ -51,7 +51,7 @@
                                                                             <constraint firstAttribute="height" constant="16" id="wza-hs-47x"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="minh@gmail.com" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNM-Bx-s9Z">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin@gmail.com" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNM-Bx-s9Z">
                                                                         <rect key="frame" x="41" y="0.0" width="204" height="16"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -196,13 +196,13 @@
                                         </constraints>
                                         <state key="normal" image="Menu Button"/>
                                         <connections>
-                                            <action selector="btnOpenMenu_Pressed:" destination="aLj-1z-2o5" eventType="touchUpInside" id="VHO-YU-MXT"/>
+                                            <action selector="btnLeftMenu_Pressed:" destination="aLj-1z-2o5" eventType="touchUpInside" id="LMT-UC-e4C"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COURSES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fc-rQ-Rqq">
                                         <rect key="frame" x="139" y="34" width="97" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="97" id="9AV-iO-rmU"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="9AV-iO-rmU"/>
                                             <constraint firstAttribute="height" constant="21" id="HKj-j9-qpE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
@@ -270,25 +270,25 @@
                                                     <state key="normal" image="arrowRight"/>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="O93-gX-sVU">
-                                                    <rect key="frame" x="18" y="11" width="307" height="63"/>
+                                                    <rect key="frame" x="18" y="11.5" width="307" height="62"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduce to Software Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="e1U-fQ-lD0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="289" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="289" height="27.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                             <color key="textColor" red="0.17254901960784313" green="0.25490196078431371" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="scx-Gc-xcK">
-                                                            <rect key="frame" x="0.0" y="43" width="307" height="20"/>
+                                                            <rect key="frame" x="0.0" y="42.5" width="307" height="19.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CS 3420" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCR-um-Y9H">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="55" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                                     <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVY-vx-I0T">
-                                                                    <rect key="frame" x="104" y="0.0" width="60" height="20"/>
+                                                                    <rect key="frame" x="103.5" y="0.0" width="60" height="19.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="mVS-cG-xDS"/>
                                                                     </constraints>
@@ -297,16 +297,16 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htB-TQ-w9o">
-                                                                    <rect key="frame" x="212" y="0.0" width="95" height="20"/>
+                                                                    <rect key="frame" x="212" y="0.0" width="95" height="19.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dQ-ts-2LG">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="19.5"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                                             <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="95" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66i-yO-Tag">
-                                                                            <rect key="frame" x="65" y="0.0" width="30" height="20"/>
+                                                                            <rect key="frame" x="65" y="0.0" width="30" height="19.5"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="30" id="cd5-0k-iNI"/>
                                                                             </constraints>
@@ -366,6 +366,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2lF-82-aEm"/>
                     <connections>
+                        <outlet property="btnLeftMenu" destination="Gr1-fe-GEy" id="f9z-lg-DKj"/>
+                        <outlet property="lblStudentName" destination="8Fc-rQ-Rqq" id="dUv-ON-tUH"/>
                         <outlet property="lblTotal" destination="FcK-Pm-DmV" id="JKh-bC-tpy"/>
                         <outlet property="tableView" destination="8rF-pa-MD2" id="mVO-nz-bqI"/>
                         <segue destination="89y-fx-9ld" kind="show" identifier="toDetailGradesVC" id="pZh-dN-uHy"/>
@@ -373,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwn-Cm-U3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325" y="770"/>
+            <point key="canvasLocation" x="1428" y="839.73013493253382"/>
         </scene>
         <!--Detail GradesVC-->
         <scene sceneID="Ce4-w4-KAI">
@@ -549,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cH-5W-bmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="770"/>
+            <point key="canvasLocation" x="2401" y="840"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="5T6-4d-CYS">
@@ -659,7 +661,7 @@
                                                     <rect key="frame" x="20" y="15" width="283" height="25"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIr-Jz-AsM">
-                                                            <rect key="frame" x="0.0" y="2" width="22" height="22"/>
+                                                            <rect key="frame" x="0.0" y="1.5" width="22" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="cpV-uc-p0T"/>
                                                                 <constraint firstAttribute="height" constant="22" id="dBv-OX-8Ya"/>
@@ -999,12 +1001,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoP-Yl-DIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="522" y="771"/>
+            <point key="canvasLocation" x="452" y="840"/>
         </scene>
         <!--Student ListVC-->
         <scene sceneID="1V7-Ho-keX">
             <objects>
-                <viewController id="GRL-Xc-wep" customClass="StudentListVC" customModule="cs_3420" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentListVC" id="GRL-Xc-wep" customClass="StudentListVC" customModule="cs_3420" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="azj-AL-6YZ"/>
                         <viewControllerLayoutGuide type="bottom" id="ky6-nR-aGG"/>
@@ -1027,7 +1029,7 @@
                                         </constraints>
                                         <state key="normal" image="Menu Button"/>
                                         <connections>
-                                            <action selector="btnOpenMenu_Pressed:" destination="GRL-Xc-wep" eventType="touchUpInside" id="SEx-Cy-rJM"/>
+                                            <action selector="btnOpenLeftMenu:" destination="GRL-Xc-wep" eventType="touchUpInside" id="6eF-Jk-tXU"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STUDENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jR-lZ-cV2">
@@ -1085,7 +1087,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="557"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="85" id="G8D-3z-KAr" customClass="Stu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="85" id="G8D-3z-KAr" customClass="StudentCell" customModule="cs_3420" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8D-3z-KAr" id="LfA-Bg-mHr">
@@ -1189,9 +1191,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="txtAverage" destination="FrY-Hb-wgc" id="mqm-tr-cp5"/>
-                                            <outlet property="txtCourseID" destination="ERg-aB-Oek" id="eYd-uv-ZAO"/>
-                                            <outlet property="txtName" destination="JtT-uI-lPW" id="Ivy-Vt-Afs"/>
+                                            <outlet property="imgProfile" destination="Spx-DB-gFa" id="k4s-Q8-oax"/>
+                                            <outlet property="lblGPA" destination="HQc-BE-8yb" id="qNa-Uw-qau"/>
+                                            <outlet property="lblName" destination="JtT-uI-lPW" id="XAT-sc-TtO"/>
+                                            <outlet property="lblTaking" destination="FrY-Hb-wgc" id="aCB-8P-Dpv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1217,13 +1220,32 @@
                     </view>
                     <navigationItem key="navigationItem" id="JxY-h4-dyD"/>
                     <connections>
-                        <outlet property="lblTotal" destination="VjA-tl-grq" id="8jZ-3y-kDE"/>
-                        <outlet property="tableView" destination="MzH-HE-bXp" id="wij-LO-bu2"/>
+                        <outlet property="lblTotal" destination="VjA-tl-grq" id="Meg-zG-MGz"/>
+                        <outlet property="tableView" destination="MzH-HE-bXp" id="oCF-Mn-mW1"/>
+                        <segue destination="aLj-1z-2o5" kind="show" identifier="studentListToCourseList" id="oN9-qn-J0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKm-87-nRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="76.911544227886068"/>
+            <point key="canvasLocation" x="1428" y="65"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="paY-hq-3BJ">
+            <objects>
+                <navigationController storyboardIdentifier="StudentListNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="laQ-4p-Pvt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oF1-HC-oQd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GRL-Xc-wep" kind="relationship" relationship="rootViewController" id="67V-9x-KTP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xkD-ku-srp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="-664"/>
         </scene>
     </scenes>
     <resources>
@@ -1237,4 +1259,7 @@
         <image name="back" width="12" height="21"/>
         <image name="bg" width="375" height="667"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oN9-qn-J0C"/>
+    </inferredMetricsTieBreakers>
 </document>

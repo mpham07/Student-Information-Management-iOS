@@ -64,24 +64,31 @@ class LoginVC: UIViewController {
             FTIndicator.dismissProgress()
         }
     }
-    
+
     private func handlePresentToSlideMenuVC() {
+
+        let mainVC: UIViewController!
         
-        
-        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListNC")
+        if AppState.instance.isAdmin! {
+            
+            mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StudentListNC")
+        }else {
+            mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListNC")
+        }
         
         let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuVC")
-        
+
         self.slideMenu = SlideMenuController.init(mainViewController: mainVC, leftMenuViewController: menuVC)
-        
+
         self.present(self.slideMenu, animated: true, completion: nil)
+
     }
 }
 
 extension LoginVC: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+
         handleButtonLogin()
         return true
     }

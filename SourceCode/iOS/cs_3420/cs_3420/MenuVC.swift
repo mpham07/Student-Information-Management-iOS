@@ -49,10 +49,18 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
 
     func setUpTableView() {
 
-        menuItems = [CONSTANTS.menuItems.profile,
-            CONSTANTS.menuItems.courses,
-            CONSTANTS.menuItems.notification,
-            CONSTANTS.menuItems.logout]
+        if let user = AppState.instance.user, user.isStudent {
+            menuItems = [CONSTANTS.menuItems.PROFILE,
+            CONSTANTS.menuItems.COURSES,
+            CONSTANTS.menuItems.NOTIFICATION,
+            CONSTANTS.menuItems.LOGOUT]
+            
+        }else {
+            menuItems = [CONSTANTS.menuItems.PROFILE,
+                         CONSTANTS.menuItems.COURSES,
+                         CONSTANTS.menuItems.STUDENTS,
+                         CONSTANTS.menuItems.LOGOUT]
+        }
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -80,28 +88,32 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         var destinationVC: UIViewController!
         switch menuItems[indexPath.row] {
         
-        case CONSTANTS.menuItems.courses:
+        case CONSTANTS.menuItems.COURSES:
             destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListNC")
             break
             
-        case CONSTANTS.menuItems.profile:
+        case CONSTANTS.menuItems.PROFILE:
             
             destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC")
         
             break
             
-        case CONSTANTS.menuItems.notification:
+        case CONSTANTS.menuItems.NOTIFICATION:
             
             tableView.cellForRow(at: indexPath)?.isSelected = false
             return
             
-        case CONSTANTS.menuItems.logout:
+        case CONSTANTS.menuItems.LOGOUT:
             AuthService.instance.logOut({ (err) in
                 self.slideMenuController()?.dismiss(animated: true, completion: nil)
 
             })
-            
+
             return
+        
+        case CONSTANTS.menuItems.STUDENTS:
+            destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StudentListNC")
+            break
         }
 
         self.slideMenuController()?.changeMainViewController(destinationVC, close: true)

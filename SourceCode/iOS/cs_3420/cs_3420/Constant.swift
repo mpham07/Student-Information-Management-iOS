@@ -86,9 +86,14 @@ struct CONSTANTS {
     
     enum menuItems: String {
         
-        case profile = "PROFILE"
-        case courses = "COURSES"
-        case notification = "NOTIFICATION"
-        case logout = "LOG OUT"
+        case PROFILE = "PROFILE"
+        case COURSES = "COURSES"
+        case NOTIFICATION = "NOTIFICATION"
+        case LOGOUT = "LOG OUT"
+        case STUDENTS = "STUDENTS"
+    }
+    
+    struct imagesAssets {
+        static let PROFILE_DEFAULT = "PROFILE_DEFAULT"
     }
 }

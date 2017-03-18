@@ -10,27 +10,38 @@ import UIKit
 
 class CourseListVC: UIViewController {
 
+    @IBOutlet weak var lblStudentName: UILabel!
+    @IBOutlet weak var btnLeftMenu: UIButton!
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    var student: User?
+    let isAdmin = AppState.instance.isAdmin!
     var courses = [Course_Grade]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getCoursesOfAStudent()
+        if isAdmin {
+            getCoursesOfAStudent(student: student)
+        }else {
+            getCoursesOfAStudent(student: AppState.instance.user)
+        }
+        
+        loadUI()
         setUpTableView()
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.navigationController?.slideMenuController()?.addLeftGestures()
+        //self.navigationController?.slideMenuController()?.addLeftGestures()
     }
     
-    func getCoursesOfAStudent() {
+    func getCoursesOfAStudent(student: User?) {
         
-        if let user = AppState.instance.user {
+        if let user = student{
             if let coursesList = user.course_grades {
                 courses = coursesList
                 
@@ -55,9 +66,25 @@ class CourseListVC: UIViewController {
         }
     }
     
-    @IBAction func btnOpenMenu_Pressed(_ sender: Any) {
-        if let slideMenuVC = self.navigationController?.slideMenuController() {
-             slideMenuVC.openLeft()
+}
+
+// Take care of UI Events
+extension CourseListVC {
+    
+    func loadUI() {
+        
+        if isAdmin {
+            btnLeftMenu.setImage(UIImage(named: "back"), for: .normal)
+            lblStudentName.text = student?.name
+        }
+    }
+    
+    @IBAction func btnLeftMenu_Pressed(_ sender: Any) {
+        
+        if !isAdmin {
+            self.navigationController?.slideMenuController()?.openLeft()
+        } else {
+            let _ = self.navigationController?.popViewController(animated: true)
         }
     }
 }

@@ -9,16 +9,19 @@
 import UIKit
 
 class StudentCell: UITableViewCell {
+    @IBOutlet weak var imgProfile: CustomizedImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblTaking: UILabel!
+    @IBOutlet weak var lblGPA: UILabel!
+    
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func updateUI(student: User) {
+        if let img = student.photoUrl {
+            imgProfile.sd_setImage(with: URL(string: img), placeholderImage: UIImage(named: CONSTANTS.imagesAssets.PROFILE_DEFAULT))
+        }
+        
+        lblName.text = student.name
+        lblTaking.text = student.takingCourses
+        lblGPA.text = student.GPA
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

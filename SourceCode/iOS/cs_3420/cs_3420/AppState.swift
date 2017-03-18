@@ -25,4 +25,12 @@ class AppState {
             _user = newValue
         }
     }
+    
+    var isAdmin: Bool? {
+        if let user = user {
+            return user.isAdmin
+        }
+        
+        return nil
+    }
 }

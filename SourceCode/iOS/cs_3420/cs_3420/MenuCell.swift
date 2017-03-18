@@ -18,11 +18,11 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var imgBackground: UIImageView!
     func updateUI(itemInfo: String) {
         
-        if itemInfo == CONSTANTS.menuItems.logout.rawValue {
+        if itemInfo == CONSTANTS.menuItems.LOGOUT.rawValue {
             lineView.isHidden = false
         }
         
-        if itemInfo == CONSTANTS.menuItems.notification.rawValue {
+        if itemInfo == CONSTANTS.menuItems.NOTIFICATION.rawValue {
             onNotify.isHidden = false
         }
         

@@ -35,7 +35,7 @@ class DetailGradesVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.slideMenuController()?.removeLeftGestures()
+        //self.slideMenuController()?.removeLeftGestures()
     }
     
     @IBAction func btnBack_Pressed(_ sender: Any) {
