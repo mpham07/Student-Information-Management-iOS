@@ -92,7 +92,8 @@ extension DetailCourseSystemVC {
                     DataService.instance.updateCourseInfo(uid: uid!, data: course) { (err) in
 
                         self.dismissProgress()
-                        let _ = self.navigationController?.popViewController(animated: true)
+                        
+                        self.popAndRefreshTheModalView()
                     }
 
                 } else {
@@ -104,7 +105,9 @@ extension DetailCourseSystemVC {
                     DataService.instance.addNewCourse(uid: uid, data: course) { (err) in
 
                         self.dismissProgress()
-                        let _ = self.navigationController?.popViewController(animated: true)
+                
+                        self.popAndRefreshTheModalView()
+                        
                     }
                 }
             }else {
@@ -113,6 +116,14 @@ extension DetailCourseSystemVC {
 
         } else {
             showError(err: "Course's name and ID should not empty!")
+        }
+    }
+    
+    private func popAndRefreshTheModalView () {
+        let _ = self.navigationController?.popViewController(animated: true)
+        
+        if let vc = self.navigationController?.visibleViewController as? CourseListSystemVC {
+            vc.loadAllCoursesFromDB(indicator: false)
         }
     }
 

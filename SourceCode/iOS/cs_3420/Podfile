@@ -14,4 +14,5 @@ target 'cs_3420' do
   pod 'SlideMenuControllerSwift'
   pod 'SDWebImage', '~>3.8'
   pod 'SloppySwiper'
+  pod 'PullToRefreshSwift'
 end

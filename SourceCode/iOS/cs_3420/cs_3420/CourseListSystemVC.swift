@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PullToRefreshSwift
 
 class CourseListSystemVC: UIViewController {
 
@@ -18,21 +19,22 @@ class CourseListSystemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        loadAllCoursesFromDB()
         setUpTableView()
+        loadAllCoursesFromDB(indicator: true)
+        
+        tableView.addPullRefresh { [weak self] in
+            
+            self?.loadAllCoursesFromDB(indicator: false)
+            self?.tableView.stopPullRefreshEver()
+        }
     }
 
-    func loadAllCoursesFromDB() {
-
-        self.showProgressLoading()
-
+    public func loadAllCoursesFromDB(indicator: Bool) {
+        
+        if indicator { showProgressUpdating() }
         DataService.instance.getAllCourses { (err, courses) in
-
+            if indicator { self.dismissProgress() }
+            
             if let err = err {
                 print(err)
 
@@ -45,8 +47,6 @@ class CourseListSystemVC: UIViewController {
                 self.courses = coursesList
                 self.loadUI()
             }
-
-            self.dismissProgress()
         }
     }
 }

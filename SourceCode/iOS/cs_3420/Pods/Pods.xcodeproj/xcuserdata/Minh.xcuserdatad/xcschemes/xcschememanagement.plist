@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PullToRefreshSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>462808052A54C121EAE21177E7AE5B4E</key>
+		<key>7CF70F73FABF27ABE391B847C50B1D8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5F87015491EB473C5BB2AD32C6250C4B</key>
+		<key>A28441AA57123BD0E346DC93A5FA2A4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A74F578636FCA3EA776CF3D072D68D87</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A93C3FFC244A6F365A54FA80DCD9A10E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F45FB05681C3CAA8959B01675A512836</key>
+		<key>DB3653D5FFD8293D20D547E34EB5583A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E58D60BB43F6B7FC5E611BA7C1C058A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
