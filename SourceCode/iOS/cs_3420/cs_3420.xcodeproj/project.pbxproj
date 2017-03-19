@@ -36,6 +36,8 @@
 		BABF08BC1E7DA9FB0017A387 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF08BB1E7DA9FB0017A387 /* StudentCell.swift */; };
 		BABF08BE1E7DD9BB0017A387 /* CourseListSystemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF08BD1E7DD9BB0017A387 /* CourseListSystemVC.swift */; };
 		BABF08C01E7DDA290017A387 /* CourseSystemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF08BF1E7DDA290017A387 /* CourseSystemCell.swift */; };
+		BAC19C4B1E7E3246009E2243 /* DetailCourseSystemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC19C4A1E7E3246009E2243 /* DetailCourseSystemVC.swift */; };
+		BAC19C4D1E7E3533009E2243 /* CustomizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC19C4C1E7E3533009E2243 /* CustomizedTextField.swift */; };
 		BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACF01041E74520F00DDFCF7 /* DataService+GET.swift */; };
 		BAE1015D1E78EA0D002FB15F /* CustomizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1015C1E78EA0D002FB15F /* CustomizedButton.swift */; };
 		BAE1015F1E790ABF002FB15F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE1015E1E790ABF002FB15F /* AuthService.swift */; };
@@ -75,6 +77,8 @@
 		BABF08BB1E7DA9FB0017A387 /* StudentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
 		BABF08BD1E7DD9BB0017A387 /* CourseListSystemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListSystemVC.swift; sourceTree = "<group>"; };
 		BABF08BF1E7DDA290017A387 /* CourseSystemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSystemCell.swift; sourceTree = "<group>"; };
+		BAC19C4A1E7E3246009E2243 /* DetailCourseSystemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCourseSystemVC.swift; sourceTree = "<group>"; };
+		BAC19C4C1E7E3533009E2243 /* CustomizedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedTextField.swift; sourceTree = "<group>"; };
 		BACF01041E74520F00DDFCF7 /* DataService+GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+GET.swift"; sourceTree = "<group>"; };
 		BAE1015C1E78EA0D002FB15F /* CustomizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedButton.swift; sourceTree = "<group>"; };
 		BAE1015E1E790ABF002FB15F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			children = (
 				BAE1015C1E78EA0D002FB15F /* CustomizedButton.swift */,
 				BA8A28831E7A3EC7004646F3 /* CustomizedImageView.swift */,
+				BAC19C4C1E7E3533009E2243 /* CustomizedTextField.swift */,
 			);
 			name = CustomuzedView;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				BA3DE8B51E7CB5D300E703FB /* DetailGradesVC.swift */,
 				BABF08B91E7DA4D20017A387 /* StudentListVC.swift */,
 				BABF08BD1E7DD9BB0017A387 /* CourseListSystemVC.swift */,
+				BAC19C4A1E7E3246009E2243 /* DetailCourseSystemVC.swift */,
 				BAA15D801E726FD60028F47B /* Shared */,
 			);
 			name = Controller;
@@ -384,6 +390,7 @@
 				BABF08C01E7DDA290017A387 /* CourseSystemCell.swift in Sources */,
 				BA8C2F341E7B603400637E09 /* MenuCell.swift in Sources */,
 				BAA4FFB51E786F9F0098EE86 /* LoginVC+Test.swift in Sources */,
+				BAC19C4D1E7E3533009E2243 /* CustomizedTextField.swift in Sources */,
 				BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */,
 				BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */,
 				BAA15D6F1E726E2B0028F47B /* LoginVC.swift in Sources */,
@@ -400,6 +407,7 @@
 				BAE1015F1E790ABF002FB15F /* AuthService.swift in Sources */,
 				BAA15D6D1E726E2B0028F47B /* AppDelegate.swift in Sources */,
 				BA01B47D1E79C54F004E8FE7 /* CourseCell.swift in Sources */,
+				BAC19C4B1E7E3246009E2243 /* DetailCourseSystemVC.swift in Sources */,
 				BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */,
 				BA8C2F321E7B5F9700637E09 /* MenuVC.swift in Sources */,
 			);

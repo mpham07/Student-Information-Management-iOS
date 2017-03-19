@@ -103,7 +103,7 @@ extension LoginVC {
         
         let course = courses[2]
         if course.enrolled == 0 {
-            DataService.instance.deleteCourse(uid: course.uid) { (err) in
+            DataService.instance.deleteCourse(course: course) { (err) in
                 print("Deleted course successfully")
             }
         }else {
@@ -140,7 +140,7 @@ extension LoginVC {
         
         let uid = course_id.replacingOccurrences(of: " ", with: "_")
         
-        DataService.instance.addCourse(uid: uid, data: course) { (err) in
+        DataService.instance.addNewCourse(uid: uid, data: course) { (err) in
             print("Added course successfully")
         }
     }

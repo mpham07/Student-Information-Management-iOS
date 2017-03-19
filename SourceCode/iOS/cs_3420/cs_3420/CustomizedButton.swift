@@ -16,4 +16,16 @@ class CustomizedButton: UIButton {
             layer.cornerRadius = cornerRadius
         }
     }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet{
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        didSet{
+            layer.borderColor = borderColor?.cgColor
+        }
+    }
 }

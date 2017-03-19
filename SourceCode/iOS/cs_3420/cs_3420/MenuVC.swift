@@ -90,8 +90,9 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         switch menuItems[indexPath.row] {
 
         case CONSTANTS.menuItems.COURSES:
+            
             if isAdmin {
-                destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListSystemVC")
+                destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListSystemNC")
             } else {
                 destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CourseListNC")
             }

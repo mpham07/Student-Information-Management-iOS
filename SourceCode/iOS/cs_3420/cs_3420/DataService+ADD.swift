@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 extension DataService {
 
     // ADD a course to Course Lists
-    func addCourse(uid: String, data: [String: Any],_ onComplete: Completion_And_Err?) {
+    func addNewCourse(uid: String, data: [String: Any],_ onComplete: Completion_And_Err?) {
         
         updateCourseInfo(uid: uid, data: data) { (err) in
             onComplete?(err)

@@ -59,4 +59,11 @@ class Course {
         _type = type
         _registed = registed
     }
+    
+    func updateInfo(course_id: String, name: String, type: String) {
+        
+        _course_id = course_id
+        _name = name
+        _type = type
+    }
 }

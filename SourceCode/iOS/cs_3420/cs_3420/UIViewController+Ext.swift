@@ -16,6 +16,14 @@ extension UIViewController {
         FTIndicator.showProgressWithmessage(CONSTANTS.indicatorMessage.LOADING, userInteractionEnable: false)
     }
     
+    func showProgressUpdating() {
+        FTIndicator.showProgressWithmessage(CONSTANTS.indicatorMessage.UPDATING, userInteractionEnable: false)
+    }
+    
+    func showProgressDeleting() {
+        FTIndicator.showProgressWithmessage(CONSTANTS.indicatorMessage.DELETING, userInteractionEnable: false)
+    }
+    
     func showError(err: String) {
         FTIndicator.showError(withMessage: err)
         self.dismissProgress()

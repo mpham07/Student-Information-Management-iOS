@@ -52,6 +52,7 @@ struct CONSTANTS {
     struct notices {
         static let USER_NOT_FOUND = "The user is not found!"
         static let COURSE_NOT_FOUND = "The course not found!"
+        static let COURSE_BEING_ENROLLED = "This course is currently registered by students!"
     }
     
     enum nameOfGrades: String {
@@ -100,6 +101,8 @@ struct CONSTANTS {
     
     struct indicatorMessage {
         
-        static let LOADING = "Loading"
+        static let LOADING = "Loading..."
+        static let UPDATING = "Updating..."
+        static let DELETING = "Deleting..."
     }
 }
