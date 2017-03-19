@@ -12,6 +12,7 @@
 		BA0174EF1E7352FC00822366 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0174EE1E7352FC00822366 /* Constant.swift */; };
 		BA01B47B1E79C38E004E8FE7 /* CourseListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */; };
 		BA01B47D1E79C54F004E8FE7 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */; };
+		BA38EA1C1E7F251500CE45A3 /* Libs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38EA1B1E7F251500CE45A3 /* Libs.swift */; };
 		BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */; };
 		BA3DE8B61E7CB5D300E703FB /* DetailGradesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B51E7CB5D300E703FB /* DetailGradesVC.swift */; };
 		BA3DE8B81E7CBB2F00E703FB /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B71E7CBB2F00E703FB /* GradeCell.swift */; };
@@ -51,6 +52,7 @@
 		BA0174EE1E7352FC00822366 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListVC.swift; sourceTree = "<group>"; };
 		BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		BA38EA1B1E7F251500CE45A3 /* Libs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Libs.swift; sourceTree = "<group>"; };
 		BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BA3DE8B51E7CB5D300E703FB /* DetailGradesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGradesVC.swift; sourceTree = "<group>"; };
 		BA3DE8B71E7CBB2F00E703FB /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		BA0174ED1E7352E400822366 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				BA38EA1B1E7F251500CE45A3 /* Libs.swift */,
 				BA0174EE1E7352FC00822366 /* Constant.swift */,
 			);
 			name = Helper;
@@ -382,6 +385,7 @@
 			files = (
 				BA01B47B1E79C38E004E8FE7 /* CourseListVC.swift in Sources */,
 				BAA15D8B1E72714B0028F47B /* Course_Grade.swift in Sources */,
+				BA38EA1C1E7F251500CE45A3 /* Libs.swift in Sources */,
 				BABF08BA1E7DA4D20017A387 /* StudentListVC.swift in Sources */,
 				BA0174EC1E7351F600822366 /* DataService.swift in Sources */,
 				BAA15D871E7270550028F47B /* Course.swift in Sources */,
@@ -537,6 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "devmen.cs-3420";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -551,6 +556,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "devmen.cs-3420";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

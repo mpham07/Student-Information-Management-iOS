@@ -107,7 +107,7 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
         
         if editingStyle == .delete {
             
-            let alert = AlertController(title: "Alert", message: "Do you want to remove \'\(course.name)\'", preferredStyle: .alert)
+            let alert = AlertController(title: "Alert", message: "Do you want to remove \'\(course.name)\'?", preferredStyle: .alert)
             alert.add(AlertAction(title: "Cancel", style: .normal))
             alert.add(AlertAction(title: "Yes", style: .destructive, handler: { alertAction in
                 
