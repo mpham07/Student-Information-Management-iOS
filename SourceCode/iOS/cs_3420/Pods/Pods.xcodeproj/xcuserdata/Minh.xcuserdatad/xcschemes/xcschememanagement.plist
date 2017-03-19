@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CF70F73FABF27ABE391B847C50B1D8F</key>
+		<key>1D6D44C6587644AA616F77E800317304</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A28441AA57123BD0E346DC93A5FA2A4D</key>
+		<key>205C957302E99942EBF7CAD8D41D0F0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A74F578636FCA3EA776CF3D072D68D87</key>
+		<key>20CC89E514171BEA49DC69B50918E630</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>320DFB64AAEC6DE687CC81B84B3A76BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DB3653D5FFD8293D20D547E34EB5583A</key>
+		<key>E24FE74FFA9ACEE8AF701EBC3419D89E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E58D60BB43F6B7FC5E611BA7C1C058A2</key>
+		<key>EDFDB0DDCE27A879E4122010A2AC377B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

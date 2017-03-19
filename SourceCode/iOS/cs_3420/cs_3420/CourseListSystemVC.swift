@@ -8,6 +8,8 @@
 
 import UIKit
 import PullToRefreshSwift
+import SDCAlertView
+
 
 class CourseListSystemVC: UIViewController {
 
@@ -101,24 +103,34 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
+        let course = self.courses[indexPath.row]
+        
         if editingStyle == .delete {
-
-            let course = courses[indexPath.row]
-
-            self.showProgressUpdating()
-            DataService.instance.deleteCourse(course: course) { (err) in
-                self.dismissProgress()
+            
+            let alert = AlertController(title: "Alert", message: "Do you want to remove \'\(course.name)\'", preferredStyle: .alert)
+            alert.add(AlertAction(title: "Cancel", style: .normal))
+            alert.add(AlertAction(title: "Yes", style: .destructive, handler: { alertAction in
                 
-                if let err = err {
-                    self.showError(err: err)
-                    return
+                // Agree to DELETE
+                
+                self.showProgressDeleting()
+                DataService.instance.deleteCourse(course: course) { (err) in
+                    self.dismissProgress()
+                    
+                    if let err = err {
+                        self.showError(err: err)
+                        return
+                    }
+                    
+                    self.courses.remove(at: indexPath.row)
+                    //self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.loadUI()
                 }
-                
-                self.courses.remove(at: indexPath.row)
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
-            }
+            }))
+            alert.present()
         }
     }
+    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 

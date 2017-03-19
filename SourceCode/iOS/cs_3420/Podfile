@@ -15,4 +15,5 @@ target 'cs_3420' do
   pod 'SDWebImage', '~>3.8'
   pod 'SloppySwiper'
   pod 'PullToRefreshSwift'
+  pod 'SDCAlertView', '~> 7.1'
 end
