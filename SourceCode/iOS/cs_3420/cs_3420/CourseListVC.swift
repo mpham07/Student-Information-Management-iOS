@@ -142,7 +142,18 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
         if isAdmin {
             if editingStyle == .delete {
                 
+                let course = (self.courses[indexPath.row].courseInfo)!
+                
+                Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", {
+                    
+                    DataService.instance.deleteCoursesForStudent(user: self.student!, course: course, { (err) in
+                        
+                            self.tableView.reloadData()
+                        })
+                })
             }
         }
     }
+    
+    
 }

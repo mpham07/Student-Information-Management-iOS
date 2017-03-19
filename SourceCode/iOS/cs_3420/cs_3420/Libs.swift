@@ -10,5 +10,17 @@ import Foundation
 import SDCAlertView
 
 class Libs {
+   
     
+    static func showAlertView (title: String, message: String, _ onComplete: @escaping ()->()) {
+        
+        let alert = AlertController(title: title, message: message, preferredStyle: .alert)
+        alert.add(AlertAction(title: "Cancel", style: .normal))
+        alert.add(AlertAction(title: "Yes", style: .destructive, handler: { alertAction in
+            
+            onComplete()
+        }))
+        
+        alert.present()
+    }
 }
