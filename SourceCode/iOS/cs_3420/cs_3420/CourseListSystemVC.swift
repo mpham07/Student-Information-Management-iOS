@@ -42,7 +42,7 @@ class CourseListSystemVC: UIViewController {
     public func loadAllCoursesFromDB(indicator: Bool) {
 
         if indicator { showProgressUpdating() }
-        DataService.instance.getAllCourses { (err, courses) in
+        DataService.instance.getAllCourses(isSelectingList: isSelectingList) { (err, courses) in
             if indicator { self.dismissProgress() }
 
             if let err = err {
@@ -106,12 +106,21 @@ extension CourseListSystemVC {
             
             var countDown = 0
             for course in arrCourses {
-                DataService.instance.addCoursesForStudent(user: student!, course: course, data: dict) { (err) in
+                
+                guard let student = student else {
+                    return
+                }
+                
+                DataService.instance.addCoursesForStudent(user: student, course: course, data: dict) { (err) in
                     
                     countDown += 1
                     
                     if (countDown == arrCourses.count) {
+                        let vc = self.navigationController?.visibleViewController as? CourseListVC
+                        
                         let _ = self.navigationController?.popViewController(animated: true)
+                        
+                        vc?.getCoursesOfAStudent(student: student)
                     }
                 }
             }

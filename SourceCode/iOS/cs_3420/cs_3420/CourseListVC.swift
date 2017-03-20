@@ -46,31 +46,37 @@ class CourseListVC: UIViewController {
     func getCoursesOfAStudent(student: User?) {
 
         if let user = student {
-            if let coursesList = user.course_grades {
-                courses = coursesList
-
-                var countDown = 0
-                for i in 0..<courses.count {
-                    let course = courses[i]
-                    DataService.instance.getACourseInfo(uid: course.uid_course, { (err, courseInfo) in
-                        
-                        if let err = err {
-                            print (err)
-                            return
-                        }
-
-                        // Successfully get course info
-                        if let courseInfo = courseInfo as? Course {
-                            course.courseInfo = courseInfo
-                            countDown += 1
+            
+            DataService.instance.getCoursesOfAStudent(user: user, { (error, data) in
+                
+                if let course_grades = data as? [Course_Grade] {
+                    self.courses = course_grades
+                    user.course_grades = course_grades
+                    
+                    var countDown = 0
+                    for i in 0..<self.courses.count {
+                        let course = self.courses[i]
+                        DataService.instance.getACourseInfo(uid: course.uid_course, { (err, courseInfo) in
                             
-                            if countDown == self.courses.count {
-                                self.tableView.reloadData()
+                            if let err = err {
+                                print (err)
+                                return
                             }
-                        }
-                    })
+                            
+                            // Successfully get course info
+                            if let courseInfo = courseInfo as? Course {
+                                course.courseInfo = courseInfo
+                                countDown += 1
+                                
+                                if countDown == self.courses.count {
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        })
+                    }
+
                 }
-            }
+            })
         }
     }
 }

@@ -148,7 +148,7 @@ extension LoginVC {
     
     func getCoursesFromDB() {
         
-        DataService.instance.getAllCourses { (err, courses) in
+        DataService.instance.getAllCourses(isSelectingList: true) { (err, courses) in
             
             if let err = err {
                 print(err)
