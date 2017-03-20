@@ -49,10 +49,11 @@ class CourseListVC: UIViewController {
             if let coursesList = user.course_grades {
                 courses = coursesList
 
+                var countDown = 0
                 for i in 0..<courses.count {
                     let course = courses[i]
                     DataService.instance.getACourseInfo(uid: course.uid_course, { (err, courseInfo) in
-
+                        
                         if let err = err {
                             print (err)
                             return
@@ -61,8 +62,11 @@ class CourseListVC: UIViewController {
                         // Successfully get course info
                         if let courseInfo = courseInfo as? Course {
                             course.courseInfo = courseInfo
-
-                            self.tableView.reloadData()
+                            countDown += 1
+                            
+                            if countDown == self.courses.count {
+                                self.tableView.reloadData()
+                            }
                         }
                     })
                 }
@@ -160,7 +164,8 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
                 Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", {
 
                     DataService.instance.deleteCoursesForStudent(user: self.student!, course: course, { (err) in
-
+                        
+                        self.courses.remove(at: indexPath.row)
                         self.tableView.reloadData()
                     })
                 })

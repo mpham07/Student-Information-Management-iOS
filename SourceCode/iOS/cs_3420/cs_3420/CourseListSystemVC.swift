@@ -104,10 +104,15 @@ extension CourseListSystemVC {
                         CONSTANTS.courses_grades.QUIZ_2: CONSTANTS.courses_grades.DEFAULT_GRADE]
             
             
+            var countDown = 0
             for course in arrCourses {
                 DataService.instance.addCoursesForStudent(user: student!, course: course, data: dict) { (err) in
                     
-                    print("Added a \(course.course_id) for Student successfully")
+                    countDown += 1
+                    
+                    if (countDown == arrCourses.count) {
+                        let _ = self.navigationController?.popViewController(animated: true)
+                    }
                 }
             }
         }
@@ -189,12 +194,9 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
             
             if let cell = tableView.cellForRow(at: indexPath) {
                 if cell.accessoryType == .none {
-                    
-                    print("checkmark")
                     cell.accessoryType = .checkmark
                 }else if cell.accessoryType == .checkmark {
                     cell.accessoryType = .none
-                    print("none")
                 }
             }
             
