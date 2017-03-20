@@ -101,7 +101,7 @@ class User {
             return "\(gpa)"
         }
 
-        return "0"
+        return "N/A"
     }
 
     var takingCourses: String {
@@ -110,7 +110,7 @@ class User {
             return "\(grades.count)"
         }
 
-        return ""
+        return "0"
     }
 
     var totalCredit: String {

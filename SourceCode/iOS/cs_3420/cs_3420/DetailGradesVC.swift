@@ -44,7 +44,13 @@ class DetailGradesVC: UIViewController {
     
     func setUpHeaderAndFooter() {
         if let courseGrade = courseGrade {
-            lblAverage.text = "\(courseGrade.averge!)"
+            
+            if let ave = courseGrade.averge {
+                lblAverage.text = "\(ave)"
+            }else {
+                lblAverage.text = "N/A"
+            }
+            
             lblNameCourse.text = courseGrade.courseInfo!.course_id
         }
     }

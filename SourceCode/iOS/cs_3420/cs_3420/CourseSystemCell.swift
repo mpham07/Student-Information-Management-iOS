@@ -14,11 +14,13 @@ class CourseSystemCell: UITableViewCell {
     @IBOutlet weak var txtName: UILabel!
     @IBOutlet weak var txtType: UILabel!
     @IBOutlet weak var txtEnrolled: UILabel!
-    
+
     func updateUI(course: Course) {
+
         txtCourseID.text = course.course_id
         txtName.text = course.name
         txtType.text = course.type
         txtEnrolled.text = "\(course.enrolled)"
     }
 }
+
