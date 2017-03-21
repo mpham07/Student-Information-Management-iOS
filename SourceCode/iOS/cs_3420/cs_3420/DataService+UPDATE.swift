@@ -19,9 +19,9 @@ extension DataService {
     }
     
     // UPDATE grades of a course_grade
-    func updateGradesOfACourse(user: User, course: Course, data: [String: Any], _ onComplete: Completion_And_Err?) {
+    func updateGradesOfACourse(user_uid: String, course_uid: String, data: [String: Any], _ onComplete: Completion_And_Err?) {
         
-        let ref = user_ref.child(user.uid).child(CONSTANTS.courses_grades.UID).child(course.uid)
+        let ref = user_ref.child(user_uid).child(CONSTANTS.courses_grades.UID).child(course_uid)
         ref.updateChildValues(data) { (err, ref) in
             onComplete?(err?.localizedDescription)
         }

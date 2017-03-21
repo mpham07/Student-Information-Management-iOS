@@ -97,8 +97,8 @@ class User {
             }
 
             let gpa = sum / Double(grades.count)
-
-            return "\(gpa)"
+            
+            return "\(Double(round(10 * gpa)/10))"
         }
 
         return "N/A"

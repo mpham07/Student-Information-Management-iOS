@@ -25,11 +25,15 @@ class CourseListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadDB()
-        loadUI()
+        
         setUpTableView()
         handleGoBackSwipeAction(swiper: &self.swiper)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadDB()
+        loadUI()
     }
     
     func loadDB() {
@@ -149,6 +153,7 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let courseGrade = courses[indexPath.row]
+        courseGrade.student_uid = student?.uid
         self.performSegue(withIdentifier: "toDetailGradesVC", sender: courseGrade)
     }
 
@@ -179,7 +184,7 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
                         
                         self.courses.remove(at: indexPath.row)
                         self.student?.course_grades?.remove(at: indexPath.row)
-                        self.tableView.reloadData()
+                        self.tableView.deleteRows(at: [indexPath], with: .left)
                     })
                 })
             }

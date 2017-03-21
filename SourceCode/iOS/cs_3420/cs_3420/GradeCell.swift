@@ -13,7 +13,7 @@ class GradeCell: UITableViewCell {
 
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
-    @IBOutlet weak var lblGrade: UILabel!
+    @IBOutlet weak var lblGrade: UITextField!
 
     func updateUI(course_grade: Course_Grade, name: CONSTANTS.nameOfGrades) {
         
@@ -57,6 +57,8 @@ class GradeCell: UITableViewCell {
                 
                 lblGrade.textColor = UIColor.red
                 lblStatus.text = CONSTANTS.statusOfGrades.GRADED
+            }else {
+                lblGrade.textColor = Libs.colorWithHexString("2C4158")
             }
         } else {
             lblGrade.text = nil
@@ -64,5 +66,17 @@ class GradeCell: UITableViewCell {
         }
         
         lblName.text = name.rawValue
+    }
+    
+    func enableEditingGrades(is editing: Bool) {
+        
+        if editing {
+            lblGrade.isUserInteractionEnabled = true
+            lblGrade.layer.borderWidth = 1.0
+            
+        }else {
+            lblGrade.isUserInteractionEnabled = false
+            lblGrade.layer.borderWidth = 0
+        }
     }
 }

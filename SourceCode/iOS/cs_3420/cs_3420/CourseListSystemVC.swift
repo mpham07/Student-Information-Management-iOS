@@ -212,20 +212,6 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
 
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
 
-//            if let cell = tableView.cellForRow(at: indexPath) {
-//                if cell.accessoryType == .none {
-//                    cell.accessoryType = .checkmark
-//                } else if cell.accessoryType == .checkmark {
-//                    cell.accessoryType = .none
-//                }
-//            }
-//
-//
-//            let count = getCoursesSelected().count
-//
-//            btnRightMenu.isHidden = count == 0
-//            lblTotal.text = "\(count)"
-
             btnRightMenu.isHidden = false
 
             if let countSelectedCell = tableView.indexPathsForSelectedRows {
@@ -258,7 +244,7 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
         }
 
         for index in indexPaths {
-
+            
             arr.append(courses[index.row])
         }
 

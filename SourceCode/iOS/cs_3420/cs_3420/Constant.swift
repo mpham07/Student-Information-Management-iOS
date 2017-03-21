@@ -39,11 +39,11 @@ struct CONSTANTS {
     struct courses_grades {
         
         static let UID = "courses_grades"
-        static let ASSIGNMENT = "assigment"
-        static let FINAL = "final"
-        static let MIDTERM = "midterm"
-        static let QUIZ_1 = "quiz_1"
-        static let QUIZ_2 = "quiz_2"
+        static let ASSIGNMENT = keyOfGrades.ASSIGNMENT.rawValue
+        static let FINAL = keyOfGrades.FINAL.rawValue
+        static let MIDTERM = keyOfGrades.MIDTERM.rawValue
+        static let QUIZ_1 = keyOfGrades.QUIZ_1.rawValue
+        static let QUIZ_2 = keyOfGrades.QUIZ_2.rawValue
         static let UID_COURSE = "uid_course"
         
         static let NONE_AVERAGE = "N/A"
@@ -62,6 +62,14 @@ struct CONSTANTS {
         case QUIZ_2 = "Quiz 2"
         case MIDTERM = "Midterm"
         case FINAL = "Final"
+    }
+    
+    enum keyOfGrades: String {
+        case ASSIGNMENT = "assigment"
+        case FINAL = "final"
+        case MIDTERM = "midterm"
+        case QUIZ_1 = "quiz_1"
+        case QUIZ_2 = "quiz_2"
     }
     
     struct statusOfGrades {

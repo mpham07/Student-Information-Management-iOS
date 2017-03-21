@@ -63,21 +63,21 @@ extension LoginVC {
         }
     }
     
-    func updateGradesOfACourse() {
-        
-        let user = self.users[0]
-        let course = self.courses[0]
-        let dict = [CONSTANTS.courses_grades.ASSIGNMENT: 80,
-                    CONSTANTS.courses_grades.FINAL: 30,
-                    CONSTANTS.courses_grades.MIDTERM: CONSTANTS.courses_grades.DEFAULT_GRADE,
-                    CONSTANTS.courses_grades.QUIZ_1: 100,
-                    CONSTANTS.courses_grades.QUIZ_2: CONSTANTS.courses_grades.DEFAULT_GRADE]
-        
-        DataService.instance.updateGradesOfACourse(user: user, course: course, data: dict) { (err) in
-            
-            print("Update Grades of \(user.name) and course \(course.name)")
-        }
-    }
+//    func updateGradesOfACourse1() {
+//        
+//        let user = self.users[0]
+//        let course = self.courses[0]
+//        let dict = [CONSTANTS.courses_grades.ASSIGNMENT: 80,
+//                    CONSTANTS.courses_grades.FINAL: 30,
+//                    CONSTANTS.courses_grades.MIDTERM: CONSTANTS.courses_grades.DEFAULT_GRADE,
+//                    CONSTANTS.courses_grades.QUIZ_1: 100,
+//                    CONSTANTS.courses_grades.QUIZ_2: CONSTANTS.courses_grades.DEFAULT_GRADE]
+//        
+//        DataService.instance.updateGradesOfACourse(user_uid: user, course_uid: "fsf", data: dict) { (err) in
+//            
+//            print("Update Grades of \(user.name) and course \(course.name)")
+//        }
+//    }
     
     func addCoursesIntoAStudent() {
         

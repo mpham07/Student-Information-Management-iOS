@@ -18,6 +18,18 @@ class Course_Grade {
     private var _quiz_2: Int?
 
     private var _courseInfo: Course?
+    
+    private var _student_uid: String?
+    
+    var student_uid: String? {
+        
+        set{
+            _student_uid = newValue
+        }
+        get {
+            return _student_uid
+        }
+    }
 
     var courseInfo: Course? {
         get {
@@ -177,5 +189,25 @@ class Course_Grade {
 
     init(uid_course: String) {
         _uid_course = uid_course
+    }
+    
+    func updateGrade(type: CONSTANTS.keyOfGrades, newGrade: Int) {
+        switch type {
+        case .ASSIGNMENT:
+            _assignment = newGrade
+            break
+        case .QUIZ_1:
+            _quiz_1 = newGrade
+            break
+        case .QUIZ_2:
+            _quiz_2 = newGrade
+            break
+        case .MIDTERM:
+            _midterm = newGrade
+            break
+        case .FINAL:
+            _final = newGrade
+            break
+        }
     }
 }
