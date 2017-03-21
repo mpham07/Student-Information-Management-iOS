@@ -13,7 +13,7 @@ extension LoginVC {
     
     func setupViewDidLoad() {
         //get_1_course()
-        getCoursesFromDB()
+        //getCoursesFromDB()
         
         //get_1_User()
         getAllStudentsFromDB()
@@ -146,21 +146,21 @@ extension LoginVC {
     }
     
     
-    func getCoursesFromDB() {
-        
-        DataService.instance.getAllCourses(isSelectingList: true) { (err, courses) in
-            
-            if let err = err {
-                print(err)
-                return
-            }
-            
-            if let courses = courses as? [Course] {
-                self.courses = courses
-                //self.printC(num: 2)
-            }
-        }
-    }
+//    func getCoursesFromDB() {
+//        
+//        DataService.instance.getAllCourses { (err, courses) in
+//            
+//            if let err = err {
+//                print(err)
+//                return
+//            }
+//            
+//            if let courses = courses as? [Course] {
+//                self.courses = courses
+//                //self.printC(num: 2)
+//            }
+//        }
+//    }
     
     func get_1_course() {
         

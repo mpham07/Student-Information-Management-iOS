@@ -26,9 +26,9 @@ class CourseListSystemVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         isSelectingList = student != nil
-        
+
         setUpTableView()
         loadAllCoursesFromDB(indicator: false)
 
@@ -42,7 +42,7 @@ class CourseListSystemVC: UIViewController {
     public func loadAllCoursesFromDB(indicator: Bool) {
 
         if indicator { showProgressUpdating() }
-        DataService.instance.getAllCourses(isSelectingList: isSelectingList) { (err, courses) in
+        DataService.instance.getAllCourses(student: self.student)  { (err, courses) in
             if indicator { self.dismissProgress() }
 
             if let err = err {
@@ -75,15 +75,15 @@ extension CourseListSystemVC {
 
             lblTotal.text = "\(self.courses.count)"
         }
-        
+
         self.tableView.reloadData()
     }
 
     @IBAction func btnLeftMenu_Pressed(_ sender: Any) {
-        
+
         if !isSelectingList {
             slideMenuController()?.openLeft()
-        }else {
+        } else {
             let _ = self.navigationController?.popViewController(animated: true)
         }
     }
@@ -92,35 +92,33 @@ extension CourseListSystemVC {
 
         if !isSelectingList {
             performSegue(withIdentifier: "courseSysToDetailSys", sender: courses)
-        }else {
-            
+        } else {
+
             //let arrCourses = [self.courses[0], self.courses[1]]
             let arrCourses = self.getCoursesSelected()
-            
+
             let dict = [CONSTANTS.courses_grades.ASSIGNMENT: CONSTANTS.courses_grades.DEFAULT_GRADE,
-                        CONSTANTS.courses_grades.FINAL: CONSTANTS.courses_grades.DEFAULT_GRADE,
-                        CONSTANTS.courses_grades.MIDTERM: CONSTANTS.courses_grades.DEFAULT_GRADE,
-                        CONSTANTS.courses_grades.QUIZ_1: CONSTANTS.courses_grades.DEFAULT_GRADE,
-                        CONSTANTS.courses_grades.QUIZ_2: CONSTANTS.courses_grades.DEFAULT_GRADE]
-            
-            
+                CONSTANTS.courses_grades.FINAL: CONSTANTS.courses_grades.DEFAULT_GRADE,
+                CONSTANTS.courses_grades.MIDTERM: CONSTANTS.courses_grades.DEFAULT_GRADE,
+                CONSTANTS.courses_grades.QUIZ_1: CONSTANTS.courses_grades.DEFAULT_GRADE,
+                CONSTANTS.courses_grades.QUIZ_2: CONSTANTS.courses_grades.DEFAULT_GRADE]
+
+
             var countDown = 0
             for course in arrCourses {
-                
+
                 guard let student = student else {
                     return
                 }
-                
+
                 DataService.instance.addCoursesForStudent(user: student, course: course, data: dict) { (err) in
-                    
+
                     countDown += 1
-                    
+
                     if (countDown == arrCourses.count) {
-                        let vc = self.navigationController?.visibleViewController as? CourseListVC
-                        
                         let _ = self.navigationController?.popViewController(animated: true)
-                        
-                        vc?.getCoursesOfAStudent(student: student)
+                        let vc = self.navigationController?.visibleViewController as? CourseListVC
+                        vc?.loadDB()
                     }
                 }
             }
@@ -135,7 +133,7 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
         if isSelectingList {
             tableView.allowsMultipleSelection = true
         }
-        
+
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -150,9 +148,9 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CourseSystemCell", for: indexPath) as? CourseSystemCell {
 
             let course = courses[indexPath.row]
-        
+
             cell.updateUI(course: course)
-            
+
             return cell
         }
 
@@ -197,35 +195,35 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
         if !isSelectingList {
             let course = courses[indexPath.row]
             performSegue(withIdentifier: "courseSysToDetailSys", sender: course)
-            
-        }else {
-            
-            
+
+        } else {
+
+
             if let cell = tableView.cellForRow(at: indexPath) {
                 if cell.accessoryType == .none {
                     cell.accessoryType = .checkmark
-                }else if cell.accessoryType == .checkmark {
+                } else if cell.accessoryType == .checkmark {
                     cell.accessoryType = .none
                 }
             }
-            
+
             lblTotal.text = "\(getCoursesSelected().count)"
         }
     }
-    
+
     func getCoursesSelected() -> [Course] {
-        
+
         var arr = [Course]()
-        
+
         for row in 0..<courses.count {
-            
+
             let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0))
             if cell?.accessoryType == .checkmark {
-                
+
                 arr.append(courses[row])
             }
         }
-        
+
         return arr
     }
 

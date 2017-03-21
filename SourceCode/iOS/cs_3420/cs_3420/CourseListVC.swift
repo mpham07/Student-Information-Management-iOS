@@ -8,6 +8,7 @@
 
 import UIKit
 import SloppySwiper
+import PullToRefreshSwift
 
 class CourseListVC: UIViewController {
 
@@ -25,22 +26,18 @@ class CourseListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadDB()
+        loadUI()
+        setUpTableView()
+        handleGoBackSwipeAction(swiper: &self.swiper)
+    }
+    
+    func loadDB() {
         if isAdmin {
             getCoursesOfAStudent(student: student)
         } else {
             getCoursesOfAStudent(student: AppState.instance.user)
         }
-
-        loadUI()
-        setUpTableView()
-        handleGoBackSwipeAction(swiper: &self.swiper)
-    }
-
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        //self.navigationController?.slideMenuController()?.addLeftGestures()
     }
 
     func getCoursesOfAStudent(student: User?) {
@@ -66,9 +63,12 @@ class CourseListVC: UIViewController {
                             // Successfully get course info
                             if let courseInfo = courseInfo as? Course {
                                 course.courseInfo = courseInfo
+                                self.student?.course_grades = self.courses
+                                
                                 countDown += 1
                                 
                                 if countDown == self.courses.count {
+                                    
                                     self.tableView.reloadData()
                                 }
                             }
@@ -114,6 +114,12 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
     func setUpTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.addPullRefresh { [weak self] in
+            
+            self?.loadDB()
+            self?.tableView.stopPullRefreshEver()
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -172,6 +178,7 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
                     DataService.instance.deleteCoursesForStudent(user: self.student!, course: course, { (err) in
                         
                         self.courses.remove(at: indexPath.row)
+                        self.student?.course_grades?.remove(at: indexPath.row)
                         self.tableView.reloadData()
                     })
                 })

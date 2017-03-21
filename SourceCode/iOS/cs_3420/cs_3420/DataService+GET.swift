@@ -21,27 +21,27 @@ extension DataService {
 
             var course_gradeList = [Course_Grade]()
             for snap in snapshot.children.allObjects as! [FIRDataSnapshot] {
-                
+
                 guard let item = snap.value as? [String: Any] else { return }
-               
-              
-                        let course_grade = Course_Grade(uid_course: snap.key)
 
-                        if let value = item as? [String: Int] {
-                            
-                            //print(value)
-                            course_grade.assignment = value[CONSTANTS.courses_grades.ASSIGNMENT]
-                            course_grade.final = value[CONSTANTS.courses_grades.FINAL]
-                            course_grade.midterm = value[CONSTANTS.courses_grades.MIDTERM]
-                            course_grade.quiz_1 = value[CONSTANTS.courses_grades.QUIZ_1]
-                            course_grade.quiz_2 = value[CONSTANTS.courses_grades.QUIZ_2]
-                        }
 
-                        course_gradeList.append(course_grade)
-               
-                
+                let course_grade = Course_Grade(uid_course: snap.key)
+
+                if let value = item as? [String: Int] {
+
+                    //print(value)
+                    course_grade.assignment = value[CONSTANTS.courses_grades.ASSIGNMENT]
+                    course_grade.final = value[CONSTANTS.courses_grades.FINAL]
+                    course_grade.midterm = value[CONSTANTS.courses_grades.MIDTERM]
+                    course_grade.quiz_1 = value[CONSTANTS.courses_grades.QUIZ_1]
+                    course_grade.quiz_2 = value[CONSTANTS.courses_grades.QUIZ_2]
+                }
+
+                course_gradeList.append(course_grade)
+
+
             }
-            
+
             onComplete?(nil, course_gradeList)
 
         }) { (error) in
@@ -53,23 +53,23 @@ extension DataService {
     // Get only 1 course from DB
     func getACourseInfo(uid: String?, _ onComplete: Completion_Data_And_Err?) {
 
-        getCourse(uid_parameter: uid) { (error, data) in
+        getCourse(student: nil, uid_parameter: uid) { (error, data) in
 
             onComplete?(error, data)
         }
     }
 
     // Get all courses from DB
-    func getAllCourses(isSelectingList: Bool, _ onComplete: Completion_Data_And_Err?) {
+    func getAllCourses(student: User?, _ onComplete: Completion_Data_And_Err?) {
 
-        getCourse(uid_parameter: nil) { (error, data) in
+        getCourse(student: student, uid_parameter: nil) { (error, data) in
 
             onComplete?(error, data)
         }
     }
 
     // General GET function supports about GET COURSE funcs
-    private func getCourse (uid_parameter: String?, _ onComplete: Completion_Data_And_Err?) {
+    private func getCourse (student: User?, uid_parameter: String?, _ onComplete: Completion_Data_And_Err?) {
 
         course_ref.observeSingleEvent(of: .value, with: { (snapshot) in
             var courses: [Course]?
@@ -92,16 +92,35 @@ extension DataService {
                     }
                 }
 
-                guard let course_id = item[CONSTANTS.courses.COURSE_ID] as? String, let name = item[CONSTANTS.courses.NAME] as? String, let type = item[CONSTANTS.courses.TYPE] as? String, let registed = item[CONSTANTS.courses.REGISTERED] as? Int else { return }
+                guard let course_id = item[CONSTANTS.courses.COURSE_ID] as? String, let name = item[CONSTANTS.courses.NAME] as? String, let type = item[CONSTANTS.courses.TYPE] as? String, let registed = item[CONSTANTS.courses.REGISTERED] as? Int
+
+                    else {
+                        return
+                }
+
+                // Check to remove to get CourseList for add course
+                if let student = student {
+                    if let grades = student.course_grades {
+
+
+                        if self.checkContained(in: grades, course_id: course_id) {
+                            continue
+                        }
+
+                    }
+                }
+
 
                 let course = Course(uid: uid, course_id: course_id, name: name, type: type, registed: registed)
 
+                //print(course.course_id)
                 // Check if want to get 1 course
                 if uid_parameter != nil {
                     onComplete?(nil, course)
                     return
 
                 } else {
+
                     courses?.append(course)
                 }
             }
@@ -119,6 +138,20 @@ extension DataService {
         }) { (error) in
             onComplete?(error.localizedDescription, nil)
         }
+    }
+    
+    private func checkContained(in parentArr: [Course_Grade], course_id: String) -> Bool{
+        
+        for i in 0..<parentArr.count {
+            
+            if let info = parentArr[i].courseInfo {
+                if info.course_id == course_id {
+                    return true
+                }
+            }
+        }
+        
+        return false
     }
 
     // =========== USERS GET METHOD ===========

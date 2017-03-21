@@ -11,6 +11,10 @@ import SDCAlertView
 
 class Libs {
    
+    private static var _instance = Libs()
+    static var instance: Libs {
+        return _instance
+    }
     
     static func showAlertView (title: String, message: String, _ onComplete: @escaping ()->()) {
         
