@@ -20,6 +20,12 @@ class StudentListVC: UIViewController {
         super.viewDidLoad()
 
         setUpTableView()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         loadAllStudentsData()
     }
     

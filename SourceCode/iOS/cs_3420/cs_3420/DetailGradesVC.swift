@@ -48,7 +48,7 @@ class DetailGradesVC: UIViewController {
             if let ave = courseGrade.averge {
                 lblAverage.text = "\(ave)"
             }else {
-                lblAverage.text = "N/A"
+                lblAverage.text = CONSTANTS.courses_grades.NONE_AVERAGE
             }
             
             lblNameCourse.text = courseGrade.courseInfo!.course_id

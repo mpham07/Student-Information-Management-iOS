@@ -46,6 +46,7 @@ struct CONSTANTS {
         static let QUIZ_2 = "quiz_2"
         static let UID_COURSE = "uid_course"
         
+        static let NONE_AVERAGE = "N/A"
         static let DEFAULT_GRADE = -1
     }
     

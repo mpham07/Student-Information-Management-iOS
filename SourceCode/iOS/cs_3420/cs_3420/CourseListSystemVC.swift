@@ -42,7 +42,7 @@ class CourseListSystemVC: UIViewController {
     public func loadAllCoursesFromDB(indicator: Bool) {
 
         if indicator { showProgressUpdating() }
-        DataService.instance.getAllCourses(student: self.student)  { (err, courses) in
+        DataService.instance.getAllCourses(student: self.student) { (err, courses) in
             if indicator { self.dismissProgress() }
 
             if let err = err {
@@ -71,6 +71,15 @@ extension CourseListSystemVC {
             lblSelected.text = "Selected: "
             lblTitle.text = "Select Course"
             btnLeftMenu.setImage(UIImage(named: "back"), for: .normal)
+            
+            btnRightMenu.setImage(nil, for: .normal)
+            btnRightMenu.setTitle("Done", for: .normal)
+            btnRightMenu.setTitleColor(UIColor.lightGray, for: .highlighted)
+            btnRightMenu.layer.borderWidth = 1.0
+            btnRightMenu.layer.cornerRadius = 4
+            btnRightMenu.layer.borderColor = UIColor.white.cgColor
+            btnRightMenu.contentHorizontalAlignment = .center
+            btnRightMenu.isHidden = true
         } else {
 
             lblTotal.text = "\(self.courses.count)"
@@ -162,32 +171,37 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
         return 85.0
     }
 
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+
+        if !isSelectingList {
+            return .delete
+        }
+
+        return .none
+    }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
         let course = self.courses[indexPath.row]
+        Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", {
 
-        if !isSelectingList && editingStyle == .delete {
+            // Agree to DELETE
 
-            Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", {
+            self.showProgressDeleting()
+            DataService.instance.deleteCourse(course: course) { (err) in
+                self.dismissProgress()
 
-                // Agree to DELETE
-
-                self.showProgressDeleting()
-                DataService.instance.deleteCourse(course: course) { (err) in
-                    self.dismissProgress()
-
-                    if let err = err {
-                        self.showError(err: err)
-                        return
-                    }
-
-                    self.courses.remove(at: indexPath.row)
-                    //self.tableView.deleteRows(at: [indexPath], with: .fade)
-                    self.loadUI()
+                if let err = err {
+                    self.showError(err: err)
+                    return
                 }
 
-            })
-        }
+                self.courses.remove(at: indexPath.row)
+                self.loadUI()
+            }
+
+        })
+
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -207,7 +221,11 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
 
-            lblTotal.text = "\(getCoursesSelected().count)"
+            
+            let count = getCoursesSelected().count
+
+            btnRightMenu.isHidden = count == 0
+            lblTotal.text = "\(count)"
         }
     }
 

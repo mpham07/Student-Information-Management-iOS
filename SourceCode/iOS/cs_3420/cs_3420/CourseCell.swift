@@ -24,6 +24,8 @@ class CourseCell: UITableViewCell {
             
             if let average = course.averge {
                 txtAverage.text = "\(Int(average))"
+            }else {
+                txtAverage.text = CONSTANTS.courses_grades.NONE_AVERAGE
             }
         }
     }
