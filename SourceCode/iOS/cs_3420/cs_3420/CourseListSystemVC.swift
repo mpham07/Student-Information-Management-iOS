@@ -71,7 +71,7 @@ extension CourseListSystemVC {
             lblSelected.text = "Selected: "
             lblTitle.text = "Select Course"
             btnLeftMenu.setImage(UIImage(named: "back"), for: .normal)
-            
+
             btnRightMenu.setImage(nil, for: .normal)
             btnRightMenu.setTitle("Done", for: .normal)
             btnRightMenu.setTitleColor(UIColor.lightGray, for: .highlighted)
@@ -111,7 +111,6 @@ extension CourseListSystemVC {
                 CONSTANTS.courses_grades.MIDTERM: CONSTANTS.courses_grades.DEFAULT_GRADE,
                 CONSTANTS.courses_grades.QUIZ_1: CONSTANTS.courses_grades.DEFAULT_GRADE,
                 CONSTANTS.courses_grades.QUIZ_2: CONSTANTS.courses_grades.DEFAULT_GRADE]
-
 
             var countDown = 0
             for course in arrCourses {
@@ -205,27 +204,48 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         if !isSelectingList {
             let course = courses[indexPath.row]
             performSegue(withIdentifier: "courseSysToDetailSys", sender: course)
 
         } else {
 
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
 
-            if let cell = tableView.cellForRow(at: indexPath) {
-                if cell.accessoryType == .none {
-                    cell.accessoryType = .checkmark
-                } else if cell.accessoryType == .checkmark {
-                    cell.accessoryType = .none
-                }
+//            if let cell = tableView.cellForRow(at: indexPath) {
+//                if cell.accessoryType == .none {
+//                    cell.accessoryType = .checkmark
+//                } else if cell.accessoryType == .checkmark {
+//                    cell.accessoryType = .none
+//                }
+//            }
+//
+//
+//            let count = getCoursesSelected().count
+//
+//            btnRightMenu.isHidden = count == 0
+//            lblTotal.text = "\(count)"
+
+            btnRightMenu.isHidden = false
+
+            if let countSelectedCell = tableView.indexPathsForSelectedRows {
+                lblTotal.text = "\(countSelectedCell.count)"
             }
 
-            
-            let count = getCoursesSelected().count
+        }
+    }
 
-            btnRightMenu.isHidden = count == 0
-            lblTotal.text = "\(count)"
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+
+        if let indexPaths = tableView.indexPathsForSelectedRows {
+            let countSelectedCell = indexPaths.count
+            lblTotal.text = "\(countSelectedCell)"
+
+        }else {
+            btnRightMenu.isHidden = true
+            lblTotal.text = "0"
         }
     }
 
@@ -233,13 +253,13 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
 
         var arr = [Course]()
 
-        for row in 0..<courses.count {
+        guard let indexPaths = tableView.indexPathsForSelectedRows else {
+            return arr
+        }
 
-            let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0))
-            if cell?.accessoryType == .checkmark {
+        for index in indexPaths {
 
-                arr.append(courses[row])
-            }
+            arr.append(courses[index.row])
         }
 
         return arr
