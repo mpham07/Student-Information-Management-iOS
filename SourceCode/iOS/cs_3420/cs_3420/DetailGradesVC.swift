@@ -45,7 +45,9 @@ class DetailGradesVC: UIViewController {
                 lblAverage.text = CONSTANTS.courses_grades.NONE_AVERAGE
             }
             
-            lblNameCourse.text = courseGrade.courseInfo!.course_id
+            if let courseInfo = courseGrade.courseInfo {
+                lblNameCourse.text = courseInfo.course_id
+            }
         }
         
         if isAdmin {
@@ -82,6 +84,10 @@ class DetailGradesVC: UIViewController {
                 self.btnRightMenu.setTitleColor(UIColor.lightGray, for: .highlighted)
                 self.loadUI()
                 self.tableView.reloadData()
+                
+                if let previousVC = self.navigationController?.viewControllers[1] as? CourseListVC {
+                    previousVC.loadDB()
+                }
             })
         }
     }

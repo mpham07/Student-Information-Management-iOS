@@ -18,12 +18,11 @@ class Course_Grade {
     private var _quiz_2: Int?
 
     private var _courseInfo: Course?
-    
     private var _student_uid: String?
-    
+
     var student_uid: String? {
-        
-        set{
+
+        set {
             _student_uid = newValue
         }
         get {
@@ -45,27 +44,27 @@ class Course_Grade {
         var sum = 0
         var count = 0
 
-        if let assign = _assignment, assign > 0 {
+        if let assign = _assignment, assign >= 0 {
             sum += assign
             count += 1
         }
 
-        if let final = _final, final > 0 {
+        if let final = _final, final >= 0 {
             sum += final
             count += 1
         }
 
-        if let midterm = _midterm, midterm > 0 {
+        if let midterm = _midterm, midterm >= 0 {
             sum += midterm
             count += 1
         }
 
-        if let quiz_1 = _quiz_1, quiz_1 > 0 {
+        if let quiz_1 = _quiz_1, quiz_1 >= 0 {
             sum += quiz_1
             count += 1
         }
 
-        if let quiz_2 = _quiz_2, quiz_2 > 0 {
+        if let quiz_2 = _quiz_2, quiz_2 >= 0 {
             sum += quiz_2
             count += 1
         }
@@ -173,24 +172,41 @@ class Course_Grade {
         return nil
     }
 
+//    var creditHour: Int {
+//
+//        var str = _uid_course
+//
+//        let i1 = str.index(str.startIndex, offsetBy: str.characters.count - 3)
+//        let i2 = str.index(after: i1)
+//        let range = i1..<i2
+//
+//        str = str.substring(with: range)
+//        
+//        if let num = Int(str) {
+//            return num
+//        }
+//        
+//        return 0
+//    }
+
     var creditHour: Int {
 
         if  var str = courseInfo?.course_id {
             let i1 = str.index(str.startIndex, offsetBy: str.characters.count - 3)
             let i2 = str.index(after: i1)
             let range = i1..<i2
-            
+
             str = str.substring(with: range)
             return Int(str)!
         }
-        
+
         return 0
     }
 
     init(uid_course: String) {
         _uid_course = uid_course
     }
-    
+
     func updateGrade(type: CONSTANTS.keyOfGrades, newGrade: Int) {
         switch type {
         case .ASSIGNMENT:

@@ -8,13 +8,22 @@
 
 import UIKit
 
+protocol StudentCellDelegate {
+    func imageProfile_Pressed(cell: StudentCell)
+}
+
 class StudentCell: UITableViewCell {
+    
     @IBOutlet weak var imgProfile: CustomizedImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblTaking: UILabel!
     @IBOutlet weak var lblGPA: UILabel!
+    var delegate: StudentCellDelegate!
+ 
+    @IBAction func tapProfile(_ sender: Any) {
+        delegate.imageProfile_Pressed(cell: self)
+    }
     
-
     func updateUI(student: User) {
         if let img = student.photoUrl {
             imgProfile.sd_setImage(with: URL(string: img), placeholderImage: UIImage(named: CONSTANTS.imagesAssets.PROFILE_DEFAULT))

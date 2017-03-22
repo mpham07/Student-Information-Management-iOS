@@ -28,10 +28,7 @@ class CourseListVC: UIViewController {
         
         setUpTableView()
         handleGoBackSwipeAction(swiper: &self.swiper)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
         loadDB()
         loadUI()
     }
@@ -40,7 +37,8 @@ class CourseListVC: UIViewController {
         if isAdmin {
             getCoursesOfAStudent(student: student)
         } else {
-            getCoursesOfAStudent(student: AppState.instance.user)
+            student = AppState.instance.user
+            getCoursesOfAStudent(student: student)
         }
     }
 

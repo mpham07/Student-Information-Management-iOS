@@ -10,7 +10,6 @@ import UIKit
 
 class GradeCell: UITableViewCell {
 
-
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblGrade: UITextField!
@@ -54,12 +53,11 @@ class GradeCell: UITableViewCell {
             lblGrade.text = "\(grade)"
             if grade <= 60 {
                 // Set font color to RED
-                
                 lblGrade.textColor = UIColor.red
-                lblStatus.text = CONSTANTS.statusOfGrades.GRADED
             }else {
                 lblGrade.textColor = Libs.colorWithHexString("2C4158")
             }
+            lblStatus.text = CONSTANTS.statusOfGrades.GRADED
         } else {
             lblGrade.text = nil
             lblStatus.text = CONSTANTS.statusOfGrades.IN_COMNG
@@ -73,10 +71,12 @@ class GradeCell: UITableViewCell {
         if editing {
             lblGrade.isUserInteractionEnabled = true
             lblGrade.layer.borderWidth = 1.0
+            lblGrade.placeholder = "0"
             
         }else {
             lblGrade.isUserInteractionEnabled = false
             lblGrade.layer.borderWidth = 0
+            lblGrade.placeholder = ""
         }
     }
 }
