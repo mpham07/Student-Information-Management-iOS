@@ -40,7 +40,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - PullToRefreshSwift (3.0.3)
-  - SDCAlertView (7.1.1)
+  - SDCAlertView (7.1.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -69,7 +69,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   PullToRefreshSwift: 0743b818072bfd7c9464addc2d1b987b131057ca
-  SDCAlertView: 4798cda4a480f90b24313d3cb07640243943d129
+  SDCAlertView: c39fa91a3aeb5eeba58fe9cea648263b131ff2bf
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SloppySwiper: 7fdffc91062af8fb80574dee80082cb9e0cee507

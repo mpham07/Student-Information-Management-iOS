@@ -10,7 +10,7 @@ import Foundation
 
 extension DataService {
 
-    //Remove courses for a student
+    //DELETE courses for a student
     func deleteCoursesForStudent(user: User, course: Course, _ onComplete: Completion_And_Err?) {
 
         let ref = user_ref.child(user.uid).child(CONSTANTS.courses_grades.UID).child(course.uid)

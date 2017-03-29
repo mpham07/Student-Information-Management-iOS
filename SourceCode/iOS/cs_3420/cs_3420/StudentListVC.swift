@@ -47,7 +47,7 @@ class StudentListVC: UIViewController {
                 //self.dismissProgress()
                 FTIndicator.dismissProgress()
                 self.students = studentList
-                print(self.students[0].totalCredit)
+                //print(self.students[0].totalCredit)
                 self.loadUI()
             }
         }

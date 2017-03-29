@@ -70,7 +70,10 @@ class DetailGradesVC: UIViewController {
                 return
             }
             
-            let grades = getGradesFromCells()
+            guard let grades = getGradesFromCells() else {
+                self.showError(err: "Grade should be in range 0 to 100!")
+                return
+            }
             
             DataService.instance.updateGradesOfACourse(user_uid: course.student_uid!, course_uid: course.uid_course, data: grades, { (err) in
                 
@@ -92,7 +95,7 @@ class DetailGradesVC: UIViewController {
         }
     }
     
-    private func getGradesFromCells() -> [String: Int] {
+    private func getGradesFromCells() -> [String: Int]? {
         
         var grades: [String: Int] = [:]
         for row in 0..<nameGrades.count {
@@ -100,6 +103,9 @@ class DetailGradesVC: UIViewController {
             if let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) as? GradeCell {
                 
                 if let grade = Int(cell.lblGrade.text!) {
+                    if grade > CONSTANTS.courses_grades.MAX_GRADE || grade < CONSTANTS.courses_grades.MIN_GRADE {
+                        return nil
+                    }
                     grades[keyGrades[row].rawValue] = grade
                 }else {
                     grades[keyGrades[row].rawValue] = CONSTANTS.courses_grades.DEFAULT_GRADE

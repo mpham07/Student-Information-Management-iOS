@@ -48,6 +48,8 @@ struct CONSTANTS {
         
         static let NONE_AVERAGE = "N/A"
         static let DEFAULT_GRADE = -1
+        static let MAX_GRADE = 100
+        static let MIN_GRADE = 0
     }
     
     struct notices {
