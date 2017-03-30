@@ -10,6 +10,23 @@ import UIKit
 
 @IBDesignable
 class CustomizedTextField: UITextField {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        isUserInteractionEnabled = false
+    }
+    
+    @IBInspectable var textOrange: Bool = false {
+    
+        didSet {
+            if textOrange {
+                self.textColor = COLORS.ORANGE
+            }else {
+                self.textColor = COLORS.DEFAULT
+            }
+        }
+    }
 
     @IBInspectable var borderColor: UIColor? {
         didSet{
@@ -28,4 +45,20 @@ class CustomizedTextField: UITextField {
             layer.borderWidth = borderWidth
         }
     }
+    
+    var isEditingMode: Bool = false {
+        didSet{
+            if isEditingMode == true {
+                isUserInteractionEnabled = true
+                borderWidth = 1
+                borderColor = COLORS.DEFAULT
+                cornerRadius = 4
+            }else {
+                borderWidth = 0
+                cornerRadius = 0
+                isUserInteractionEnabled = false
+            }
+        }
+    }
+
 }

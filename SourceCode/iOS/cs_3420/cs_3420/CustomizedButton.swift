@@ -28,4 +28,14 @@ class CustomizedButton: UIButton {
             layer.borderColor = borderColor?.cgColor
         }
     }
+    
+    func setToEditMode() {
+        setTitle("Edit", for: .normal)
+        setTitleColor(UIColor.lightGray, for: .highlighted)
+    }
+    
+    func setToDoneMode() {
+        setTitle("Done", for: .normal)
+        setTitleColor(UIColor.lightGray, for: .highlighted)
+    }
 }

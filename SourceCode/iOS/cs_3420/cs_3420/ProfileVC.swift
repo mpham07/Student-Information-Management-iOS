@@ -14,20 +14,24 @@ import SloppySwiper
 class ProfileVC: UIViewController {
     var swiper = SloppySwiper()
 
-    @IBOutlet weak var lblMajor: UILabel!
+    @IBOutlet weak var lblMajor: CustomizedTextField!
     @IBOutlet weak var lblCredits: UILabel!
-    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblName: CustomizedTextField!
     @IBOutlet weak var imgProfile: CustomizedImageView!
-    @IBOutlet weak var lblStudentID: UILabel!
+    @IBOutlet weak var lblStudentID: CustomizedTextField!
     @IBOutlet weak var lblGPA: UILabel!
     @IBOutlet weak var btnLeftMenu: UIButton!
+    @IBOutlet weak var btnRightMenu: CustomizedButton!
+    @IBOutlet weak var stackViewForStudent: UIStackView!
+    @IBOutlet weak var stackViewForStudent2: UIStackView!
 
     var student: User?
 
     // isAdminMode to check who is login
     // isAdmin to check who is been working on in this VC
-    var isAdminMode: Bool = false
-    var isAdmin: Bool = false
+    var isAdminLogin: Bool = false
+    var isAdminProfile: Bool = false
+    var isEditingProfile: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +41,15 @@ class ProfileVC: UIViewController {
         }
         //print(student?.totalCredit)
         if let userAppstate = AppState.instance.user {
-            isAdminMode = userAppstate.isAdmin
+            isAdminLogin = userAppstate.isAdmin
         }
 
         //print(student?.totalCredit)
-        isAdmin = (student?.isAdmin)!
+        isAdminProfile = (student?.isAdmin)!
 
         // Admin Login && Profile of Student
-        if isAdminMode && !isAdmin {
-
+        if isAdminLogin && !isAdminProfile {
+            
             btnLeftMenu.setImage(UIImage(named: "back"), for: .normal)
             handleGoBackSwipeAction(swiper: &self.swiper)
 
@@ -74,6 +78,21 @@ class ProfileVC: UIViewController {
                     })
                 }
             }
+            
+        }else if isAdminLogin && isAdminProfile {
+            // Admin Login && Profile of Admin
+            
+            stackViewForStudent.isHidden = true
+            stackViewForStudent2.isHidden = true
+        }else if !isAdminLogin {
+            // Student Login
+
+        }
+        
+        if isAdminLogin {
+            // Admin Login
+            btnRightMenu.isHidden = false
+            
         }
 
         updateUI(user: student!)
@@ -90,6 +109,7 @@ class ProfileVC: UIViewController {
         guard let student_id = user.student_id else {
             return
         }
+        
         lblStudentID.text = student_id
         lblGPA.text = user.GPA
         lblCredits.text = user.totalCredit
@@ -98,10 +118,53 @@ class ProfileVC: UIViewController {
 
     @IBAction func btnOpenMenu_Pressed(_ sender: Any) {
 
-        if isAdminMode && !isAdmin {
+        if isAdminLogin && !isAdminProfile {
             let _ = self.navigationController?.popViewController(animated: true)
         } else {
             slideMenuController()?.openLeft()
+        }
+    }
+    
+    @IBAction func btnRightMenu_Pressed(_ sender: Any) {
+        
+        if isAdminLogin {
+            
+            if !isEditingProfile {
+                
+                self.setEditingModeForUI(value: true)
+            }else {
+                
+                let user = student!
+                
+                var info = [CONSTANTS.users.NAME: lblName.text!]
+                
+                if user.isStudent {
+                    info[CONSTANTS.users.STUDENT_ID] = lblStudentID.text!
+                    info[CONSTANTS.users.MAJOR] = lblMajor.text!
+                }
+
+                DataService.instance.updateAUserInfo(user: user, data: info) { (err) in
+                    
+                    self.setEditingModeForUI(value: false)
+                    print("UPDATED user info successfully")
+                }
+                
+                
+            }
+        }
+    }
+    
+    private func setEditingModeForUI(value: Bool) {
+        
+        isEditingProfile = value
+        lblName.isEditingMode = value
+        lblMajor.isEditingMode = value
+        lblStudentID.isEditingMode = value
+        
+        if value {
+            btnRightMenu.setToDoneMode()
+        }else {
+            btnRightMenu.setToEditMode()
         }
     }
 }

@@ -53,9 +53,9 @@ class GradeCell: UITableViewCell {
             lblGrade.text = "\(grade)"
             if grade <= 60 {
                 // Set font color to RED
-                lblGrade.textColor = UIColor.red
+                lblGrade.textColor = COLORS.RED
             }else {
-                lblGrade.textColor = Libs.colorWithHexString("2C4158")
+                lblGrade.textColor = COLORS.DEFAULT
             }
             lblStatus.text = CONSTANTS.statusOfGrades.GRADED
         } else {
