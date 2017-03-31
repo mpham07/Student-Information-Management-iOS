@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol StudentCellDelegate {
+protocol StudentCellDelegate: NSObjectProtocol {
     func imageProfile_Pressed(cell: StudentCell)
 }
 
@@ -18,7 +18,7 @@ class StudentCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblTaking: UILabel!
     @IBOutlet weak var lblGPA: UILabel!
-    var delegate: StudentCellDelegate!
+    weak var delegate: StudentCellDelegate!
  
     @IBAction func tapProfile(_ sender: Any) {
         delegate.imageProfile_Pressed(cell: self)

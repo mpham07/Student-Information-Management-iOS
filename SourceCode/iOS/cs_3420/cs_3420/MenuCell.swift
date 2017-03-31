@@ -16,6 +16,7 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var onNotify: UISwitch!
     
     @IBOutlet weak var imgBackground: UIImageView!
+    
     func updateUI(itemInfo: String) {
         
         if itemInfo == CONSTANTS.menuItems.LOGOUT.rawValue {
@@ -38,6 +39,4 @@ class MenuCell: UITableViewCell {
             imgBackground.image = nil
         }
     }
-    
-    
 }

@@ -14,7 +14,6 @@ class CustomizedTextField: UITextField {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        isUserInteractionEnabled = false
     }
     
     @IBInspectable var textOrange: Bool = false {
