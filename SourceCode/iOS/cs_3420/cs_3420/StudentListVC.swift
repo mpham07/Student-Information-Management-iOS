@@ -56,7 +56,11 @@ class StudentListVC: UIViewController {
 
 // Take care of UI events
 extension StudentListVC {
-
+   
+    @IBAction func btnOpenRightMenu(_ sender: Any) {
+        performSegue(withIdentifier: "segStudentListVCToNewStudentVC", sender: nil)
+    }
+    
     @IBAction func btnOpenLeftMenu(_ sender: Any) {
 
         self.navigationController?.slideMenuController()?.openLeft()
@@ -126,6 +130,33 @@ extension StudentListVC: UITableViewDelegate, UITableViewDataSource, StudentCell
             let student = students[indexPath.row]
             performSegue(withIdentifier: "studentVCToProfileVC", sender: student)
 
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let student = students[indexPath.row]
+        
+        if editingStyle == .delete {
+            
+            // To do something
+            Libs.showAlertView(title: "Alert", message: "Do you want to DELETE '\(student.name)'", actionTitle: "Yes", {
+                
+                self.showProgress(type: .DELETING)
+                AuthService.instance.deleteAStudent(user: student, { (err) in
+                    self.dismissProgress()
+                    if let err = err {
+                        
+                        print(err)
+                        return
+                    }
+                    
+                    // Sucessfully Delete
+                    print("Sucessfully Delete")
+                    self.students.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .left)
+                })
+            })
         }
     }
 }

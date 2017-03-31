@@ -49,19 +49,19 @@ extension LoginVC {
         }
     }
     
-    func updateUserInfo() {
-        let user = self.users[2]
-        
-        var info = [CONSTANTS.users.NAME: "Lalala",]
-        
-        if user.isStudent {
-            info[CONSTANTS.users.STUDENT_ID] = "223344244"
-        }
-        
-        DataService.instance.updateAUserInfo(user: user, data: info) { (err) in
-            print("UPDATED user info successfully")
-        }
-    }
+//    func updateUserInfo() {
+//        let user = self.users[2]
+//        
+//        var info = [CONSTANTS.users.NAME: "Lalala",]
+//        
+//        if user.isStudent {
+//            info[CONSTANTS.users.STUDENT_ID] = "223344244"
+//        }
+//        
+//        DataService.instance.updateAUserInfo(user: user, data: info) { (err) in
+//            print("UPDATED user info successfully")
+//        }
+//    }
     
 //    func updateGradesOfACourse1() {
 //        

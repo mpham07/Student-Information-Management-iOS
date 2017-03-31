@@ -10,7 +10,18 @@ import Foundation
 import FTIndicator
 import SloppySwiper
 
+enum ProgressType: String{
+    case LOADING = "Loading..."
+    case UPDATING = "Updating..."
+    case DELETING = "Deleting..."
+}
+
 extension UIViewController {
+    
+    func showProgress(type: ProgressType) {
+      
+        FTIndicator.showProgressWithmessage(type.rawValue, userInteractionEnable: false)
+    }
     
     func showProgressLoading() {
         FTIndicator.showProgressWithmessage(CONSTANTS.indicatorMessage.LOADING, userInteractionEnable: false)
@@ -39,6 +50,4 @@ extension UIViewController {
         
         navigationController?.delegate = swiper;
     }
-    
-    
 }

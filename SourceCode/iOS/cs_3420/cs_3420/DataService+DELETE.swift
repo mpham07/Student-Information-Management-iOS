@@ -28,16 +28,24 @@ extension DataService {
             })
         }
     }
-
-    // DELETE a course from Course Lists ********** TEMP *************
+    
+    // DELETE a course from Course Lists
     func deleteCourse(course: Course, _ onComplete: Completion_And_Err?) {
 
         if course.enrolled == 0 {
             course_ref.child(course.uid).removeValue { (err, ref) in
                 onComplete?(err?.localizedDescription)
             }
-        }else {
+        } else {
             onComplete?(CONSTANTS.notices.COURSE_BEING_ENROLLED)
+        }
+    }
+
+    // DELETE a user infos
+    func deleteUserInfo(user: User, _ onComplete: Completion_And_Err?) {
+        let ref = user_ref.child(user.uid)
+        ref.removeValue { (error, ref) in
+            onComplete?(error?.localizedDescription)
         }
     }
 }

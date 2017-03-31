@@ -11,19 +11,27 @@ import SDCAlertView
 
 class Libs {
    
-    private static var _instance = Libs()
-    static var instance: Libs {
-        return _instance
-    }
+//    private static var _instance = Libs()
+//    static var instance: Libs {
+//        return _instance
+//    }
     
-    static func showAlertView (title: String, message: String, _ onComplete: @escaping ()->()) {
+    static func showAlertView (title: String, message: String, actionTitle: String?, _ onComplete: @escaping ()->()) {
         
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
-        alert.add(AlertAction(title: "Cancel", style: .normal))
-        alert.add(AlertAction(title: "Yes", style: .destructive, handler: { alertAction in
+        
+        var cancelTitle = "OK"
+        
+        if actionTitle != nil {
+            cancelTitle = "Cancel"
             
-            onComplete()
-        }))
+            alert.add(AlertAction(title: actionTitle!, style: .destructive, handler: { alertAction in
+                
+                onComplete()
+            }))
+        }
+        
+        alert.add(AlertAction(title: cancelTitle, style: .normal))
         
         alert.present()
     }

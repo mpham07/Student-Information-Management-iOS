@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335.19999999999999" y="62.518740629685162"/>
+            <point key="canvasLocation" x="-822" y="256"/>
         </scene>
         <!--Course ListVC-->
         <scene sceneID="iw3-cb-560">
@@ -461,10 +461,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZU4-VN-usR">
-                                                    <rect key="frame" x="18" y="8" width="284" height="52"/>
+                                                    <rect key="frame" x="18" y="8" width="339" height="52"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="ImL-Kg-Wlk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="204" height="52"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="259" height="52"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bD5-Qt-Afg">
                                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="34.5"/>
@@ -489,7 +489,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MQ6-ZU-8VI" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
-                                                            <rect key="frame" x="204" y="0.0" width="80" height="52"/>
+                                                            <rect key="frame" x="259" y="0.0" width="80" height="52"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="52" id="SOa-Gl-1e1"/>
                                                                 <constraint firstAttribute="width" constant="80" id="uGL-KO-wQ1"/>
@@ -772,12 +772,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDa-hW-bTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="522" y="65"/>
+            <point key="canvasLocation" x="-161" y="256"/>
         </scene>
-        <!--View Controller-->
+        <!--New StudentVC-->
         <scene sceneID="1iJ-vd-1eb">
             <objects>
-                <viewController id="JDU-9F-5cQ" sceneMemberID="viewController">
+                <viewController id="JDU-9F-5cQ" customClass="NewStudentVC" customModule="cs_3420" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7c-my-HVY"/>
                         <viewControllerLayoutGuide type="bottom" id="xQp-b9-Guc"/>
@@ -807,7 +807,7 @@
                                                         <color key="textColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="henry@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MjC-wl-LAx" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="henry@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MjC-wl-LAx" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                         <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
@@ -830,7 +830,7 @@
                                                         <color key="textColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qqqqqq" borderStyle="roundedRect" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1e9-4E-ZDz" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qqqqqq" borderStyle="roundedRect" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1e9-4E-ZDz" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                         <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
@@ -858,7 +858,7 @@
                                                         <color key="textColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minh Pham" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kfx-Cv-eES" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Henry Pham" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kfx-Cv-eES" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                         <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
@@ -881,7 +881,7 @@
                                                         <color key="textColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999222111" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lcD-jS-G5c" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="222331111" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lcD-jS-G5c" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                         <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
@@ -906,7 +906,7 @@
                                                 <color key="textColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Computer Science" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="5" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="liN-aq-yoQ" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Computer Science" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="5" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="liN-aq-yoQ" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                 <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
@@ -930,6 +930,7 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                         <connections>
+                                            <action selector="btnLeftMenu:" destination="JDU-9F-5cQ" eventType="touchUpInside" id="5OC-dT-RyA"/>
                                             <action selector="btnOpenMenu_Pressed:" destination="x5a-jV-AbH" eventType="touchUpInside" id="iNo-lx-wso"/>
                                         </connections>
                                     </button>
@@ -943,7 +944,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-bt-CP2" customClass="CustomizedButton" customModule="cs_3420" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-bt-CP2" customClass="CustomizedButton" customModule="cs_3420" customModuleProvider="target">
                                         <rect key="frame" x="314" y="29.5" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="N2A-aW-Fsh"/>
@@ -964,6 +965,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="btnRightMenu:" destination="JDU-9F-5cQ" eventType="touchUpInside" id="sdW-ij-XAs"/>
                                             <action selector="btnRightMenu_Pressed:" destination="x5a-jV-AbH" eventType="touchUpInside" id="OLe-G5-4BF"/>
                                             <action selector="btnRightMenu_Pressed:" destination="89y-fx-9ld" eventType="touchUpInside" id="YfF-qm-hfb"/>
                                             <action selector="btnRightNavi_Pressed:" destination="4E0-ia-Z0V" eventType="touchUpInside" id="mFp-b5-D2Z"/>
@@ -996,6 +998,13 @@
                             <constraint firstItem="410-Ng-fcb" firstAttribute="top" secondItem="ctO-VD-BoI" secondAttribute="top" id="v4L-PM-OYA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="MjC-wl-LAx" id="Z6d-Di-ZJN"/>
+                        <outlet property="txtId" destination="lcD-jS-G5c" id="9hG-tH-xp3"/>
+                        <outlet property="txtMajor" destination="liN-aq-yoQ" id="lb9-Qq-nWx"/>
+                        <outlet property="txtName" destination="kfx-Cv-eES" id="SKL-WC-zMV"/>
+                        <outlet property="txtPass" destination="1e9-4E-ZDz" id="42r-l3-DlS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvw-g4-RHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1283,7 +1292,6 @@
                         <outlet property="lblName" destination="itA-Cc-NKW" id="IB6-m7-StU"/>
                         <outlet property="lblStudentID" destination="zoa-SD-nBv" id="dRD-M8-MyA"/>
                         <outlet property="stackViewForStudent" destination="fSg-hC-g1Z" id="sG8-gr-jI1"/>
-                        <outlet property="stackViewForStudent2" destination="VU2-WR-ePP" id="RdQ-kP-TRR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeX-Zu-3in" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1357,6 +1365,7 @@
                                         <state key="normal" image="add"/>
                                         <connections>
                                             <action selector="btnAddNewCourse_Pressed:" destination="v8o-2b-5mg" eventType="touchUpInside" id="Jtp-5f-iO3"/>
+                                            <action selector="btnOpenRightMenu:" destination="GRL-Xc-wep" eventType="touchUpInside" id="z3k-PE-94b"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1414,7 +1423,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8x-VK-WS2">
-                                                    <rect key="frame" x="290" y="31" width="12" height="22"/>
+                                                    <rect key="frame" x="345" y="31" width="12" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="M6l-vn-F26"/>
                                                         <constraint firstAttribute="width" constant="12" id="SrU-GC-3qM"/>
@@ -1422,7 +1431,7 @@
                                                     <state key="normal" image="arrowRight"/>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-iQ-1l2">
-                                                    <rect key="frame" x="23" y="11.5" width="252" height="62"/>
+                                                    <rect key="frame" x="23" y="11.5" width="307" height="62"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-G3-roT">
                                                             <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
@@ -1474,19 +1483,19 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fFE-gf-Afe">
-                                                            <rect key="frame" x="82" y="7.5" width="170" height="47"/>
+                                                            <rect key="frame" x="82" y="7.5" width="225" height="47"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minh Pham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JtT-uI-lPW">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="27.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="27.5"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                                     <color key="textColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="njp-JT-aAv">
-                                                                    <rect key="frame" x="0.0" y="27.5" width="170" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="27.5" width="225" height="19.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gcR-56-IX0">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="19.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="19.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taking: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e10-v6-0N8">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="56" height="19.5"/>
@@ -1498,7 +1507,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrY-Hb-wgc">
-                                                                                    <rect key="frame" x="56" y="0.0" width="29" height="19.5"/>
+                                                                                    <rect key="frame" x="56" y="0.0" width="56.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                                                     <color key="textColor" red="0.6705882352941176" green="0.39215686274509803" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -1506,7 +1515,7 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8st-xx-4iA">
-                                                                            <rect key="frame" x="85" y="0.0" width="85" height="19.5"/>
+                                                                            <rect key="frame" x="112.5" y="0.0" width="112.5" height="19.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPA: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERg-aB-Oek">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="45" height="19.5"/>
@@ -1518,7 +1527,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQc-BE-8yb">
-                                                                                    <rect key="frame" x="45" y="0.0" width="40" height="19.5"/>
+                                                                                    <rect key="frame" x="45" y="0.0" width="67.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                                                     <color key="textColor" red="0.6705882352941176" green="0.39215686274509803" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -1574,11 +1583,12 @@
                         <outlet property="tableView" destination="MzH-HE-bXp" id="oCF-Mn-mW1"/>
                         <segue destination="aLj-1z-2o5" kind="show" identifier="studentListToCourseList" id="oN9-qn-J0C"/>
                         <segue destination="x5a-jV-AbH" kind="show" identifier="studentVCToProfileVC" id="9Th-vS-feW"/>
+                        <segue destination="JDU-9F-5cQ" kind="show" identifier="segStudentListVCToNewStudentVC" id="oFw-LB-yrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKm-87-nRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="65"/>
+            <point key="canvasLocation" x="671" y="155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="paY-hq-3BJ">
@@ -1799,7 +1809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c58-Cs-4EV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2401" y="64"/>
+            <point key="canvasLocation" x="2401" y="128"/>
         </scene>
         <!--Detail Course SystemVC-->
         <scene sceneID="1Lt-tk-Fdx">

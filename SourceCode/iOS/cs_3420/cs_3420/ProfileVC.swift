@@ -23,7 +23,6 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var btnLeftMenu: UIButton!
     @IBOutlet weak var btnRightMenu: CustomizedButton!
     @IBOutlet weak var stackViewForStudent: UIStackView!
-    @IBOutlet weak var stackViewForStudent2: UIStackView!
 
     var student: User?
 
@@ -70,7 +69,6 @@ class ProfileVC: UIViewController {
                             
                             course.courseInfo = courseInfo
                             if countDouwn == course_grades.count {
-                                print("aa")
                                 self.updateUI(user: self.student!)
                                 return
                             }
@@ -83,7 +81,6 @@ class ProfileVC: UIViewController {
             // Admin Login && Profile of Admin
             
             stackViewForStudent.isHidden = true
-            stackViewForStudent2.isHidden = true
         }else if !isAdminLogin {
             // Student Login
 

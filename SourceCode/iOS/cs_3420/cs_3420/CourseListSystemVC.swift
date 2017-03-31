@@ -182,7 +182,7 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
         let course = self.courses[indexPath.row]
-        Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", {
+        Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", actionTitle: "Yes", {
 
             // Agree to DELETE
 

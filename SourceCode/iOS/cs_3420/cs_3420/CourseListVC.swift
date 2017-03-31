@@ -176,7 +176,7 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
 
                 let course = (self.courses[indexPath.row].courseInfo)!
 
-                Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", {
+                Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", actionTitle: "Yes", {
 
                     DataService.instance.deleteCoursesForStudent(user: self.student!, course: course, { (err) in
                         

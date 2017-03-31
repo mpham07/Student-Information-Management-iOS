@@ -13,12 +13,14 @@ struct COLORS {
     static let DEFAULT = colorWithHexString("2C4158")
     static let ORANGE = colorWithHexString("AB6426")
     static let RED = UIColor.red
-}
-
-extension COLORS {
-    // Function helpers
     
-    internal static func colorWithHexString(_ hexString: String, alpha: CGFloat? = 1.0) -> UIColor {
+    
+    
+    
+    
+    
+    // Function helpers
+    private static func colorWithHexString(_ hexString: String, alpha: CGFloat? = 1.0) -> UIColor {
         
         let hexint = Int(intFromHexString(hexString))
         let red = CGFloat((hexint & 0xff0000) >> 16) / 255.0

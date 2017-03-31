@@ -13,6 +13,7 @@
 		BA01B47B1E79C38E004E8FE7 /* CourseListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */; };
 		BA01B47D1E79C54F004E8FE7 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */; };
 		BA38EA1C1E7F251500CE45A3 /* Libs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38EA1B1E7F251500CE45A3 /* Libs.swift */; };
+		BA3C57A61E8ECE6000348FFF /* NewStudentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C57A51E8ECE6000348FFF /* NewStudentVC.swift */; };
 		BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */; };
 		BA3DE8B61E7CB5D300E703FB /* DetailGradesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B51E7CB5D300E703FB /* DetailGradesVC.swift */; };
 		BA3DE8B81E7CBB2F00E703FB /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B71E7CBB2F00E703FB /* GradeCell.swift */; };
@@ -54,6 +55,7 @@
 		BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListVC.swift; sourceTree = "<group>"; };
 		BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		BA38EA1B1E7F251500CE45A3 /* Libs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Libs.swift; sourceTree = "<group>"; };
+		BA3C57A51E8ECE6000348FFF /* NewStudentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStudentVC.swift; sourceTree = "<group>"; };
 		BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BA3DE8B51E7CB5D300E703FB /* DetailGradesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGradesVC.swift; sourceTree = "<group>"; };
 		BA3DE8B71E7CBB2F00E703FB /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				BABF08B91E7DA4D20017A387 /* StudentListVC.swift */,
 				BABF08BD1E7DD9BB0017A387 /* CourseListSystemVC.swift */,
 				BAC19C4A1E7E3246009E2243 /* DetailCourseSystemVC.swift */,
+				BA3C57A51E8ECE6000348FFF /* NewStudentVC.swift */,
 				BAA15D801E726FD60028F47B /* Shared */,
 			);
 			name = Controller;
@@ -402,6 +405,7 @@
 				BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */,
 				BAA15D6F1E726E2B0028F47B /* LoginVC.swift in Sources */,
 				BA3DE8B61E7CB5D300E703FB /* DetailGradesVC.swift in Sources */,
+				BA3C57A61E8ECE6000348FFF /* NewStudentVC.swift in Sources */,
 				BAE1015D1E78EA0D002FB15F /* CustomizedButton.swift in Sources */,
 				BA3DE8B81E7CBB2F00E703FB /* GradeCell.swift in Sources */,
 				BAE876151E7DE66600E3A07B /* UIViewController+Ext.swift in Sources */,
