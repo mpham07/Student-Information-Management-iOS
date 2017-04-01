@@ -66,4 +66,8 @@ class Course {
         _name = name
         _type = type
     }
+    
+    deinit {
+        print("=============== > deinit Course")
+    }
 }

@@ -226,4 +226,8 @@ class Course_Grade {
             break
         }
     }
+    
+    deinit {
+        print("=============== > deinit Course_Grade")
+    }
 }
