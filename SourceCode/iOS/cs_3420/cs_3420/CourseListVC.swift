@@ -49,7 +49,7 @@ class CourseListVC: UIViewController {
 
         if let user = student {
             
-            showProgress(type: .LOADING, userInteractionEnable: true)
+            //showProgress(type: .LOADING, userInteractionEnable: true)
             DataService.instance.getCoursesOfAStudent(user: user, { (error, data) in
         
                 if let course_grades = data as? [Course_Grade] {
@@ -59,14 +59,14 @@ class CourseListVC: UIViewController {
                     var countDown = 0
                     
                     if self.courses.count == 0 {
-                        self.dismissProgress()
+                        //self.dismissProgress()
                     }
                     
                     for i in 0..<self.courses.count {
                         let course = self.courses[i]
                         DataService.instance.getACourseInfo(uid: course.uid_course, { (err, courseInfo) in
                             
-                            self.dismissProgress()
+                            //self.dismissProgress()
                             
                             if let err = err {
                                 print (err)

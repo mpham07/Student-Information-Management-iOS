@@ -28,9 +28,9 @@ class StudentListVC: UIViewController {
     }
 
     func loadAllStudentsData() {
-        showProgress(type: .LOADING, userInteractionEnable: true)
+        //showProgress(type: .LOADING, userInteractionEnable: true)
         DataService.instance.getAllStudents { (err, students) in
-            self.dismissProgress()
+            //self.dismissProgress()
             
             if let err = err {
                 

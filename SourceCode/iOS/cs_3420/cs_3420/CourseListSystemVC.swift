@@ -43,9 +43,9 @@ class CourseListSystemVC: UIViewController {
 
     public func loadAllCoursesFromDB(indicator: Bool) {
 
-        if indicator { showProgress(type: .UPDATING, userInteractionEnable: false) }
+        //if indicator { showProgress(type: .UPDATING, userInteractionEnable: false) }
         DataService.instance.getAllCourses(student: self.student) { (err, courses) in
-            if indicator { self.dismissProgress() }
+            //if indicator { self.dismissProgress() }
 
             if let err = err {
                 print(err)
@@ -192,14 +192,14 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
         Libs.showAlertView(title: nil, message: "Do you want to delete \'\(course.name)\'?", actionCompletion: { 
             // Agree to DELETE
             
-            self.showProgress(type: .DELETING, userInteractionEnable: false)
+            //self.showProgress(type: .DELETING, userInteractionEnable: false)
             DataService.instance.deleteCourse(course: course) { (err) in
-                
+                //self.dismissProgress()
                 
                 if let err = err {
                     
                     Libs.showAlertView(title: nil, message: err, cancelComplete: {
-                        self.dismissProgress()
+                        
                     })
                     return
                 }
