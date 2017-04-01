@@ -168,29 +168,13 @@ class ProfileVC: UIViewController {
                     let imageName = student.photoImagePath
 
                     if let profileImage = self.imgProfile.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
-                        
-                        let ref = FIRStorage.storage().reference().child(CONSTANTS.storage.STORAGE_PROFILE_IMAGES).child(imageName)
-                        ref.put(uploadData, metadata: nil, completion: { (metadata, error) in
-                            
+                        StorageService.instance.uploadAProfilePictureToStorage(user: student, fileName: imageName, uploadData: uploadData, { (error) in
+
                             if let err = error {
-                                print(err.localizedDescription)
-                                return
-                            }
-                            
-                            guard let path = metadata?.downloadURL()?.absoluteString else { return }
-                            let userInfo = [CONSTANTS.users.PHOTO_URL: path]
-                            
-                            // Successfully
-                            DataService.instance.updateAUserInfo(user: student, data:userInfo, { (err) in
-                                
-                                if let err = err {
-                                    print(err)
-                                    return
-                                }
-                                
-                                // success
+                                print(err)
+                            } else {
                                 self.setEditingModeForUI(value: false, isProfileEditing: true)
-                            })
+                            }
                         })
                     }
                 }

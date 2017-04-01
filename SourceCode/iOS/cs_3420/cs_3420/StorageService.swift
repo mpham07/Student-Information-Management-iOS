@@ -16,7 +16,7 @@ class StorageService {
     static var instance: StorageService {
         return _instance
     }
-    
+
     var main_ref: FIRStorageReference {
         return FIRStorage.storage().reference()
     }
@@ -24,25 +24,47 @@ class StorageService {
     var images_ref: FIRStorageReference {
         return main_ref.child(CONSTANTS.storage.STORAGE_PROFILE_IMAGES)
     }
-    
+
     func uploadAProfilePictureToStorage(user: User, fileName: String, uploadData: Data, _ onComplete: Completion_And_Err?) {
-        let _ = images_ref.child(fileName)
-        //ref.put(uploadData, metadata: nil) { (metadate, err) in
+        
+        images_ref.child(fileName).put(uploadData, metadata: nil) { (metadata, err) in
+
+            if let err = err {
+                onComplete?(err.localizedDescription)
+                return
+            }
+
+            guard let path = metadata?.downloadURL()?.absoluteString else {
+                onComplete?("Cannot get PhotoUrl")
+                return }
             
-        //}
+            let userInfo = [CONSTANTS.users.PHOTO_URL: path]
+
+            // Successfully
+            DataService.instance.updateAUserInfo(user: user, data: userInfo, { (err) in
+
+                if let err = err {
+                     onComplete?(err)
+                    return
+                }
+
+                // success
+                onComplete?(nil)
+            })
+        }
     }
-    
-    func deleteProfilePicture(user: User,  _ onComplete: Completion_And_Err?) {
+
+    func deleteProfilePicture(user: User, _ onComplete: Completion_And_Err?) {
         images_ref.child(user.photoImagePath).delete { (err) in
             if let err = err {
                 onComplete?(err.localizedDescription)
-            }else {
+            } else {
                 onComplete?(nil)
             }
         }
     }
-    
+
     func getDownloadUrl(path: String) {
-      //  main_ref.child(path)
+        //  main_ref.child(path)
     }
 }

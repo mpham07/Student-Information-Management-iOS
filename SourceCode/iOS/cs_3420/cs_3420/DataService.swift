@@ -11,10 +11,10 @@ import UIKit
 import FirebaseDatabase
 
 typealias ErrorMessage = String?
-typealias Data = Any?
+typealias AnyData = Any?
 
 typealias Completion_And_Err = (_ errMsg: ErrorMessage) -> Void
-typealias Completion_Data_And_Err = (_ errMsg: ErrorMessage, _ data: Data) -> Void
+typealias Completion_Data_And_Err = (_ errMsg: ErrorMessage, _ data: AnyData) -> Void
 
 class DataService {
     
