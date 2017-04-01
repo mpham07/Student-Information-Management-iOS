@@ -28,30 +28,30 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f1x-rQ-6v6">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="78"/>
                                         <subviews>
-                                            <stackView opaque="NO" tag="10" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QnR-Pl-ms7">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="27"/>
+                                            <stackView opaque="NO" tag="10" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QnR-Pl-ms7">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="29"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DEi-oE-zkH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="21"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="z0j-ND-fVi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="21" height="16"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="21" id="YRZ-ZB-Jd3"/>
-                                                                    <constraint firstAttribute="height" constant="16" id="wza-hs-47x"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="wza-hs-47x"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNM-Bx-s9Z">
-                                                                <rect key="frame" x="41" y="0.0" width="239" height="16"/>
+                                                                <rect key="frame" x="41" y="0.0" width="239" height="21"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZG-YW-WU3" userLabel="Line">
-                                                        <rect key="frame" x="0.0" y="26" width="280" height="1"/>
+                                                        <rect key="frame" x="0.0" y="28" width="280" height="1"/>
                                                         <color key="backgroundColor" red="0.25882352941176467" green="0.32941176470588235" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="IUF-4O-cas"/>
@@ -65,21 +65,21 @@
                                                     <constraint firstItem="DEi-oE-zkH" firstAttribute="leading" secondItem="QnR-Pl-ms7" secondAttribute="leading" id="tBN-Oc-EnI"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lYX-8I-3d0">
-                                                <rect key="frame" x="0.0" y="47" width="280" height="31"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="lYX-8I-3d0">
+                                                <rect key="frame" x="0.0" y="49" width="280" height="29"/>
                                                 <subviews>
                                                     <stackView opaque="NO" tag="10" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PGS-CT-Bd0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="21"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock" translatesAutoresizingMaskIntoConstraints="NO" id="CJN-NH-NpP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="arp-tI-nKF"/>
-                                                                    <constraint firstAttribute="height" constant="20" id="ibz-Gc-lnS"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="ibz-Gc-lnS"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wip-f5-cei">
-                                                                <rect key="frame" x="40" y="0.0" width="240" height="20"/>
+                                                                <rect key="frame" x="40" y="0.0" width="240" height="21"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
@@ -88,7 +88,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJP-eG-wXf" userLabel="Line">
-                                                        <rect key="frame" x="0.0" y="30" width="280" height="1"/>
+                                                        <rect key="frame" x="0.0" y="28" width="280" height="1"/>
                                                         <color key="backgroundColor" red="0.25882352941176467" green="0.32941176470588235" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="aSi-BD-rrw"/>
@@ -807,7 +807,7 @@
                                                         <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="textOrange" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
@@ -858,7 +858,7 @@
                                                         <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="textOrange" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
@@ -881,7 +881,7 @@
                                                         <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="textOrange" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
@@ -906,7 +906,7 @@
                                                 <rect key="frame" x="77" y="0.0" width="236" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="textOrange" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
