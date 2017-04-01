@@ -194,14 +194,16 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
             
             self.showProgress(type: .DELETING, userInteractionEnable: false)
             DataService.instance.deleteCourse(course: course) { (err) in
-                self.dismissProgress()
+                
                 
                 if let err = err {
                     
-                    Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
+                    Libs.showAlertView(title: nil, message: err, cancelComplete: {
+                        self.dismissProgress()
+                    })
                     return
                 }
-                
+               
                 self.courses.remove(at: indexPath.row)
                 self.loadUI()
             }

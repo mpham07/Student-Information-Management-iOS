@@ -22,12 +22,12 @@ extension UIViewController {
     
     func showProgress(type: ProgressType, userInteractionEnable: Bool) {
       
-        FTIndicator.showProgressWithmessage(type.rawValue, userInteractionEnable: userInteractionEnable)
+        //FTIndicator.showProgressWithmessage(type.rawValue, userInteractionEnable: userInteractionEnable)
     }
     
     func dismissProgress() {
       
-        FTIndicator.dismissProgress()
+        //FTIndicator.dismissProgress()
     }
     
     func handleGoBackSwipeAction(swiper: inout SloppySwiper) {
