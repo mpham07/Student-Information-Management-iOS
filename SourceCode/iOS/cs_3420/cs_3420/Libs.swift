@@ -16,7 +16,7 @@ class Libs {
 //        return _instance
 //    }
     
-    static func showAlertView (title: String, message: String, actionTitle: String?, _ onComplete: @escaping ()->()) {
+    static func showAlertView (title: String, message: String, actionTitle: String?, _ onComplete: Completion?) {
         
         let alert = AlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -25,14 +25,16 @@ class Libs {
         if actionTitle != nil {
             cancelTitle = "Cancel"
             
+            alert.add(AlertAction(title: cancelTitle, style: .normal))
             alert.add(AlertAction(title: actionTitle!, style: .destructive, handler: { alertAction in
                 
-                onComplete()
+                onComplete?()
             }))
+            alert.present()
+            return
         }
         
-        alert.add(AlertAction(title: cancelTitle, style: .normal))
-        
+        alert.add(AlertAction(title: cancelTitle, style: .destructive))
         alert.present()
     }
 }

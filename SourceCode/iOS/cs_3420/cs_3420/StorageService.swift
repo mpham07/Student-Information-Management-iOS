@@ -25,17 +25,17 @@ class StorageService {
         return main_ref.child(CONSTANTS.storage.STORAGE_PROFILE_IMAGES)
     }
 
-    func uploadAProfilePictureToStorage(user: User, fileName: String, uploadData: Data, _ onComplete: Completion_And_Err?) {
+    func uploadAProfilePictureToStorage(user: User, fileName: String, uploadData: Data, _ onComplete: Completion_Data_And_Err?) {
         
         images_ref.child(fileName).put(uploadData, metadata: nil) { (metadata, err) in
 
             if let err = err {
-                onComplete?(err.localizedDescription)
+                onComplete?(err.localizedDescription, nil)
                 return
             }
 
             guard let path = metadata?.downloadURL()?.absoluteString else {
-                onComplete?("Cannot get PhotoUrl")
+                onComplete?("Cannot get PhotoUrl", nil)
                 return }
             
             let userInfo = [CONSTANTS.users.PHOTO_URL: path]
@@ -44,12 +44,12 @@ class StorageService {
             DataService.instance.updateAUserInfo(user: user, data: userInfo, { (err) in
 
                 if let err = err {
-                     onComplete?(err)
+                     onComplete?(err, nil)
                     return
                 }
 
                 // success
-                onComplete?(nil)
+                onComplete?(nil, path)
             })
         }
     }

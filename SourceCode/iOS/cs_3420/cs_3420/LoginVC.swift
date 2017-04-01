@@ -42,19 +42,20 @@ class LoginVC: UIViewController {
             return
         }
 
-        self.showProgressLoading()
+        self.showProgress(type: .LOADING)
 
         AuthService.instance.logInviaEmailPassword(email: email, password: password) { (err, user) in
-
+            self.dismissProgress()
+            
             if let err = err {
 
-                self.showError(err: err)
+                Libs.showAlertView(title: "Alert", message: err, actionTitle: nil, nil)
                 return
             }
 
             // Successfully login and get user
             if let user = user as? User {
-                self.dismissProgress()
+                
                 AppState.instance.user = user
                 self.handlePresentToSlideMenuVC()
             }

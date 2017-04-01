@@ -19,6 +19,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var lblMajor: CustomizedTextField!
     @IBOutlet weak var lblCredits: UILabel!
     @IBOutlet weak var lblName: CustomizedTextField!
+    @IBOutlet weak var lblEmail: CustomizedTextField!
     @IBOutlet weak var imgProfile: CustomizedImageView!
     @IBOutlet weak var lblStudentID: CustomizedTextField!
     @IBOutlet weak var lblGPA: UILabel!
@@ -84,11 +85,12 @@ class ProfileVC: UIViewController {
             // Admin Login && Profile of Admin
 
             stackViewForStudent.isHidden = true
+            setupUIImagePickerView()
         } else if !isAdminLogin {
             // Student Login
             setupUIImagePickerView()
         }
-
+        
         updateUI(user: student!)
     }
 
@@ -99,6 +101,7 @@ class ProfileVC: UIViewController {
         }
         //print(user.totalCredit)
         lblName.text = user.name
+        lblEmail.text = user.email
 
         guard let student_id = user.student_id else {
             return
@@ -111,7 +114,6 @@ class ProfileVC: UIViewController {
     }
 
     @IBAction func btnProfilePicture_Pressed(_ sender: Any) {
-
 
         present(picker, animated: true, completion: nil)
     }
@@ -127,11 +129,16 @@ class ProfileVC: UIViewController {
 
     @IBAction func btnRightMenu_Pressed(_ sender: Any) {
 
-        if isAdminLogin && !isAdminProfile {
+        if isAdminLogin {
 
             if !isEditingProfile {
 
-                self.setEditingModeForUI(value: true, isProfileEditing: false)
+                self.setEditingModeForUI(value: true, isProfilePhotoEditing: false)
+                
+                if self.isAdminProfile {
+                    self.setEditingModeForUI(value: true, isProfilePhotoEditing: true)
+                }
+                
             } else {
 
                 let user = student!
@@ -142,54 +149,74 @@ class ProfileVC: UIViewController {
                     info[CONSTANTS.users.STUDENT_ID] = lblStudentID.text!
                     info[CONSTANTS.users.MAJOR] = lblMajor.text!
                 }
-
+                
+                self.showProgress(type: .UPDATING)
                 DataService.instance.updateAUserInfo(user: user, data: info) { (err) in
+                    self.dismissProgress()
+                    
+                    if self.isAdminProfile {
+                        AppState.instance.user?.name = self.lblName.text!
+                        
+                        self.handleEditingProfilePhoto()
+                    }
 
-                    self.setEditingModeForUI(value: false, isProfileEditing: false)
-                    print("UPDATED user info successfully")
+                    self.setEditingModeForUI(value: false, isProfilePhotoEditing: false)
                 }
-
-
             }
+
         } else if !isAdminLogin {
             // Student Login
 
             if !isEditingProfile {
-                setEditingModeForUI(value: true, isProfileEditing: true)
+                setEditingModeForUI(value: true, isProfilePhotoEditing: true)
 
             } else {
-
-                if isSelectedImage {
-
-                    guard let student = student else {
-                        return
-                    }
-
-                    let imageName = student.photoImagePath
-
-                    if let profileImage = self.imgProfile.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
-                        StorageService.instance.uploadAProfilePictureToStorage(user: student, fileName: imageName, uploadData: uploadData, { (error) in
-
-                            if let err = error {
-                                print(err)
-                            } else {
-                                self.setEditingModeForUI(value: false, isProfileEditing: true)
-                            }
-                        })
-                    }
-                }
+                handleEditingProfilePhoto()
             }
         }
     }
 
-    private func setEditingModeForUI(value: Bool, isProfileEditing: Bool) {
+    private func handleEditingProfilePhoto() {
+        
+        if isSelectedImage {
 
-        if isProfileEditing {
+            guard let student = student else {
+                return
+            }
+
+            let imageName = student.photoImagePath
+
+            if let profileImage = self.imgProfile.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
+                
+                self.showProgress(type: .UPLOADING)
+                StorageService.instance.uploadAProfilePictureToStorage(user: student, fileName: imageName, uploadData: uploadData, { (error, path) in
+                    self.dismissProgress()
+                    if let err = error {
+                        print(err)
+                    } else {
+                        self.setEditingModeForUI(value: false, isProfilePhotoEditing: true)
+
+                        AppState.instance.user?.photoUrl = path as? String
+                        self.isSelectedImage  = false
+                        return
+                    }
+                })
+            }
+        }
+
+        setEditingModeForUI(value: false, isProfilePhotoEditing: true)
+    }
+
+
+
+    private func setEditingModeForUI(value: Bool, isProfilePhotoEditing: Bool) {
+
+        if isProfilePhotoEditing {
             btnProfilePicture.isUserInteractionEnabled = value
             btnProfilePicture.isProfilePictureEditMode = value
 
         } else {
-            isEditingProfile = value
+
             lblName.isEditingMode = value
             lblMajor.isEditingMode = value
             lblStudentID.isEditingMode = value

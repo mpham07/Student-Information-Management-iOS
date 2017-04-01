@@ -14,6 +14,7 @@ class MenuVC: UIViewController {
     @IBOutlet weak var imgProfile: CustomizedImageView!
     @IBOutlet weak var lblNameUser: UILabel!
     @IBOutlet weak var lblStudentID: UILabel!
+    @IBOutlet weak var stackViewForStudent: UIStackView!
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -24,12 +25,16 @@ class MenuVC: UIViewController {
         super.viewDidLoad()
 
         setUpTableView()
+        
+        if isAdmin {
+            stackViewForStudent.isHidden = true
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        updateProfileViewInfo(user: AppState.instance.user!)
-
+        
+        self.updateProfileViewInfo(user: AppState.instance.user!)
     }
 
     func updateProfileViewInfo(user: User) {
@@ -110,9 +115,13 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             return
 
         case CONSTANTS.menuItems.LOGOUT:
-            AuthService.instance.logOut({ (err) in
-                self.slideMenuController()?.dismiss(animated: true, completion: nil)
-
+            
+            Libs.showAlertView(title: "Alert", message: "Do you want to log out?", actionTitle: "Yes", {
+                
+                AuthService.instance.logOut({ (err) in
+                    self.slideMenuController()?.dismiss(animated: true, completion: nil)
+                    
+                })
             })
 
             return

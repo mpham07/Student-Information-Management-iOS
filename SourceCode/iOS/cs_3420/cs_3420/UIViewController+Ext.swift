@@ -14,6 +14,7 @@ enum ProgressType: String{
     case LOADING = "Loading..."
     case UPDATING = "Updating..."
     case DELETING = "Deleting..."
+    case UPLOADING = "Uploading..."
 }
 
 extension UIViewController {

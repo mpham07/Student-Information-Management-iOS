@@ -42,7 +42,12 @@ class User {
     }
 
     var name: String {
-        return _name
+        get {
+            return _name
+        }
+        set {
+            _name = newValue
+        }
     }
 
     var role: String {

@@ -32,7 +32,6 @@
 		BAA15D871E7270550028F47B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D861E7270550028F47B /* Course.swift */; };
 		BAA15D891E7270FA0028F47B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D881E7270FA0028F47B /* User.swift */; };
 		BAA15D8B1E72714B0028F47B /* Course_Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA15D8A1E72714B0028F47B /* Course_Grade.swift */; };
-		BAA4FFB51E786F9F0098EE86 /* LoginVC+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4FFB41E786F9F0098EE86 /* LoginVC+Test.swift */; };
 		BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CC9C1E75142F00255D5D /* DataService+ADD.swift */; };
 		BAB0CC9F1E75160A00255D5D /* DataService+UPDATE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CC9E1E75160A00255D5D /* DataService+UPDATE.swift */; };
 		BAB0CCA11E75166700255D5D /* DataService+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */; };
@@ -77,7 +76,6 @@
 		BAA15D861E7270550028F47B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		BAA15D881E7270FA0028F47B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAA15D8A1E72714B0028F47B /* Course_Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course_Grade.swift; sourceTree = "<group>"; };
-		BAA4FFB41E786F9F0098EE86 /* LoginVC+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginVC+Test.swift"; sourceTree = "<group>"; };
 		BAB0CC9C1E75142F00255D5D /* DataService+ADD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+ADD.swift"; sourceTree = "<group>"; };
 		BAB0CC9E1E75160A00255D5D /* DataService+UPDATE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+UPDATE.swift"; sourceTree = "<group>"; };
 		BAB0CCA01E75166700255D5D /* DataService+DELETE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataService+DELETE.swift"; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			children = (
 				BAE876161E7DE66A00E3A07B /* ExtensionVC */,
 				BAA15D6E1E726E2B0028F47B /* LoginVC.swift */,
-				BAA4FFB41E786F9F0098EE86 /* LoginVC+Test.swift */,
 				BA8C2F311E7B5F9700637E09 /* MenuVC.swift */,
 				BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */,
 				BA01B47A1E79C38E004E8FE7 /* CourseListVC.swift */,
@@ -402,7 +399,6 @@
 				BAA15D851E7270220028F47B /* AppState.swift in Sources */,
 				BABF08C01E7DDA290017A387 /* CourseSystemCell.swift in Sources */,
 				BA8C2F341E7B603400637E09 /* MenuCell.swift in Sources */,
-				BAA4FFB51E786F9F0098EE86 /* LoginVC+Test.swift in Sources */,
 				BAC19C4D1E7E3533009E2243 /* CustomizedTextField.swift in Sources */,
 				BAB0CC9D1E75142F00255D5D /* DataService+ADD.swift in Sources */,
 				BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */,

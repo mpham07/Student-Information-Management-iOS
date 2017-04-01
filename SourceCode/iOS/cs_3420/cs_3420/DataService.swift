@@ -13,6 +13,7 @@ import FirebaseDatabase
 typealias ErrorMessage = String?
 typealias AnyData = Any?
 
+typealias Completion = ()->Void
 typealias Completion_And_Err = (_ errMsg: ErrorMessage) -> Void
 typealias Completion_Data_And_Err = (_ errMsg: ErrorMessage, _ data: AnyData) -> Void
 
