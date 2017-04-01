@@ -150,7 +150,7 @@ class ProfileVC: UIViewController {
                     info[CONSTANTS.users.MAJOR] = lblMajor.text!
                 }
                 
-                self.showProgress(type: .UPDATING)
+                self.showProgress(type: .UPDATING, userInteractionEnable: false)
                 DataService.instance.updateAUserInfo(user: user, data: info) { (err) in
                     self.dismissProgress()
                     
@@ -188,7 +188,7 @@ class ProfileVC: UIViewController {
 
             if let profileImage = self.imgProfile.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
                 
-                self.showProgress(type: .UPLOADING)
+                self.showProgress(type: .UPLOADING, userInteractionEnable: false)
                 StorageService.instance.uploadAProfilePictureToStorage(user: student, fileName: imageName, uploadData: uploadData, { (error, path) in
                     self.dismissProgress()
                     if let err = error {

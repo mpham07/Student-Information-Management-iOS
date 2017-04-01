@@ -15,36 +15,20 @@ enum ProgressType: String{
     case UPDATING = "Updating..."
     case DELETING = "Deleting..."
     case UPLOADING = "Uploading..."
+    case ADDING = "Adding..."
 }
 
 extension UIViewController {
     
-    func showProgress(type: ProgressType) {
+    func showProgress(type: ProgressType, userInteractionEnable: Bool) {
       
-        FTIndicator.showProgressWithmessage(type.rawValue, userInteractionEnable: false)
-    }
-    
-    func showProgressLoading() {
-        FTIndicator.showProgressWithmessage(CONSTANTS.indicatorMessage.LOADING, userInteractionEnable: false)
-    }
-    
-    func showProgressUpdating() {
-        FTIndicator.showProgressWithmessage(CONSTANTS.indicatorMessage.UPDATING, userInteractionEnable: false)
-    }
-    
-    func showProgressDeleting() {
-        FTIndicator.showProgressWithmessage(CONSTANTS.indicatorMessage.DELETING, userInteractionEnable: false)
-    }
-    
-    func showError(err: String) {
-        FTIndicator.showError(withMessage: err)
-        self.dismissProgress()
+        FTIndicator.showProgressWithmessage(type.rawValue, userInteractionEnable: userInteractionEnable)
     }
     
     func dismissProgress() {
+      
         FTIndicator.dismissProgress()
     }
-    
     
     func handleGoBackSwipeAction(swiper: inout SloppySwiper) {
         swiper = SloppySwiper.init(navigationController: self.navigationController)

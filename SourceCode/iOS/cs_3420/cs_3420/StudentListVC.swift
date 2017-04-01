@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FTIndicator
 
 class StudentListVC: UIViewController {
 
@@ -21,33 +20,28 @@ class StudentListVC: UIViewController {
         super.viewDidLoad()
 
         setUpTableView()
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         loadAllStudentsData()
     }
 
     func loadAllStudentsData() {
-
-        //self.showProgressLoading()
+        showProgress(type: .LOADING, userInteractionEnable: true)
         DataService.instance.getAllStudents { (err, students) in
-
+            self.dismissProgress()
+            
             if let err = err {
-
-                self.showError(err: err)
+                
+                Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
                 return
             }
 
             // Seccessully got all data
             if let studentList = students as? [User] {
 
-                //self.dismissProgress()
-                FTIndicator.dismissProgress()
                 self.students = studentList
-                //print(self.students[0].totalCredit)
                 self.loadUI()
             }
         }
@@ -140,9 +134,8 @@ extension StudentListVC: UITableViewDelegate, UITableViewDataSource, StudentCell
         if editingStyle == .delete {
             
             // To do something
-            Libs.showAlertView(title: "Alert", message: "Do you want to DELETE '\(student.name)'", actionTitle: "Yes", {
-                
-                self.showProgress(type: .DELETING)
+            Libs.showAlertView(title: nil, message: "Do you want to DELETE '\(student.name)'", actionCompletion: { 
+                self.showProgress(type: .DELETING, userInteractionEnable: false)
                 AuthService.instance.deleteAStudent(user: student, { (err) in
                     self.dismissProgress()
                     if let err = err {
@@ -152,11 +145,11 @@ extension StudentListVC: UITableViewDelegate, UITableViewDataSource, StudentCell
                     }
                     
                     // Sucessfully Delete
-                    print("Sucessfully Delete")
                     self.students.remove(at: indexPath.row)
                     self.tableView.deleteRows(at: [indexPath], with: .left)
                 })
-            })
+
+            }, cancelCompletion: nil)
         }
     }
 }

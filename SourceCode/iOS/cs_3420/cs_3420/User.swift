@@ -97,17 +97,16 @@ class User {
 
     var GPA: String {
 
-        if let grades = _course_grades {
-
+        if let grades = _course_grades,  grades.count > 0 {
             var sum = 0.0
             for grade in grades {
                 if let val = grade.valueOfGradeLetter {
                     sum += val.rawValue
                 }
             }
-
+            
             let gpa = sum / Double(grades.count)
-
+            
             return "\(Double(round(10 * gpa) / 10))"
         }
 

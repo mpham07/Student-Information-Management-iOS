@@ -116,13 +116,12 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
 
         case CONSTANTS.menuItems.LOGOUT:
             
-            Libs.showAlertView(title: "Alert", message: "Do you want to log out?", actionTitle: "Yes", {
-                
+            Libs.showAlertView(title: nil, message: "Do you want to log out?", actionCompletion: { 
                 AuthService.instance.logOut({ (err) in
                     self.slideMenuController()?.dismiss(animated: true, completion: nil)
                     
                 })
-            })
+            }, cancelCompletion: nil)
 
             return
 

@@ -88,7 +88,7 @@ extension DetailCourseSystemVC {
 
                     let uid = self.course?.uid
 
-                    self.showProgressUpdating()
+                    self.showProgress(type: .UPDATING, userInteractionEnable: false)
                     DataService.instance.updateCourseInfo(uid: uid!, data: course) { (err) in
 
                         self.dismissProgress()
@@ -101,7 +101,7 @@ extension DetailCourseSystemVC {
                     course[ CONSTANTS.courses.REGISTERED] = 0
                     let uid = txtCourseID.text!.replacingOccurrences(of: " ", with: "_")
 
-                    self.showProgressUpdating()
+                    self.showProgress(type: .UPDATING, userInteractionEnable: false)
                     DataService.instance.addNewCourse(uid: uid, data: course) { (err) in
 
                         self.dismissProgress()
@@ -111,20 +111,21 @@ extension DetailCourseSystemVC {
                     }
                 }
             }else {
-                showError(err: "The course \(txtCourseID.text!) is exist!")
+           
+                Libs.showAlertView(title: nil, message: "The course \(txtCourseID.text!) is exist!", cancelComplete: nil)
             }
 
         } else {
-            showError(err: "Course's name and ID should not empty!")
+            Libs.showAlertView(title: nil, message: "Course's name and ID should not empty!", cancelComplete: nil)
         }
     }
     
     private func popAndRefreshTheModalView () {
         let _ = self.navigationController?.popViewController(animated: true)
         
-        if let vc = self.navigationController?.visibleViewController as? CourseListSystemVC {
-            vc.loadAllCoursesFromDB(indicator: false)
-        }
+//        if let vc = self.navigationController?.visibleViewController as? CourseListSystemVC {
+//            vc.loadAllCoursesFromDB(indicator: false)
+//        }
     }
 
     private func isExistCourseID(newCourseId: String) -> Bool {

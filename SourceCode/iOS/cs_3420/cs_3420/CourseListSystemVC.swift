@@ -30,25 +30,27 @@ class CourseListSystemVC: UIViewController {
         isSelectingList = student != nil
 
         setUpTableView()
-        loadAllCoursesFromDB(indicator: false)
+        loadAllCoursesFromDB(indicator: true)
 
         tableView.addPullRefresh { [weak self] in
 
             self?.loadAllCoursesFromDB(indicator: false)
             self?.tableView.stopPullRefreshEver()
         }
+        
+        loadMenuButtns()
     }
 
     public func loadAllCoursesFromDB(indicator: Bool) {
 
-        if indicator { showProgressUpdating() }
+        if indicator { showProgress(type: .UPDATING, userInteractionEnable: false) }
         DataService.instance.getAllCourses(student: self.student) { (err, courses) in
             if indicator { self.dismissProgress() }
 
             if let err = err {
                 print(err)
-
-                self.showError(err: err)
+                
+                Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
                 return
             }
 
@@ -64,14 +66,13 @@ class CourseListSystemVC: UIViewController {
 // Take care of the UI Events
 extension CourseListSystemVC {
 
-    func loadUI() {
-
+    func loadMenuButtns() {
         if isSelectingList {
             lblTotal.text = "0"
             lblSelected.text = "Selected: "
             lblTitle.text = "Select Course"
             btnLeftMenu.setImage(UIImage(named: "back"), for: .normal)
-
+            
             btnRightMenu.setImage(nil, for: .normal)
             btnRightMenu.setTitle("Done", for: .normal)
             btnRightMenu.setTitleColor(UIColor.lightGray, for: .highlighted)
@@ -80,7 +81,12 @@ extension CourseListSystemVC {
             btnRightMenu.layer.borderColor = UIColor.white.cgColor
             btnRightMenu.contentHorizontalAlignment = .center
             btnRightMenu.isHidden = true
-        } else {
+        }
+    }
+    
+    func loadUI() {
+
+        if !isSelectingList {
 
             lblTotal.text = "\(self.courses.count)"
         }
@@ -125,8 +131,8 @@ extension CourseListSystemVC {
 
                     if (countDown == arrCourses.count) {
                         let _ = self.navigationController?.popViewController(animated: true)
-                        let vc = self.navigationController?.visibleViewController as? CourseListVC
-                        vc?.loadDB()
+//                        let vc = self.navigationController?.visibleViewController as? CourseListVC
+//                        vc?.loadDB()
                     }
                 }
             }
@@ -182,24 +188,25 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
         let course = self.courses[indexPath.row]
-        Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", actionTitle: "Yes", {
-
+        
+        Libs.showAlertView(title: nil, message: "Do you want to delete \'\(course.name)\'?", actionCompletion: { 
             // Agree to DELETE
-
-            self.showProgressDeleting()
+            
+            self.showProgress(type: .DELETING, userInteractionEnable: false)
             DataService.instance.deleteCourse(course: course) { (err) in
                 self.dismissProgress()
-
+                
                 if let err = err {
-                    self.showError(err: err)
+                    
+                    Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
                     return
                 }
-
+                
                 self.courses.remove(at: indexPath.row)
                 self.loadUI()
             }
 
-        })
+        }, cancelCompletion: nil)
 
     }
 

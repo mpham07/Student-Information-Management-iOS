@@ -10,34 +10,48 @@ import Foundation
 import SDCAlertView
 
 class Libs {
-   
-//    private static var _instance = Libs()
-//    static var instance: Libs {
-//        return _instance
-//    }
-    
-    static func showAlertView (title: String, message: String, actionTitle: String?, _ onComplete: Completion?) {
-        
-        let alert = AlertController(title: title, message: message, preferredStyle: .alert)
-        
-        var cancelTitle = "OK"
-        
-        if actionTitle != nil {
-            cancelTitle = "Cancel"
-            
-            alert.add(AlertAction(title: cancelTitle, style: .normal))
-            alert.add(AlertAction(title: actionTitle!, style: .destructive, handler: { alertAction in
-                
-                onComplete?()
-            }))
-            alert.present()
-            return
+
+    static func showAlertView (title: String?, message: String, actionCompletion: Completion?, cancelCompletion: Completion?) {
+
+        var alertTitle: String!
+        if let title = title {
+            alertTitle = title
+        } else {
+            alertTitle = CONSTANTS.notices.ALERT
         }
+
+        let alert = AlertController(title: alertTitle, message: message, preferredStyle: .alert)
+
+        alert.add(AlertAction(title: CONSTANTS.notices.CANCEL, style: .normal, handler: { (alertAction) in
+            cancelCompletion?()
+        }))
+
+        alert.add(AlertAction(title: CONSTANTS.notices.YES, style: .destructive, handler: { alertAction in
+
+            actionCompletion?()
+        }))
         
-        alert.add(AlertAction(title: cancelTitle, style: .destructive))
+        alert.present()
+    }
+
+    static func showAlertView(title: String?, message: String, cancelComplete: Completion?) {
+
+        var alertTitle: String!
+        if let title = title {
+            alertTitle = title
+        } else {
+            alertTitle = CONSTANTS.notices.ALERT
+        }
+
+        let alert = AlertController(title: alertTitle, message: message, preferredStyle: .alert)
+
+        alert.add(AlertAction(title: CONSTANTS.notices.OK, style: .destructive, handler: { (alertAction) in
+            cancelComplete?()
+        }))
+
         alert.present()
     }
 }
 
 
-    
+

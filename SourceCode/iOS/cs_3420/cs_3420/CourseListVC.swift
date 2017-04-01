@@ -28,7 +28,10 @@ class CourseListVC: UIViewController {
         
         setUpTableView()
         handleGoBackSwipeAction(swiper: &self.swiper)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         loadDB()
         loadUI()
     }
@@ -46,16 +49,24 @@ class CourseListVC: UIViewController {
 
         if let user = student {
             
+            showProgress(type: .LOADING, userInteractionEnable: true)
             DataService.instance.getCoursesOfAStudent(user: user, { (error, data) in
-                
+        
                 if let course_grades = data as? [Course_Grade] {
                     self.courses = course_grades
                     user.course_grades = course_grades
                     
                     var countDown = 0
+                    
+                    if self.courses.count == 0 {
+                        self.dismissProgress()
+                    }
+                    
                     for i in 0..<self.courses.count {
                         let course = self.courses[i]
                         DataService.instance.getACourseInfo(uid: course.uid_course, { (err, courseInfo) in
+                            
+                            self.dismissProgress()
                             
                             if let err = err {
                                 print (err)
@@ -70,7 +81,6 @@ class CourseListVC: UIViewController {
                                 countDown += 1
                                 
                                 if countDown == self.courses.count {
-                                    
                                     self.tableView.reloadData()
                                 }
                             }
@@ -79,6 +89,7 @@ class CourseListVC: UIViewController {
 
                 }
             })
+            
         }
     }
 }
@@ -168,6 +179,15 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        
+        if isAdmin {
+            return .delete
+        }
+        
+        return .none
+    }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
@@ -176,15 +196,18 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
 
                 let course = (self.courses[indexPath.row].courseInfo)!
 
-                Libs.showAlertView(title: "Alert", message: "Do you want to delete \'\(course.name)\'?", actionTitle: "Yes", {
-
+                Libs.showAlertView(title: nil, message: "Do you want to delete \'\(course.name)\'?", actionCompletion: {
+                    
+                    self.showProgress(type: .DELETING, userInteractionEnable: false)
                     DataService.instance.deleteCoursesForStudent(user: self.student!, course: course, { (err) in
+                        
+                        self.dismissProgress()
                         
                         self.courses.remove(at: indexPath.row)
                         self.student?.course_grades?.remove(at: indexPath.row)
                         self.tableView.deleteRows(at: [indexPath], with: .left)
                     })
-                })
+                }, cancelCompletion: nil)
             }
         }
     }

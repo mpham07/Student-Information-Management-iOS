@@ -71,7 +71,8 @@ class DetailGradesVC: UIViewController {
             }
             
             guard let grades = getGradesFromCells() else {
-                self.showError(err: "Grade should be in range 0 to 100!")
+                
+                Libs.showAlertView(title: nil, message: "Grade should be in range 0 to 100!", cancelComplete: nil)
                 return
             }
             
@@ -79,7 +80,7 @@ class DetailGradesVC: UIViewController {
                 
                 if let err = err {
                     
-                    self.showError(err: err)
+                    Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
                 }
                 
                 self.isEditingGrade = false

@@ -95,6 +95,7 @@ extension DataService {
                 guard let course_id = item[CONSTANTS.courses.COURSE_ID] as? String, let name = item[CONSTANTS.courses.NAME] as? String, let type = item[CONSTANTS.courses.TYPE] as? String, let registed = item[CONSTANTS.courses.REGISTERED] as? Int
 
                     else {
+                        onComplete?("No course Infos", nil)
                         return
                 }
 
@@ -120,7 +121,7 @@ extension DataService {
                     return
 
                 } else {
-
+                    
                     courses?.append(course)
                 }
             }

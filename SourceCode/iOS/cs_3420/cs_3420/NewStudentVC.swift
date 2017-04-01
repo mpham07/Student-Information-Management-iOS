@@ -41,7 +41,7 @@ extension NewStudentVC {
 
         if self.isTextFeildsNOTEmpty {
 
-            self.showProgressLoading()
+            self.showProgress(type: .ADDING, userInteractionEnable: false)
 
             let info = [CONSTANTS.users.EMAIL: txtEmail.text!,
                         CONSTANTS.users.NAME: txtName.text!,
@@ -54,7 +54,7 @@ extension NewStudentVC {
                 self.dismissProgress()
 
                 if let err = error {
-                    print(err)
+                    Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
                     return
                 }
                 

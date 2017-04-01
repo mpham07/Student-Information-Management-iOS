@@ -42,14 +42,14 @@ class LoginVC: UIViewController {
             return
         }
 
-        self.showProgress(type: .LOADING)
+        self.showProgress(type: .LOADING, userInteractionEnable: false)
 
         AuthService.instance.logInviaEmailPassword(email: email, password: password) { (err, user) in
             self.dismissProgress()
             
             if let err = err {
 
-                Libs.showAlertView(title: "Alert", message: err, actionTitle: nil, nil)
+                Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
                 return
             }
 

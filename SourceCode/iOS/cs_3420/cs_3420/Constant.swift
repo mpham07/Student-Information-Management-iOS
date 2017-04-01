@@ -64,6 +64,11 @@ struct CONSTANTS {
         static let USER_NOT_FOUND = "The user is not found!"
         static let COURSE_NOT_FOUND = "The course not found!"
         static let COURSE_BEING_ENROLLED = "This course is currently registered by students!"
+        
+        static let ALERT = "Alert"
+        static let OK = "OK"
+        static let YES = "Yes"
+        static let CANCEL = "Cancel"
     }
     
     struct statusOfGrades {
