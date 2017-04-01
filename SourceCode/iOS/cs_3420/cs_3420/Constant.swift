@@ -37,6 +37,12 @@ struct CONSTANTS {
         static let STUDENT_ID = "student_id"
         static let MAJOR = "major"
     }
+    
+    struct storage {
+        
+        static let MAIN_PATH = "gs://pokesearch-ef252.appspot.com/"
+        static let STORAGE_PROFILE_IMAGES = "profile_images"
+    }
 
     struct courses_grades {
 

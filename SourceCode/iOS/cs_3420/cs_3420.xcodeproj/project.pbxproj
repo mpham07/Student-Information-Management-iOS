@@ -14,6 +14,7 @@
 		BA01B47D1E79C54F004E8FE7 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */; };
 		BA38EA1C1E7F251500CE45A3 /* Libs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38EA1B1E7F251500CE45A3 /* Libs.swift */; };
 		BA3C57A61E8ECE6000348FFF /* NewStudentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C57A51E8ECE6000348FFF /* NewStudentVC.swift */; };
+		BA3C57A81E8F111600348FFF /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C57A71E8F111600348FFF /* StorageService.swift */; };
 		BA3DE8B41E7C67D800E703FB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */; };
 		BA3DE8B61E7CB5D300E703FB /* DetailGradesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B51E7CB5D300E703FB /* DetailGradesVC.swift */; };
 		BA3DE8B81E7CBB2F00E703FB /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DE8B71E7CBB2F00E703FB /* GradeCell.swift */; };
@@ -56,6 +57,7 @@
 		BA01B47C1E79C54F004E8FE7 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		BA38EA1B1E7F251500CE45A3 /* Libs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Libs.swift; sourceTree = "<group>"; };
 		BA3C57A51E8ECE6000348FFF /* NewStudentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStudentVC.swift; sourceTree = "<group>"; };
+		BA3C57A71E8F111600348FFF /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		BA3DE8B31E7C67D800E703FB /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BA3DE8B51E7CB5D300E703FB /* DetailGradesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGradesVC.swift; sourceTree = "<group>"; };
 		BA3DE8B71E7CBB2F00E703FB /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				BAE1015E1E790ABF002FB15F /* AuthService.swift */,
+				BA3C57A71E8F111600348FFF /* StorageService.swift */,
 				BACF01031E7451C500DDFCF7 /* DataServie */,
 			);
 			name = Services;
@@ -418,6 +421,7 @@
 				BA4479091E8C52A7002CFF31 /* Colors.swift in Sources */,
 				BAE1015F1E790ABF002FB15F /* AuthService.swift in Sources */,
 				BAA15D6D1E726E2B0028F47B /* AppDelegate.swift in Sources */,
+				BA3C57A81E8F111600348FFF /* StorageService.swift in Sources */,
 				BA01B47D1E79C54F004E8FE7 /* CourseCell.swift in Sources */,
 				BAC19C4B1E7E3246009E2243 /* DetailCourseSystemVC.swift in Sources */,
 				BACF01051E74520F00DDFCF7 /* DataService+GET.swift in Sources */,

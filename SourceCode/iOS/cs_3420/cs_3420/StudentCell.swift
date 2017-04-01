@@ -25,6 +25,8 @@ class StudentCell: UITableViewCell {
     }
     
     func updateUI(student: User) {
+        
+       // print(student.photoUrl!)
         if let img = student.photoUrl {
             imgProfile.sd_setImage(with: URL(string: img), placeholderImage: UIImage(named: CONSTANTS.imagesAssets.PROFILE_DEFAULT))
         }

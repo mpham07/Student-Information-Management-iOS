@@ -47,7 +47,7 @@ class CustomizedTextField: UITextField {
     
     var isEditingMode: Bool = false {
         didSet{
-            if isEditingMode == true {
+            if isEditingMode {
                 isUserInteractionEnabled = true
                 borderWidth = 1
                 borderColor = COLORS.DEFAULT

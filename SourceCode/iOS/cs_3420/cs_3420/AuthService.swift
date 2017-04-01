@@ -115,9 +115,17 @@ class AuthService {
                                     
                                     if counter == numberOfCourses {
                                         
-                                        DataService.instance.deleteUserInfo(user: user, { (err) in
-                                            onComplete?(err)
+                                        StorageService.instance.deleteProfilePicture(user: user, { (err) in
+                                            
+                                            if let err = err {
+                                                onComplete?(err)
+                                            }else {
+                                                DataService.instance.deleteUserInfo(user: user, { (err) in
+                                                    onComplete?(err)
+                                                })
+                                            }
                                         })
+                                        
                                     }
                                 })
                             }

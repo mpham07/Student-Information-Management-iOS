@@ -19,6 +19,11 @@ class User {
     private var _major: String?
     private var _course_grades: [Course_Grade]?
 
+    var photoImagePath: String {
+
+        return self.email.components(separatedBy: "@")[0] + "__" + self.uid + ".jpg"
+    }
+
     var major: String? {
         set {
             _major = newValue
@@ -97,8 +102,8 @@ class User {
             }
 
             let gpa = sum / Double(grades.count)
-            
-            return "\(Double(round(10 * gpa)/10))"
+
+            return "\(Double(round(10 * gpa) / 10))"
         }
 
         return "N/A"
@@ -121,10 +126,10 @@ class User {
             for course in courses {
                 sum += course.creditHour
             }
-            
+
             return "\(sum)"
         }
-        
+
         return "0"
     }
 

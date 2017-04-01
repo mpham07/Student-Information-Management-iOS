@@ -10,30 +10,42 @@ import UIKit
 
 @IBDesignable
 class CustomizedButton: UIButton {
-    
+
     @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet{
+        didSet {
             layer.cornerRadius = cornerRadius
         }
     }
-    
+
     @IBInspectable var borderWidth: CGFloat = 0 {
-        didSet{
+        didSet {
             layer.borderWidth = borderWidth
         }
     }
-    
+
     @IBInspectable var borderColor: UIColor? {
-        didSet{
+        didSet {
             layer.borderColor = borderColor?.cgColor
         }
     }
-    
+
+    var isProfilePictureEditMode: Bool = false {
+        didSet {
+            if isProfilePictureEditMode {
+                borderWidth = 1
+                cornerRadius = 4
+                borderColor = COLORS.DEFAULT
+            } else {
+                borderWidth = 0
+            }
+        }
+    }
+
     func setToEditMode() {
         setTitle("Edit", for: .normal)
         setTitleColor(UIColor.lightGray, for: .highlighted)
     }
-    
+
     func setToDoneMode() {
         setTitle("Done", for: .normal)
         setTitleColor(UIColor.lightGray, for: .highlighted)
