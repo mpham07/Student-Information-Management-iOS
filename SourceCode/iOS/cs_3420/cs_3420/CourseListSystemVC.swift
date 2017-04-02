@@ -198,14 +198,13 @@ extension CourseListSystemVC: UITableViewDelegate, UITableViewDataSource {
                 
                 if let err = err {
                     
-                    Libs.showAlertView(title: nil, message: err, cancelComplete: {
-                        
-                    })
+                    Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
                     return
                 }
                
                 self.courses.remove(at: indexPath.row)
-                self.loadUI()
+                self.lblTotal.text = "\(self.courses.count)"
+                self.tableView.deleteRows(at: [indexPath], with: .left)
             }
 
         }, cancelCompletion: nil)
