@@ -39,48 +39,25 @@ extension NewStudentVC {
 
     private func handleBtnRightMenu_Pressed() {
 
-        if self.isTextFeildsNOTEmpty {
+        self.showProgress(type: .ADDING, userInteractionEnable: false)
 
-            self.showProgress(type: .ADDING, userInteractionEnable: false)
+        let info = [CONSTANTS.users.EMAIL: txtEmail.text!,
+            CONSTANTS.users.NAME: txtName.text!,
+            CONSTANTS.users.STUDENT_ID: txtId.text!,
+            CONSTANTS.users.MAJOR: txtMajor.text!,
+            CONSTANTS.users.ROLE: CONSTANTS.users.STUDENT
+        ]
 
-            let info = [CONSTANTS.users.EMAIL: txtEmail.text!,
-                        CONSTANTS.users.NAME: txtName.text!,
-                        CONSTANTS.users.STUDENT_ID: txtId.text!,
-                        CONSTANTS.users.MAJOR: txtMajor.text!,
-                        CONSTANTS.users.ROLE: CONSTANTS.users.STUDENT
-                        ]
+        AuthService.instance.createNewStudentViewEmailPassword(email: txtEmail.text!, password: txtPass.text!, info: info, { (error, uidUser) in
+            self.dismissProgress()
 
-            AuthService.instance.createNewStudentViewEmailPassword(email: txtEmail.text!, password: txtPass.text!, info: info, { (error, uidUser) in
-                self.dismissProgress()
-
-                if let err = error {
-                    Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
-                    return
-                }
-                
-                // Successfuly 
-                let _ = self.navigationController?.popViewController(animated: true)
-            })
-            
-        }else {
-            // Show err messages
-            
-        }
-    }
-
-    //Temp
-    private var isTextFeildsNOTEmpty: Bool {
-        //print("views.count = \(view.subviews.count)")
-        for txt in view.subviews as [UIView] {
-            //print(1)
-            if let txt = txt as? UITextField {
-                //print(2)
-                if txt.text?.characters.count == 0 {
-                    return false
-                }
+            if let err = error {
+                Libs.showAlertView(title: nil, message: err, cancelComplete: nil)
+                return
             }
-        }
 
-        return true
+            // Successfuly
+            let _ = self.navigationController?.popViewController(animated: true)
+        })
     }
 }

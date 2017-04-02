@@ -39,9 +39,9 @@ class AuthService {
             // Successfully Sign In to FIR
             if let user = user {
                 DataService.instance.getAUser(uid: user.uid) { (err, userDB) in
-                    
+
                     if let err = err {
-                        
+
                         self.logOut(nil)
                         onComplete?(err, nil)
                         return
@@ -112,20 +112,14 @@ class AuthService {
                                 DataService.instance.deleteCoursesForStudent(user: user, course: courseInfo, { (error) in
 
                                     counter += 1
-                                    
+
                                     if counter == numberOfCourses {
-                                        
-                                        StorageService.instance.deleteProfilePicture(user: user, { (err) in
+                                        StorageService.instance.deleteProfilePicture(user: user)
+
+                                        DataService.instance.deleteUserInfo(user: user, { (err) in
                                             
-                                            if let err = err {
-                                                onComplete?(err)
-                                            }else {
-                                                DataService.instance.deleteUserInfo(user: user, { (err) in
-                                                    onComplete?(err)
-                                                })
-                                            }
+                                            onComplete?(err)
                                         })
-                                        
                                     }
                                 })
                             }

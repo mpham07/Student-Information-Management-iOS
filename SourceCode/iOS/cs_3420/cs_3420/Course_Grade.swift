@@ -172,23 +172,6 @@ class Course_Grade {
         return nil
     }
 
-//    var creditHour: Int {
-//
-//        var str = _uid_course
-//
-//        let i1 = str.index(str.startIndex, offsetBy: str.characters.count - 3)
-//        let i2 = str.index(after: i1)
-//        let range = i1..<i2
-//
-//        str = str.substring(with: range)
-//        
-//        if let num = Int(str) {
-//            return num
-//        }
-//        
-//        return 0
-//    }
-
     var creditHour: Int {
 
         if  var str = courseInfo?.course_id {
@@ -225,9 +208,5 @@ class Course_Grade {
             _final = newGrade
             break
         }
-    }
-    
-    deinit {
-        print("=============== > deinit Course_Grade")
     }
 }

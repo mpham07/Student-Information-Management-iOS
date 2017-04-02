@@ -189,6 +189,7 @@
 				BAA15D831E726FE50028F47B /* Model */,
 				BAA15D821E726FE30028F47B /* View */,
 				BAA15D811E726FE00028F47B /* Controller */,
+				BAA15D801E726FD60028F47B /* Shared */,
 			);
 			path = cs_3420;
 			sourceTree = "<group>";
@@ -220,7 +221,6 @@
 				BABF08BD1E7DD9BB0017A387 /* CourseListSystemVC.swift */,
 				BAC19C4A1E7E3246009E2243 /* DetailCourseSystemVC.swift */,
 				BA3C57A51E8ECE6000348FFF /* NewStudentVC.swift */,
-				BAA15D801E726FD60028F47B /* Shared */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -549,7 +549,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "devmen.cs-3420";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -564,7 +564,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "devmen.cs-3420";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

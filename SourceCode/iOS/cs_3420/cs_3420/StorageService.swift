@@ -54,17 +54,17 @@ class StorageService {
         }
     }
 
-    func deleteProfilePicture(user: User, _ onComplete: Completion_And_Err?) {
-        images_ref.child(user.photoImagePath).delete { (err) in
-            if let err = err {
-                onComplete?(err.localizedDescription)
-            } else {
-                onComplete?(nil)
-            }
-        }
-    }
-
-    func getDownloadUrl(path: String) {
-        //  main_ref.child(path)
+//    func deleteProfilePicture(user: User, _ onComplete: Completion_And_Err?) {
+//        images_ref.child(user.photoImagePath).delete { (err) in
+//            if let err = err {
+//                onComplete?(err.localizedDescription)
+//            } else {
+//                onComplete?(nil)
+//            }
+//        }
+//    }
+    
+    func deleteProfilePicture(user: User) {
+        images_ref.child(user.photoImagePath).delete(completion: nil)
     }
 }

@@ -143,8 +143,4 @@ class User {
         _name = name
         _role = role
     }
-    
-    deinit {
-        print("=============== > deinit User")
-    }
 }

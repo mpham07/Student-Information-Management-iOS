@@ -41,7 +41,7 @@
                                                                     <constraint firstAttribute="height" constant="21" id="wza-hs-47x"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="minh@gmail.com" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNM-Bx-s9Z">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNM-Bx-s9Z">
                                                                 <rect key="frame" x="41" y="0.0" width="239" height="21"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +78,7 @@
                                                                     <constraint firstAttribute="height" constant="21" id="ibz-Gc-lnS"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qqqqqq" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wip-f5-cei">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wip-f5-cei">
                                                                 <rect key="frame" x="40" y="0.0" width="240" height="21"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1149,7 +1149,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cue-U8-ykx">
                                                 <rect key="frame" x="0.0" y="0.0" width="216" height="64"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minh Pham" textAlignment="natural" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="itA-Cc-NKW" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minh Pham" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="itA-Cc-NKW" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="216" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="W39-SQ-NyE"/>
@@ -1207,7 +1207,7 @@
                                                                         <color key="textColor" red="0.17254901960784313" green="0.25490196078431371" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999222111" textAlignment="natural" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="zoa-SD-nBv" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999222111" textAlignment="natural" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zoa-SD-nBv" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                                         <rect key="frame" x="34" y="0.0" width="182" height="22"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
@@ -1283,7 +1283,7 @@
                                                                 <color key="textColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Computer Science" textAlignment="natural" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="O2Y-0n-TxG" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Computer Science" textAlignment="natural" minimumFontSize="5" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O2Y-0n-TxG" customClass="CustomizedTextField" customModule="cs_3420" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="33" width="216" height="28"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
