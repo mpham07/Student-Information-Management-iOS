@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="J0d-O1-Etd">
-                                <rect key="frame" x="47.5" y="271" width="280" height="153"/>
+                                <rect key="frame" x="47.5" y="271" width="280" height="148"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f1x-rQ-6v6">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="78"/>
@@ -108,29 +108,39 @@
                                             <constraint firstAttribute="trailing" secondItem="QnR-Pl-ms7" secondAttribute="trailing" id="nG8-6b-aMu"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHC-BH-8R6" customClass="CustomizedButton" customModule="cs_3420" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103" width="280" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-ff-8lE">
+                                        <rect key="frame" x="0.0" y="103" width="280" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHC-BH-8R6" customClass="CustomizedButton" customModule="cs_3420" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="0.0" width="240" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="FIh-ah-sSg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                                <state key="normal" title="Log In">
+                                                    <color key="titleColor" red="0.17254901959999999" green="0.25490196079999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnLogin_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeJ-4j-UyU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="FIh-ah-sSg"/>
+                                            <constraint firstItem="MHC-BH-8R6" firstAttribute="leading" secondItem="Um3-ff-8lE" secondAttribute="leading" constant="20" id="cdZ-Oi-Faz"/>
+                                            <constraint firstAttribute="trailing" secondItem="MHC-BH-8R6" secondAttribute="trailing" constant="20" id="tWf-pH-Clu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                        <state key="normal" title="Log In" backgroundImage="Login Button"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="25"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="btnLogin_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeJ-4j-UyU"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="1JT-2G-7Tm"/>
-                                    <constraint firstAttribute="trailing" secondItem="MHC-BH-8R6" secondAttribute="trailing" id="3AD-7k-MLO"/>
                                     <constraint firstItem="f1x-rQ-6v6" firstAttribute="leading" secondItem="J0d-O1-Etd" secondAttribute="leading" id="506-UJ-aHO"/>
                                     <constraint firstAttribute="trailing" secondItem="f1x-rQ-6v6" secondAttribute="trailing" id="b6H-Zz-T6t"/>
-                                    <constraint firstItem="MHC-BH-8R6" firstAttribute="leading" secondItem="J0d-O1-Etd" secondAttribute="leading" id="sSh-Ca-ry4"/>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-hc-SBd">
@@ -2044,8 +2054,7 @@
     <resources>
         <image name="Email" width="21" height="16"/>
         <image name="Lock" width="20" height="20"/>
-        <image name="Login Button" width="285" height="50"/>
-        <image name="Logo" width="217" height="156"/>
+        <image name="Logo" width="227" height="157"/>
         <image name="Menu Button" width="15" height="17"/>
         <image name="PROFILE_DEFAULT" width="82" height="82"/>
         <image name="add" width="16" height="16"/>
