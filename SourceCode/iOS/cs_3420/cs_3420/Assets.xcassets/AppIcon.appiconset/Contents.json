@@ -33,13 +33,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "IP7_icon@2x.png",
+      "filename" : "IP7_icon.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "IP7_icon@3x.png",
+      "filename" : "IP7_icon3.png",
       "scale" : "3x"
     }
   ],
