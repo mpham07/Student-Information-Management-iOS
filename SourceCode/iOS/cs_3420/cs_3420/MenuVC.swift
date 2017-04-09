@@ -118,6 +118,20 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             
             Libs.showAlertView(title: nil, message: "Do you want to log out?", actionCompletion: { 
                 AuthService.instance.logOut({ (err) in
+                    
+                    if let _ = err{
+                        return
+                    }
+                    
+                    DataService.instance.deletePushToken(user: AppState.instance.user!, { (err) in
+                        
+                        if let _ = err {
+                            return
+                        }
+                        
+                        AppState.instance.user = nil
+                    })
+                    
                     self.slideMenuController()?.dismiss(animated: true, completion: nil)
                     
                 })

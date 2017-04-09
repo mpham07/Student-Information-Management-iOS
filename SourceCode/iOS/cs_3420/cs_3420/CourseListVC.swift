@@ -203,6 +203,11 @@ extension CourseListVC: UITableViewDelegate, UITableViewDataSource {
                         
                         self.dismissProgress()
                         
+                        
+                        if let pushToken = self.student!.pushToken {
+                            self.sendPushNotificationMessage(pushToken: pushToken, title: self.student!.name, message: CONSTANTS.pushService.MESSAGE_DELETE_COURSES)
+                        }
+                        
                         self.courses.remove(at: indexPath.row)
                         self.student?.course_grades?.remove(at: indexPath.row)
                         self.tableView.deleteRows(at: [indexPath], with: .left)

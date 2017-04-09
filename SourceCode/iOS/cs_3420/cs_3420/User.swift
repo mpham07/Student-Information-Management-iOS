@@ -18,7 +18,17 @@ class User {
     private var _student_id: String?
     private var _major: String?
     private var _course_grades: [Course_Grade]?
+    private var _pushToken: String?
 
+    var pushToken: String? {
+        get {
+            return _pushToken
+        }
+        set{
+            _pushToken = newValue
+        }
+    }
+    
     var photoImagePath: String {
 
         return self.email.components(separatedBy: "@")[0] + "__" + self.uid + ".jpg"

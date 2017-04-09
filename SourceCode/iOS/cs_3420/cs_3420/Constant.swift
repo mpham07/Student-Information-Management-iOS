@@ -28,6 +28,7 @@ struct CONSTANTS {
     struct users {
         static let ADMIN = "admin"
         static let STUDENT = "student"
+       
 
         static let UID = "users"
         static let EMAIL = "email"
@@ -36,6 +37,15 @@ struct CONSTANTS {
         static let ROLE = "role"
         static let STUDENT_ID = "student_id"
         static let MAJOR = "major"
+    }
+    
+    struct pushService {
+        static let NOTIFICATION_URL = "https://fcm.googleapis.com/fcm/send"
+        static let SERVER_KEY = "AIzaSyC1_XqYg5G3gUqV7L9e8hGgbFVw39643ok"
+        static let TOKEN_STRING = "pushToken"
+        
+        static let MESSAGE_ADD_COURSES = "Admin added courses into your account"
+        static let MESSAGE_DELETE_COURSES = "Admin deleted course from your account"
     }
     
     struct storage {

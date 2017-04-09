@@ -131,8 +131,11 @@ extension CourseListSystemVC {
 
                     if (countDown == arrCourses.count) {
                         let _ = self.navigationController?.popViewController(animated: true)
-//                        let vc = self.navigationController?.visibleViewController as? CourseListVC
-//                        vc?.loadDB()
+                        
+                        if let pushToken = student.pushToken {
+                            
+                            self.sendPushNotificationMessage(pushToken: pushToken, title: student.name, message: CONSTANTS.pushService.MESSAGE_ADD_COURSES)
+                        }
                     }
                 }
             }

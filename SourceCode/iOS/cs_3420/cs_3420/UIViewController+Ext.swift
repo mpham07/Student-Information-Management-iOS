@@ -9,6 +9,7 @@
 import Foundation
 import FTIndicator
 import SloppySwiper
+import Alamofire
 
 enum ProgressType: String{
     case LOADING = "Loading..."
@@ -34,5 +35,27 @@ extension UIViewController {
         swiper = SloppySwiper.init(navigationController: self.navigationController)
         
         navigationController?.delegate = swiper;
+    }
+    
+    func sendPushNotificationMessage(pushToken: String, title: String, message: String) {
+        
+        var _header: HTTPHeaders? = HTTPHeaders()
+        _header = [
+            "Content-Type": "application/json",
+            "Authorization": "key=\(CONSTANTS.pushService.SERVER_KEY)"
+        ]
+        
+        let _notification: Parameters? = [
+            "to": "\(pushToken)",
+            "notification": [
+                "title": "\(title)",
+                "body": "\(message)"
+            ]
+        ]
+        
+        Alamofire.request(CONSTANTS.pushService.NOTIFICATION_URL as URLConvertible, method: .post, parameters: _notification, encoding: JSONEncoding.default, headers: _header).responseJSON(completionHandler: { (data) in
+            
+            print("=============> Successfully Send Push Message")
+        })
     }
 }

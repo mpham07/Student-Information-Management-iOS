@@ -1,6 +1,6 @@
 # SloppySwiper
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/fastred/SloppySwiper/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/fastred/SloppySwiper/blob/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/v/SloppySwiper.svg?style=flat)](https://github.com/fastred/SloppySwiper)
 
 `SloppySwiper` is a `UINavigationController` delegate that allows swipe back gesture to be started from anywhere on the screen (not only from the left edge).
@@ -11,6 +11,10 @@
   - the animation tends to be glitchy on the iOS Simulator, but it's fine on the device
   - [`hidesBottomBarWhenPushed` isn't animated properly](https://github.com/fastred/SloppySwiper/issues/2)
 * the gesture can collide with other *pan to the right* gestures
+* If you're having problems with a UINavigationController inside of
+  a UITabBarController that is causing the UITabBar to pop out of view during the animation process,
+  you'll want to implement the SloppySwiperDelegate protocol and return NO for calls to
+  `-(BOOL)sloppySwiperShouldAnimateTabBar:(SloppySwiper *)swiper`.
 
 ![Demo GIF](https://raw.githubusercontent.com/fastred/SloppySwiper/master/demo.gif)
 

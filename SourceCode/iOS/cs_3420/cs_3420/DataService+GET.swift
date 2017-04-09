@@ -205,6 +205,10 @@ extension DataService {
                 if let photoUrl = item[CONSTANTS.users.PHOTO_URL] as? String {
                     user.photoUrl = photoUrl
                 }
+                
+                if let pushToken = item[CONSTANTS.pushService.TOKEN_STRING] as? String {
+                    user.pushToken = pushToken
+                }
 
                 if let student_id = item[CONSTANTS.users.STUDENT_ID] as? String {
                     user.student_id = student_id

@@ -10,6 +10,8 @@ target 'cs_3420' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
+  pod 'Alamofire', '~> 4.4'
   
   pod 'FTIndicator'
   pod 'SlideMenuControllerSwift'

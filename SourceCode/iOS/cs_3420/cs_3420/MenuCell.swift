@@ -23,6 +23,11 @@ class MenuCell: UITableViewCell {
         }
 
         if itemInfo == CONSTANTS.menuItems.NOTIFICATION.rawValue {
+            
+            if let _ = AppState.instance.user!.pushToken {
+                onNotify.setOn(true, animated: false)
+            }
+            
             onNotify.isHidden = false
         }
 
@@ -42,10 +47,27 @@ class MenuCell: UITableViewCell {
     @IBAction func switchNotif(_ sender: Any) {
 
         if let switchNotification = sender as? UISwitch {
-
+            let user = AppState.instance.user!
             if switchNotification.isOn {
-                Libs.showAlertView(title: "Notice", message: "This feature will be coming soon.", cancelComplete: {
+                if let tokenString = AuthService.instance.pushToken {
+                    
+                    DataService.instance.storePushToken(student: user, tokenString: tokenString, { (error) in
+                        
+                        if let _ = error {
+                            switchNotification.setOn(false, animated: true)
+                            return
+                        }
+                    })
+                }else {
                     switchNotification.setOn(false, animated: true)
+                }
+            }else {
+                
+                DataService.instance.deletePushToken(user: user, { (error) in
+                    if let _ = error {
+                        switchNotification.setOn(true, animated: true)
+                        return
+                    }
                 })
             }
         }

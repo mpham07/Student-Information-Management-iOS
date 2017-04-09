@@ -48,4 +48,12 @@ extension DataService {
             onComplete?(error?.localizedDescription)
         }
     }
+    
+    // DELETE user pushToken
+    func deletePushToken(user: User, _ onComplete: Completion_And_Err?) {
+        
+        user_ref.child(user.uid).child(CONSTANTS.pushService.TOKEN_STRING).removeValue { (error, ref) in
+            onComplete?(error?.localizedDescription)
+        }
+    }
 }

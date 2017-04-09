@@ -145,6 +145,7 @@ extension StudentListVC: UITableViewDelegate, UITableViewDataSource, StudentCell
                     }
                     
                     // Sucessfully Delete
+                    
                     self.students.remove(at: indexPath.row)
                     self.tableView.deleteRows(at: [indexPath], with: .left)
                 })

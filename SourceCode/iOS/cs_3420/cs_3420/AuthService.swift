@@ -10,11 +10,18 @@ import Foundation
 import FirebaseAuth
 
 class AuthService {
-
-    private static var _instance = AuthService()
-
-    static var instance: AuthService {
-        return _instance
+    
+    static var instance = AuthService()
+    
+    let userDefaults = UserDefaults.standard
+    
+    var pushToken: String? {
+        get{
+            return userDefaults.value(forKey: CONSTANTS.pushService.TOKEN_STRING) as? String
+        }
+        set{
+            userDefaults.set(newValue, forKey: CONSTANTS.pushService.TOKEN_STRING)
+        }
     }
 
     func logOut(_ onComplete: Completion_And_Err?) {
