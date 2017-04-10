@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'cs_3420' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for cs_3420
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  
+  pod 'FTIndicator'
+  pod 'SlideMenuControllerSwift'
+  pod 'SDWebImage', '~>3.8'
+  pod 'SloppySwiper'
+  pod 'PullToRefreshSwift'
+  pod 'SDCAlertView', '~> 7.1'
+end
