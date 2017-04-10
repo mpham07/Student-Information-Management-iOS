@@ -1,4 +1,6 @@
 PODS:
+  - Firebase (3.15.0):
+    - Firebase/Core (= 3.15.0)
   - Firebase/Auth (3.15.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -51,9 +53,10 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SlideMenuControllerSwift (3.0.1)
-  - SloppySwiper (0.5)
+  - SloppySwiper (0.6)
 
 DEPENDENCIES:
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -80,8 +83,8 @@ SPEC CHECKSUMS:
   SDCAlertView: c39fa91a3aeb5eeba58fe9cea648263b131ff2bf
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
-  SloppySwiper: 7fdffc91062af8fb80574dee80082cb9e0cee507
+  SloppySwiper: 37e38f6da8df5c805914c6f32ec6ec8da63abe7c
 
-PODFILE CHECKSUM: c0ab6fcdb3cee53b83c22e32a0d85441c53f64ea
+PODFILE CHECKSUM: 95e019da537222166838b39604f724109c3e6244
 
 COCOAPODS: 1.2.0

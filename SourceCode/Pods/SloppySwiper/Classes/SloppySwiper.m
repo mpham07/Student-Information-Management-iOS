@@ -8,7 +8,7 @@
 #import "SSWAnimator.h"
 #import "SSWDirectionalPanGestureRecognizer.h"
 
-@interface SloppySwiper() <UIGestureRecognizerDelegate>
+@interface SloppySwiper() <UIGestureRecognizerDelegate, SSWAnimatorDelegate>
 @property (weak, readwrite, nonatomic) UIPanGestureRecognizer *panRecognizer;
 @property (weak, nonatomic) IBOutlet UINavigationController *navigationController;
 @property (strong, nonatomic) SSWAnimator *animator;
@@ -56,6 +56,25 @@
     _panRecognizer = panRecognizer;
 
     _animator = [[SSWAnimator alloc] init];
+    _animator.delegate = self;
+}
+
+#pragma mark - SSWAnimatorDelegate
+
+- (BOOL)animatorShouldAnimateTabBar:(SSWAnimator *)animator {
+    if ([self.delegate respondsToSelector:@selector(sloppySwiperShouldAnimateTabBar:)]) {
+        return [self.delegate sloppySwiperShouldAnimateTabBar:self];
+    } else {
+        return YES;
+    }
+}
+
+- (CGFloat)animatorTransitionDimAmount:(SSWAnimator *)animator {
+    if ([self.delegate respondsToSelector:@selector(sloppySwiperTransitionDimAmount:)]) {
+        return [self.delegate sloppySwiperTransitionDimAmount:self];
+    } else {
+        return 0.1f;
+    }
 }
 
 #pragma mark - UIPanGestureRecognizer
@@ -75,7 +94,7 @@
         // Cumulative translation.x can be less than zero because user can pan slightly to the right and then back to the left.
         CGFloat d = translation.x > 0 ? translation.x / CGRectGetWidth(view.bounds) : 0;
         [self.interactionController updateInteractiveTransition:d];
-    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+    } else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
         if ([recognizer velocityInView:view].x > 0) {
             [self.interactionController finishInteractiveTransition];
         } else {

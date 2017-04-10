@@ -52,6 +52,8 @@ UIViewAnimationOptions const SSWNavigationTransitionCurve = 7 << 16;
 
     // parallax effect; the offset matches the one used in the pop animation in iOS 7.1
     CGFloat toViewControllerXTranslation = - CGRectGetWidth([transitionContext containerView].bounds) * 0.3f;
+    toViewController.view.bounds = [transitionContext containerView].bounds;
+    toViewController.view.center = [transitionContext containerView].center;
     toViewController.view.transform = CGAffineTransformMakeTranslation(toViewControllerXTranslation, 0);
 
     // add a shadow on the left side of the frontmost view controller
@@ -61,7 +63,8 @@ UIViewAnimationOptions const SSWNavigationTransitionCurve = 7 << 16;
 
     // in the default transition the view controller below is a little dimmer than the frontmost one
     UIView *dimmingView = [[UIView alloc] initWithFrame:toViewController.view.bounds];
-    dimmingView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.1f];
+    CGFloat dimAmount = [self.delegate animatorTransitionDimAmount:self];
+    dimmingView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:dimAmount];
     [toViewController.view addSubview:dimmingView];
 
     // fix hidesBottomBarWhenPushed not animated properly
@@ -73,7 +76,8 @@ UIViewAnimationOptions const SSWNavigationTransitionCurve = 7 << 16;
     BOOL tabBarControllerContainsToViewController = [tabBarController.viewControllers containsObject:toViewController];
     BOOL tabBarControllerContainsNavController = [tabBarController.viewControllers containsObject:navController];
     BOOL isToViewControllerFirstInNavController = [navController.viewControllers firstObject] == toViewController;
-    if (tabBar && (tabBarControllerContainsToViewController || (isToViewControllerFirstInNavController && tabBarControllerContainsNavController))) {
+    BOOL shouldAnimateTabBar = [self.delegate animatorShouldAnimateTabBar:self];
+    if (shouldAnimateTabBar && tabBar && (tabBarControllerContainsToViewController || (isToViewControllerFirstInNavController && tabBarControllerContainsNavController))) {
         [tabBar.layer removeAllAnimations];
         
         CGRect tabBarRect = tabBar.frame;

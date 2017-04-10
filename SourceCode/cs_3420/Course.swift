@@ -41,7 +41,12 @@ class Course {
     }
     
     var course_id: String {
-        return _course_id
+        get {
+            return _course_id
+        }
+        set{
+            _course_id = newValue
+        }
     }
     
     var name: String {

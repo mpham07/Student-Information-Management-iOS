@@ -6,6 +6,7 @@ target 'cs_3420' do
   use_frameworks!
 
   # Pods for cs_3420
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
