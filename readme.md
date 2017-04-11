@@ -33,5 +33,5 @@ If your OSX has CocoaPods already, just ignore this step. Otherwise, open `Termi
 
 ### Setup Firebase
 - Add Firebase to the iOS Project. [(link)](https://firebase.google.com/docs/ios/setup)
-- Make sure the project has 'GoogleService-Info.plist' file.
-- Import database from '/Documents/database.json'
+- Make sure the project has `GoogleService-Info.plist` file.
+- Import database from `/Documents/database.json`
