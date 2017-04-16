@@ -83,5 +83,11 @@ class cs_3420Tests: XCTestCase {
         CS_2402.courseInfo = courseInfo
         student.course_grades?.append(CS_2402)
         XCTAssertEqual(student.totalCredit, "8")
+        
+        let CS_3402 = Course_Grade(uid_course: "CS_3402")
+        courseInfo.course_id = "CS 3402"
+        CS_3402.courseInfo = courseInfo
+        student.course_grades?.append(CS_2402)
+        XCTAssertEqual(student.totalCredit, "12")
     }
 }
